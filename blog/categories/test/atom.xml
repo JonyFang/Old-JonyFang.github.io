@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Categories:test | I'm Jony]]></title>
+  <title><![CDATA[Categorie: Test | I'm Jony]]></title>
   <link href="http://jonyfang.github.io/blog/categories/test/atom.xml" rel="self"/>
   <link href="http://jonyfang.github.io/"/>
-  <updated>2015-10-07T23:47:21+08:00</updated>
+  <updated>2015-10-08T01:11:17+08:00</updated>
   <id>http://jonyfang.github.io/</id>
   <author>
     <name><![CDATA[Jony Fang]]></name>
