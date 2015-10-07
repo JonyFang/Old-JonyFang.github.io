@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Categories:test | I'm Jony]]></title>
+  <link href="http://jonyfang.github.io/blog/categories/test/atom.xml" rel="self"/>
+  <link href="http://jonyfang.github.io/"/>
+  <updated>2015-10-07T23:47:21+08:00</updated>
+  <id>http://jonyfang.github.io/</id>
+  <author>
+    <name><![CDATA[Jony Fang]]></name>
+    <email><![CDATA[ahchunfang@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Just a Test]]></title>
+    <link href="http://jonyfang.github.io/blog/2015/10/07/just-a-test/"/>
+    <updated>2015-10-07T23:45:17+08:00</updated>
+    <id>http://jonyfang.github.io/blog/2015/10/07/just-a-test</id>
+    <content type="html"><![CDATA[<p>This is just a test ~</p>
+]]></content>
+  </entry>
+  
+</feed>
