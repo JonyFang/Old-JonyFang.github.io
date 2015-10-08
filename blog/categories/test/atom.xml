@@ -4,7 +4,7 @@
   <title><![CDATA[Categorie: Test | I'm Jony]]></title>
   <link href="http://jonyfang.github.io/blog/categories/test/atom.xml" rel="self"/>
   <link href="http://jonyfang.github.io/"/>
-  <updated>2015-10-09T01:31:18+08:00</updated>
+  <updated>2015-10-09T01:41:27+08:00</updated>
   <id>http://jonyfang.github.io/</id>
   <author>
     <name><![CDATA[Jony Fang]]></name>
@@ -40,9 +40,13 @@
 
 <h2 id="about-first">1.1 About first</h2>
 
-<p><img src="http://jonyfang.github.io/images/blog_images/10.8_daily.jpg" alt="1-1 Train yourself to let go of everything you fear to lose. 10.8_daily" /></p>
-
 <p>这是一个测试</p>
+
+<p><img src="http://jonyfang.github.io/images/blog_images/10.8_daily.jpg" alt="1-1 Train yourself to let go of everything you fear to lose." /></p>
+
+<p>Train yourself to let go of everything you fear to lose.</p>
+
+<p>试着放下所有你害怕失去的东西。</p>
 
 <h1 id="second">2.第二篇Second</h1>
 
