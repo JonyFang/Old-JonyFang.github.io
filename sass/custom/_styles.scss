@@ -1,2 +1,107 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
+
+$white: #FFFFFF;
+
+
+html {
+    background: #FAFAFA;
+}
+
+
+body {
+    font-family: $sans !important;
+    font-size: 1em;
+
+    a {
+        text-decoration: none;
+    }
+
+    > header {
+        background: RGB(100, 102, 102);
+        text-align: center;
+    }
+
+    > nav {
+        background: RGB(245, 245, 245);
+        border-bottom: 0px;
+
+        a {
+            text-shadow: none;
+            font-family: $sans;
+            font-size: 0.9em;
+            padding-top: 0.3em;
+            line-height: 1.5em;
+        }
+
+        li + li {
+            border-left: 0px;
+
+            a {
+                border-left: 0px;
+            }
+        }
+    }
+
+    > div {
+        background: $white;
+        border-bottom: 0px;
+
+        > div {
+            background: $white;
+        }
+    }
+
+    > footer {
+        background: $white;
+        text-shadow: none;
+        color: #AAAAAA;
+    }
+
+}
+
+
+article {
+    padding-top: 2em;
+
+    ul, ol {
+        margin-left: 2em;
+    }
+
+    header {
+        h1.entry-title {
+            font-family: $heading-font-family;
+            font-weight: 400;
+        }
+    }
+}
+
+
+aside {
+    font-size: 1.1em;
+}
+
+
+#markdown-toc:before {
+    content: "本篇目录：";
+    font-size: 1.2em;
+    font-family: $heading-font-family;
+    font-weight: 400;
+}
+
+
+ul#markdown-toc {
+    list-style: none;
+    background-color: RGB(230, 230, 230);
+    font-size: 1.1em;
+    font-family: $heading-font-family;
+    font-weight: 400;
+    padding-left: 0.9em;
+    padding-bottom: 0.5em;
+    padding-top:0.5em;
+}
+
+.blog-index #markdown-toc {
+    display: none;
+}
+
