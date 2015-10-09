@@ -1,12 +1,20 @@
 $blockquote: $type-border !default;
-$sans: "PT Sans", "Helvetica Neue", Arial, sans-serif !default;
-$serif: "PT Serif", Georgia, Times, "Times New Roman", serif !default;
-$mono: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace !default;
-$heading-font-family: "PT Serif", "Georgia", "Helvetica Neue", Arial, sans-serif !default;
-$header-title-font-family: $heading-font-family !default;
-$header-subtitle-font-family: $heading-font-family !default;
+//$sans: "PT Sans", "Helvetica Neue", Arial, sans-serif !default;
+//$serif: "PT Serif", Georgia, Times, "Times New Roman", serif !default;
+//$mono: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace !default;
+//$heading-font-family: "PT Serif", "Georgia", "Helvetica Neue", Arial, sans-serif !default;
+//$header-title-font-family: $heading-font-family !default;
+//$header-subtitle-font-family: $heading-font-family !default;
 
 // Fonts
+$sans: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Hiragino Sans GB","Microsoft YaHei", DotumChe, sans-serif !default;
+$serif: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Hiragino Sans GB","Microsoft YaHei", serif !default;
+$mono: Menlo, Monaco, "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Hiragino Sans GB","Microsoft YaHei", DotumChe, monospace !default;
+$heading-font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Hiragino Sans GB","Microsoft YaHei", DotumChe, sans-serif !default;
+$header-title-font-family: $heading-font-family !default;
+$header-subtitle-font-family: $serif !default;
+
+
 .heading {
   font-family: $heading-font-family;
 }
@@ -15,7 +23,7 @@ $header-subtitle-font-family: $heading-font-family !default;
 .mono { font-family: $mono; }
 
 body > header h1 {
-  font-size: 2.2em;
+  font-size: 2.0em;
   @extend .heading;
   font-family: $header-title-font-family;
   font-weight: normal;
@@ -32,13 +40,13 @@ body {
   @extend .serif;
 }
 h1 {
-  font-size: 2.2em;
+  font-size: 2.0em;
   line-height: 1.2em;
 }
 
 @media only screen and (min-width: 992px) {
   body { font-size: 1.15em; }
-  h1 { font-size: 2.6em; line-height: 1.2em; }
+  h1 { font-size: 2.0em; line-height: 1.2em; }
 }
 
 #{headings()}{
@@ -49,9 +57,11 @@ h1 {
 }
 h2, section h1 {
   font-size: 1.5em;
+  font-weight: bold;
 }
 h3, section h2, section section h1 {
   font-size: 1.3em;
+  font-weight: bold;
 }
 h4, section h3, section section h2, section section section h1 {
   font-size: 1em;
@@ -78,7 +88,10 @@ ul, ol { ul, ol { margin-bottom: 0em; }}
 
 strong { font-weight: bold; }
 
-em { font-style: italic; }
+em {
+  font-style: italic;
+  font-weight:bold;
+}
 
 sup, sub { font-size: 0.75em; position: relative;  display: inline-block; padding: 0 .2em; line-height: .8em;}
 sup { top: -.5em; }
