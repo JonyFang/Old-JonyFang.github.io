@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Categorie: Octopress | I'm Jony]]></title>
+  <link href="http://jonyfang.github.io/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://jonyfang.github.io/"/>
+  <updated>2015-10-10T20:49:55+08:00</updated>
+  <id>http://jonyfang.github.io/</id>
+  <author>
+    <name><![CDATA[Jony Fang]]></name>
+    <email><![CDATA[ahchunfang@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[基于 Octopress 和 Github 搭建博客]]></title>
+    <link href="http://jonyfang.github.io/blog/2015/10/09/ji-yu-octopress-he-github-da-jian-bo-ke/"/>
+    <updated>2015-10-09T23:46:54+08:00</updated>
+    <id>http://jonyfang.github.io/blog/2015/10/09/ji-yu-octopress-he-github-da-jian-bo-ke</id>
+    <content type="html"><![CDATA[<p>从刚接触 Octopress 到现在大概一个多星期了，幸运的是经过一番摸爬滚打算是弄出点了模样，这里介绍下如何在 Github Pages 上搭建 Octopress 博客及自己在搭建过程中遇到问题时采用的解决方法。具体技术细节未必精确，若有大神围观看到还望指正。</p>
+
+<p>整个搭建过程是在 Mac OSX 系统下完成的，不一定完全适用于 Windows 的童鞋（勿拍砖…）。</p>
+
+]]></content>
+  </entry>
+  
+</feed>
