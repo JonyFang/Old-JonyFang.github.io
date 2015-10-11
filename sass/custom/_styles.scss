@@ -123,3 +123,51 @@ ul#markdown-toc {
     display: none;
 }
 
+// TODO --------- footnote
+.footnote-button {
+    position: relative;
+    z-index: 5;
+    top: -0.2em;
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 0.325em;
+    margin: 0 0.1em 0 0.2em;
+    height: 1em;
+    width: 1em;
+    border: none;
+    border-radius: 0.6em;
+    cursor: pointer;
+    opacity: 0.3;
+    background-color: #464646;
+    line-height: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    transition: opacity;
+    transition-duration: 0.25s;
+}
+
+.footnote-button:before {
+    content: attr(data-footnote-number);
+    position: absolute;
+    bottom: 0.63em;
+    left: 0;
+    right: 0;
+    display: block;
+    font-size: 0.8em;
+    color: #fff;
+    font-family: inherit;
+    font-weight: bold;
+    font-style: normal;
+    line-height: 0;
+    text-align: center;
+}
+
+.footnote-content.active:not(.fixed-bottom) {
+    transform: scale(1) translateZ(0);
+    opacity: 0.97;
+}
+
+.footnote-print-only {
+display: none !important;
+}
+
