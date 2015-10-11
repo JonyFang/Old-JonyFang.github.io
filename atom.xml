@@ -4,7 +4,7 @@
   <title><![CDATA[I'm Jony]]></title>
   <link href="http://jonyfang.github.io/atom.xml" rel="self"/>
   <link href="http://jonyfang.github.io/"/>
-  <updated>2015-10-11T14:26:46+08:00</updated>
+  <updated>2015-10-11T16:40:21+08:00</updated>
   <id>http://jonyfang.github.io/</id>
   <author>
     <name><![CDATA[Jony Fang]]></name>
@@ -30,7 +30,10 @@
     <link href="http://jonyfang.github.io/blog/2015/10/07/just-a-test/"/>
     <updated>2015-10-07T23:45:17+08:00</updated>
     <id>http://jonyfang.github.io/blog/2015/10/07/just-a-test</id>
-    <content type="html"><![CDATA[<p>这是一篇测试文章</p>
+    <content type="html"><![CDATA[<p class="info">
+"Objects in the rear view mirror may appear closer than they are."
+</p>
+<p>“test worning 你好，这是一个好玩的测试哦，这是一篇测试文章”</p>
 
 <ul id="markdown-toc">
   <li><a href="#first" id="markdown-toc-first">1. 第一篇First</a>    <ul>
