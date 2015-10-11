@@ -4,7 +4,7 @@
   <title><![CDATA[I'm Jony]]></title>
   <link href="http://jonyfang.github.io/atom.xml" rel="self"/>
   <link href="http://jonyfang.github.io/"/>
-  <updated>2015-10-11T16:45:05+08:00</updated>
+  <updated>2015-10-11T16:48:45+08:00</updated>
   <id>http://jonyfang.github.io/</id>
   <author>
     <name><![CDATA[Jony Fang]]></name>
@@ -14,26 +14,14 @@
 
   
   <entry>
-    <title type="html"><![CDATA[基于 Octopress 和 Github 搭建博客]]></title>
-    <link href="http://jonyfang.github.io/blog/2015/10/09/ji-yu-octopress-he-github-da-jian-bo-ke/"/>
-    <updated>2015-10-09T23:46:54+08:00</updated>
-    <id>http://jonyfang.github.io/blog/2015/10/09/ji-yu-octopress-he-github-da-jian-bo-ke</id>
-    <content type="html"><![CDATA[<p>从刚接触 Octopress 到现在大概一个多星期了，幸运的是经过一番摸爬滚打算是弄出点了模样，这里介绍下如何在 Github Pages 上搭建 Octopress 博客及自己在搭建过程中遇到问题时采用的解决方法。具体技术细节未必精确，若有大神围观看到还望指正。</p>
-
-<p>整个搭建过程是在 Mac OSX 系统下完成的，不一定完全适用于 Windows 的童鞋（勿拍砖…）。</p>
-
-]]></content>
-  </entry>
-  
-  <entry>
     <title type="html"><![CDATA[Just a Test]]></title>
     <link href="http://jonyfang.github.io/blog/2015/10/07/just-a-test/"/>
     <updated>2015-10-07T23:45:17+08:00</updated>
     <id>http://jonyfang.github.io/blog/2015/10/07/just-a-test</id>
     <content type="html"><![CDATA[<p class="info">
-"Objects in the rear view mirror may appear closer than they are."
+"Objects in the rear view mirror may appear closer than they are."<br />
+"test worning 你好，这是一个好玩的测试哦，这是一篇测试文章"
 </p>
-<p>“test worning 你好，这是一个好玩的测试哦，这是一篇测试文章”</p>
 
 <ul id="markdown-toc">
   <li><a href="#first" id="markdown-toc-first">1. 第一篇First</a>    <ul>
