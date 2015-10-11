@@ -4,7 +4,7 @@
   <title><![CDATA[I'm Jony]]></title>
   <link href="http://jonyfang.github.io/atom.xml" rel="self"/>
   <link href="http://jonyfang.github.io/"/>
-  <updated>2015-10-11T17:23:22+08:00</updated>
+  <updated>2015-10-11T17:26:43+08:00</updated>
   <id>http://jonyfang.github.io/</id>
   <author>
     <name><![CDATA[Jony Fang]]></name>
@@ -19,7 +19,7 @@
     <updated>2015-10-07T23:45:17+08:00</updated>
     <id>http://jonyfang.github.io/blog/2015/10/07/just-a-test</id>
     <content type="html"><![CDATA[<p class="info">
-这是一个有意思的 info 测试，这是一个<code>code 标示</code>测试
+这是一个有意思的 info 测试，这是一个<code>标示</code>测试<br />换行测试
 </p>
 
 <p class="warning">
