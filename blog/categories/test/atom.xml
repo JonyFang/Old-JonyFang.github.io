@@ -4,7 +4,7 @@
   <title><![CDATA[Categorie: Test | I'm Jony]]></title>
   <link href="http://jonyfang.github.io/blog/categories/test/atom.xml" rel="self"/>
   <link href="http://jonyfang.github.io/"/>
-  <updated>2015-10-11T17:29:38+08:00</updated>
+  <updated>2015-10-11T18:12:40+08:00</updated>
   <id>http://jonyfang.github.io/</id>
   <author>
     <name><![CDATA[Jony Fang]]></name>
@@ -20,6 +20,8 @@
     <id>http://jonyfang.github.io/blog/2015/10/07/just-a-test</id>
     <content type="html"><![CDATA[<p class="info">
 这是一个有意思的 info 测试，这是一个<code>标示</code>测试<br />换行测试
+footnote 测试 <a href="#" class="footnote-button" id="fnref:1" data-footnote-number="1" data-footnote-identifier="1" alt="See Footnote 1" rel="footnote" data-footnote-content="&lt;p&gt;A blogging framework for hackers.&lt;/p&gt;"><span class="footnote-circle" data-footnote-number="1"></span><span class="footnote-circle"></span><span class="footnote-circle"></span></a>
+<sup id="fnref:1" data-footnote-backlink-ref="fnref:1" data-footnote-ref="#fn:1" class="footnote-print-only"><a href="#fn:1" rel="footnote">1</a></sup>
 </p>
 
 <p class="warning">
