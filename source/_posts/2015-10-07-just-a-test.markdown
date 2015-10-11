@@ -5,7 +5,15 @@ date: 2015-10-07 23:45:17 +0800
 comments: true
 categories: test
 ---
-这是一篇测试文章
+
+<p class="info">
+这是一个有意思的 info 测试，这是一个<code>标示</code>测试<br>换行测试
+</p>
+
+<p class="warning">
+那么，这是另一个有意思的 warning 测试，<br>链接测试<a href="http://octopress.org/" target="_blank">Octopress 官网</a>
+</p>
+
 
 * list element with functor item
 {:toc}

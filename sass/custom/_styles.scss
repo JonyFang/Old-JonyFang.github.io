@@ -77,6 +77,24 @@ article {
 }
 
 
+// Tips
+.info, .warning {
+    border: none;
+    padding: 0.6em 1.25em 0.6em 48px;
+    margin-top: 0.25em;
+    border-radius: 8px;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.3);
+}
+
+.info {
+    background: #d5e9f6 url(/images/tab_info.gif) no-repeat left top;
+}
+
+.warning {
+    background: #f9d9d8 url(/images/tab_red.gif) no-repeat left top;
+}
+
+
 #markdown-toc:before {
     content: "本页目录";
     font-weight: bold;
