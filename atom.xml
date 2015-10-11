@@ -4,7 +4,7 @@
   <title><![CDATA[I'm Jony]]></title>
   <link href="http://jonyfang.github.io/atom.xml" rel="self"/>
   <link href="http://jonyfang.github.io/"/>
-  <updated>2015-10-11T16:48:45+08:00</updated>
+  <updated>2015-10-11T17:23:22+08:00</updated>
   <id>http://jonyfang.github.io/</id>
   <author>
     <name><![CDATA[Jony Fang]]></name>
@@ -19,8 +19,11 @@
     <updated>2015-10-07T23:45:17+08:00</updated>
     <id>http://jonyfang.github.io/blog/2015/10/07/just-a-test</id>
     <content type="html"><![CDATA[<p class="info">
-"Objects in the rear view mirror may appear closer than they are."<br />
-"test worning 你好，这是一个好玩的测试哦，这是一篇测试文章"
+这是一个有意思的 info 测试，这是一个<code>code 标示</code>测试
+</p>
+
+<p class="warning">
+那么，这是另一个有意思的 warning 测试，<br />链接测试<a href="http://octopress.org/" target="_blank">Octopress 官网</a>
 </p>
 
 <ul id="markdown-toc">
