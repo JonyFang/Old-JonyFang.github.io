@@ -77,28 +77,28 @@ article {
 }
 
 
-aside {
-    font-size: 1.1em;
-}
-
-
 #markdown-toc:before {
-    content: "本篇目录：";
-    font-size: 1.2em;
+    content: "本页目录";
+    font-weight: bold;
     font-family: $heading-font-family;
-    font-weight: 400;
+    font-size: 1.2em;
+    line-height: 2em;
 }
 
 
 ul#markdown-toc {
     list-style: none;
-    background-color: RGB(230, 230, 230);
+    border: none;
+    padding: 0.6em 1.25em 1.2em;
+    margin-top: 0.25em;
+    margin-bottom: 1.25em;
+    margin-left: 0;
+    font-style: normal;
     font-size: 1.1em;
-    font-family: $heading-font-family;
-    font-weight: 400;
-    padding-left: 0.9em;
-    padding-bottom: 0.5em;
-    padding-top:0.5em;
+    line-height: 1.75em;
+    border-radius: 8px;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.3);
+    background-color: #D3D3D3;
 }
 
 .blog-index #markdown-toc {
