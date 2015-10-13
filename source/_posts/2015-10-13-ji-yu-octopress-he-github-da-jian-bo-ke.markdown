@@ -125,9 +125,9 @@ GitHub Pages 这里用于显示托管在 GitHub 上的静态网页，是 GitHub 
 
 > 上面提到的 Ruby 镜像问题，还有另外两种解决方法:
 
-* 比较原始的方法——手动更改：打开 octopress 文件夹 -> 打开 Gemfile 文件 -> 将 source "https://rubygems.org" 改为 source "https://ruby.taobao.org" 就可以了。
+（1）比较原始的方法——手动更改：打开 octopress 文件夹 -> 打开 Gemfile 文件 -> 将 source "https://rubygems.org" 改为 source "https://ruby.taobao.org" 就可以了。
 
-* 相对方便点，因为我们使用的是 Gemfile，所以我们可以用 Bundler 的 [Gem 源代码镜像命令](http://bundler.io/v1.5/bundle_config.html#gem-source-mirrors)，这样我们就不用改 Gemfile 的 source 了。
+（2）相对方便点，因为我们使用的是 Gemfile，所以我们可以用 Bundler 的 [Gem 源代码镜像命令](http://bundler.io/v1.5/bundle_config.html#gem-source-mirrors)，这样我们就不用改 Gemfile 的 source 了。
 
 {% codeblock lang:ruby %}
   $ cd octopress
