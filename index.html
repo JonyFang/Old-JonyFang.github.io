@@ -9,7 +9,7 @@
   <meta name="author" content="Jony Fang">
 
   
-  <meta name="description" content="这是一个有意思的 info 测试，这是一个标示测试换行测试 那么，这是另一个有意思的 warning 测试，链接测试 Octopress 官网 1. 第一篇First 1.1 About first 2.第二篇Second 2.1 About Second 1 2.2 About Second &hellip;">
+  <meta name="description" content="一直以来想有个属于自己的博客空间，或许是出于一种归属感吧。就这样知道了 WordPress、Jekyll、Hexo 和 Octopress。一番对比后选择了 Octopress，相信追随大神的脚步应该不会错。Octopress 接触有一个多星期了，幸运的是经过一番折腾算是弄出点了模样。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -75,7 +75,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2015/10/07/just-a-test/">Just a Test</a></h1>
+      <h1 class="entry-title"><a href="/blog/2015/10/13/ji-yu-octopress-he-github-da-jian-bo-ke/">基于 Octopress & Github Pages 搭建博客（一）</a></h1>
     
     
       <p class="meta">
@@ -84,10 +84,10 @@
 
 
 
-<time class='entry-date' datetime='2015-10-07T23:45:17+08:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>7</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:45 pm</span></time>
+<time class='entry-date' datetime='2015-10-13T13:13:00+08:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>13</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>1:13 pm</span></time>
         
-           | <a href="/blog/2015/10/07/just-a-test/#disqus_thread"
-             data-disqus-identifier="http://jonyfang.github.io/blog/2015/10/07/just-a-test/">Comments</a>
+           | <a href="/blog/2015/10/13/ji-yu-octopress-he-github-da-jian-bo-ke/#disqus_thread"
+             data-disqus-identifier="http://jonyfang.github.io/blog/2015/10/13/ji-yu-octopress-he-github-da-jian-bo-ke/">Comments</a>
         
       </p>
     
@@ -95,84 +95,38 @@
 
 
   <div class="entry-content"><p class="info">
-这是一个有意思的 info 测试，这是一个<code>标示</code>测试<br />换行测试
-</p>
-
-<p class="warning">
-那么，这是另一个有意思的 warning 测试，<br />链接测试<a href="http://octopress.org/" target="_blank"> Octopress 官网</a>
+一直以来想有个属于自己的博客空间，或许是出于一种归属感吧。就这样知道了 WordPress、Jekyll、Hexo 和 Octopress。一番对比后选择了 Octopress，相信追随大神的脚步应该不会错。Octopress 接触有一个多星期了，幸运的是经过一番折腾算是弄出点了模样。这里总结下基于 Octopress 及 Github搭建博客的过程及自己中间遇到的一些问题的解决办法。技术上不一定完全精确，若有大神围观望指正：)
+<br /><br />
+使用的是 Mac OS X 系统，不一定适用于 Windows 的童鞋。（勿拍砖...）
+<br /><br />
+这是最终的实现效果：<a href="http://jonyfang.github.io/" target="_blank"> I'm Jony</a>
 </p>
 
 <ul id="markdown-toc">
-  <li><a href="#first" id="markdown-toc-first">1. 第一篇First</a>    <ul>
-      <li><a href="#about-first" id="markdown-toc-about-first">1.1 About first</a></li>
+  <li><a href="#octopress--jekyll--github-pages-" id="markdown-toc-octopress--jekyll--github-pages-">1. Octopress 与 Jekyll &amp; Github Pages 的关系</a></li>
+  <li><a href="#section" id="markdown-toc-section">2. 准备工作</a>    <ul>
+      <li><a href="#git" id="markdown-toc-git">2-1. 安装 Git</a></li>
+      <li><a href="#ruby" id="markdown-toc-ruby">2-2. 安装 Ruby</a></li>
     </ul>
   </li>
-  <li><a href="#second" id="markdown-toc-second">2.第二篇Second</a>    <ul>
-      <li><a href="#about-second-1" id="markdown-toc-about-second-1">2.1 About Second 1</a></li>
-      <li><a href="#about-second-2" id="markdown-toc-about-second-2">2.2 About Second 2</a></li>
-    </ul>
-  </li>
-  <li><a href="#third" id="markdown-toc-third">3.Third</a>    <ul>
-      <li><a href="#about-third" id="markdown-toc-about-third">3.1 About Third</a></li>
-    </ul>
-  </li>
+  <li><a href="#octopress" id="markdown-toc-octopress">3. 本地安装 Octopress</a></li>
+  <li><a href="#section-1" id="markdown-toc-section-1">4. 预览效果</a></li>
 </ul>
 
-<h1 id="first">1. 第一篇First</h1>
+<h2 id="octopress--jekyll--github-pages-">1. Octopress 与 Jekyll &amp; Github Pages 的关系</h2>
 
-<h2 id="about-first">1.1 About first</h2>
+<p>Octopress 是基于 Jekyll 的静态博客框架。</p>
 
-<p>这是一个测试</p>
+<p>GitHub Pages 这里用于显示托管在 GitHub 上的静态网页，是 GitHub 提供的一项服务。</p>
 
-<p><img src="http://jonyfang.github.io/images/blog_images/10.8_daily.jpg" alt="1-1 Train yourself to let go of everything you fear to lose." /></p>
+<p>总的来说也就是我们使用基于 Jekyll 的 Octopress 生成本地的静态网站，然后将静态的网站托管到 Github 为我们提供的 Github Pages 服务上。最后访问 博客地址 就可以显示我们的个人博客网站了。</p>
 
-<p>Train yourself to let go of everything you fear to lose.</p>
-
-<p>试着放下所有你害怕失去的东西。</p>
-
-<h1 id="second">2.第二篇Second</h1>
-
-<h2 id="about-second-1">2.1 About Second 1</h2>
-
-<p>这也是一个测试</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>[lang: ANTLR] [Obj-c test] </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">UIImage *image = [[UIImage alloc] init];</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class="objc"><span class="line"><span class="p">[</span><span class="n">rectangle</span> <span class="nl">setX</span><span class="p">:</span> <span class="mi">10</span> <span class="nl">y</span><span class="p">:</span> <span class="mi">10</span> <span class="nl">width</span><span class="p">:</span> <span class="mi">20</span> <span class="nl">height</span><span class="p">:</span> <span class="mi">20</span><span class="p">];</span>
-</span><span class="line"><span class="bp">UIImage</span> <span class="o">*</span><span class="n">image</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">UIImage</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-</pre></td><td class="code"><pre><code class="objc"><span class="line">  <span class="bp">NSString</span> <span class="o">*</span><span class="n">string1</span> <span class="o">=</span> <span class="s">@&quot;helloworld&quot;</span><span class="p">;</span>
-</span><span class="line">  <span class="bp">NSString</span> <span class="o">*</span><span class="n">string2</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSString</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithFormat</span><span class="p">:</span><span class="s">@&quot;:%@&quot;</span><span class="p">,</span> <span class="s">@&quot;helloworld&quot;</span><span class="p">];</span>
-</span><span class="line">  <span class="bp">NSString</span> <span class="o">*</span><span class="n">string3</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSHomeDirectory</span><span class="p">()</span> <span class="nl">stringByAppendingPathComponent</span><span class="p">:</span><span class="n">string1</span><span class="p">];</span>
-</span><span class="line">  <span class="bp">NSTextStorage</span> <span class="o">*</span><span class="n">storage</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSTextStorage</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithString</span><span class="p">:</span><span class="n">string1</span><span class="p">];</span>
-</span><span class="line">  <span class="bp">NSString</span> <span class="o">*</span><span class="n">string4</span> <span class="o">=</span> <span class="p">[</span><span class="n">storage</span> <span class="n">string</span><span class="p">];</span>
-</span><span class="line">
-</span><span class="line">  <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;%@&quot;</span><span class="p">,</span> <span class="p">[[</span><span class="n">string1</span> <span class="k">class</span><span class="p">]</span> <span class="n">description</span><span class="p">]);</span>
-</span><span class="line">  <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;%@&quot;</span><span class="p">,</span> <span class="p">[[</span><span class="n">string2</span> <span class="k">class</span><span class="p">]</span> <span class="n">description</span><span class="p">]);</span>
-</span><span class="line">  <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;%@&quot;</span><span class="p">,</span> <span class="p">[[</span><span class="n">string3</span> <span class="k">class</span><span class="p">]</span> <span class="n">description</span><span class="p">]);</span>
-</span><span class="line">  <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;%@&quot;</span><span class="p">,</span> <span class="p">[[</span><span class="n">string4</span> <span class="k">class</span><span class="p">]</span> <span class="n">description</span><span class="p">]);</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
+<h2 id="section">2. 准备工作</h2>
 </div>
   
   
     <footer>
-      <a rel="full-article" href="/blog/2015/10/07/just-a-test/">Read on &rarr;</a>
+      <a rel="full-article" href="/blog/2015/10/13/ji-yu-octopress-he-github-da-jian-bo-ke/">Read on &rarr;</a>
     </footer>
   
 
@@ -200,7 +154,7 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2015/10/07/just-a-test/">Just a Test</a>
+        <a href="/blog/2015/10/13/ji-yu-octopress-he-github-da-jian-bo-ke/">基于 Octopress & Github Pages 搭建博客（一）</a>
       </li>
     
   </ul>

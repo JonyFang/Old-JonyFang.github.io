@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Categorie: Octopress | I'm Jony]]></title>
+  <link href="http://jonyfang.github.io/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://jonyfang.github.io/"/>
+  <updated>2015-10-13T13:52:53+08:00</updated>
+  <id>http://jonyfang.github.io/</id>
+  <author>
+    <name><![CDATA[Jony Fang]]></name>
+    <email><![CDATA[ahchunfang@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[基于 Octopress & Github Pages 搭建博客（一）]]></title>
+    <link href="http://jonyfang.github.io/blog/2015/10/13/ji-yu-octopress-he-github-da-jian-bo-ke/"/>
+    <updated>2015-10-13T13:13:00+08:00</updated>
+    <id>http://jonyfang.github.io/blog/2015/10/13/ji-yu-octopress-he-github-da-jian-bo-ke</id>
+    <content type="html"><![CDATA[<p class="info">
+一直以来想有个属于自己的博客空间，或许是出于一种归属感吧。就这样知道了 WordPress、Jekyll、Hexo 和 Octopress。一番对比后选择了 Octopress，相信追随大神的脚步应该不会错。Octopress 接触有一个多星期了，幸运的是经过一番折腾算是弄出点了模样。这里总结下基于 Octopress 及 Github搭建博客的过程及自己中间遇到的一些问题的解决办法。技术上不一定完全精确，若有大神围观望指正：)
+<br /><br />
+使用的是 Mac OS X 系统，不一定适用于 Windows 的童鞋。（勿拍砖...）
+<br /><br />
+这是最终的实现效果：<a href="http://jonyfang.github.io/" target="_blank"> I'm Jony</a>
+</p>
+
+<ul id="markdown-toc">
+  <li><a href="#octopress--jekyll--github-pages-" id="markdown-toc-octopress--jekyll--github-pages-">1. Octopress 与 Jekyll &amp; Github Pages 的关系</a></li>
+  <li><a href="#section" id="markdown-toc-section">2. 准备工作</a>    <ul>
+      <li><a href="#git" id="markdown-toc-git">2-1. 安装 Git</a></li>
+      <li><a href="#ruby" id="markdown-toc-ruby">2-2. 安装 Ruby</a></li>
+    </ul>
+  </li>
+  <li><a href="#octopress" id="markdown-toc-octopress">3. 本地安装 Octopress</a></li>
+  <li><a href="#section-1" id="markdown-toc-section-1">4. 预览效果</a></li>
+</ul>
+
+<h2 id="octopress--jekyll--github-pages-">1. Octopress 与 Jekyll &amp; Github Pages 的关系</h2>
+
+<p>Octopress 是基于 Jekyll 的静态博客框架。</p>
+
+<p>GitHub Pages 这里用于显示托管在 GitHub 上的静态网页，是 GitHub 提供的一项服务。</p>
+
+<p>总的来说也就是我们使用基于 Jekyll 的 Octopress 生成本地的静态网站，然后将静态的网站托管到 Github 为我们提供的 Github Pages 服务上。最后访问 博客地址 就可以显示我们的个人博客网站了。</p>
+
+<h2 id="section">2. 准备工作</h2>
+<!-- more -->
+
+<h3 id="git">2-1. 安装 Git</h3>
+
+<p>前往 Git 官网 <a href="http://git-scm.com/">点击这里</a> ，按下图提示下载安装（一般 Mac OS X自带 Git 环境，终端执行 git -v 可查看 Git 版本）。</p>
+
+<p><img src="http://jonyfang.github.io/images/octopress/git_downloads.png" alt="git_downloads" /></p>
+
+<h3 id="ruby">2-2. 安装 Ruby</h3>
+
+<p>这是 <a href="https://www.ruby-lang.org/en/">Ruby 官网</a>，这里就不详细介绍 Ruby 啦，总之 Ruby 很 NB，后面静下心研究下。好吧，回到 Ruby 的安装。</p>
+
+<p>打开终端，执行如下命令，安装 RVM，同时也会安装最新的 Ruby：</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'>  <span class="err">$</span> <span class="n">curl</span> <span class="o">-</span><span class="n">L</span> <span class="nl">https</span><span class="p">:</span><span class="c1">//get.rvm.io | bash -s stable –ruby</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p>安装完，执行如下命令，查看 Ruby 版本 (-v = –version)</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'>  <span class="err">$</span> <span class="n">ruby</span> <span class="o">-</span><span class="n">v</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p>如果你的 Ruby 版本不低于 1.9.3，可直接跳转到 安装 RubyGems。否则需要执行如下命令：</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'>  <span class="err">$</span> <span class="n">rvm</span> <span class="n">install</span> <span class="mf">2.0.0</span>
+</span><span class='line'>  <span class="err">$</span> <span class="n">rvm</span> <span class="n">use</span> <span class="mf">2.0.0</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p>安装 RubyGems：</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'>  <span class="err">$</span> <span class="n">rvm</span> <span class="n">rubygems</span> <span class="n">latest</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p>现在我们再执行命令 ruby -v 查看 Ruby版本，会看到现在已经是 2.0.0 了。</p>
+
+<p>呼，准备工作搞定！</p>
+
+<h2 id="octopress">3. 本地安装 Octopress</h2>
+
+<p>前面做了那么多准备，主角总算要上场了。</p>
+
+<p>首先，将 Octopress 的项目 clone 到本地，终端执行如下命令：</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'>  <span class="err">$</span> <span class="n">git</span> <span class="n">clone</span> <span class="nl">git</span><span class="p">:</span><span class="c1">//github.com/imathis/octopress.git octopress</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p>进入 octopress 目录，安装 Octopress 所需要的依赖库（dependencies）：</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'>  <span class="err">$</span> <span class="n">cd</span> <span class="n">octopress</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="err">#</span> <span class="err">安装过程中可能会遇到权限问题，我们需要在命令前面加上</span> <span class="n">sudo</span> <span class="err">再执行，并输入登录密码。</span>
+</span><span class='line'>  <span class="cp"># sudo 全称：super user do，也就是以 root 用户身份来执行&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="err">$</span> <span class="n">sudo</span> <span class="n">gem</span> <span class="n">install</span> <span class="n">bundler</span>
+</span><span class='line'>  <span class="err">$</span> <span class="n">bundle</span> <span class="n">install</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p class="warning">
+这里在不翻墙的情况下，可能会遇到一个问题：sudo gem install bundler 执行后，一直没有响应。这是由于国内网络原因（你懂的），导致<a href="http://rubygems.org/" target="_blank"> rubygems.org </a>存放在 Amazon S3 上面的资源文件间歇性连接失败。所以你会遇到 gem install rack 或 bundle install 的时候半天没有响应的情况。
+</p>
+
+<p>幸运的是国内某大神帮我们解决了这一心头大患，我们可以用淘宝的Ruby镜像来替换原来的镜像。只需终端执行下面的命令即可：</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'>  <span class="err">$</span> <span class="n">gem</span> <span class="n">sources</span> <span class="o">-</span><span class="n">a</span> <span class="nl">https</span><span class="p">:</span><span class="c1">//ruby.taobao.org/ -r https://rubygems.org/&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="err">#</span> <span class="err">下一命令查看切换后结果</span>
+</span><span class='line'>  <span class="err">$</span> <span class="n">gem</span> <span class="n">sources</span> <span class="o">-</span><span class="n">l</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p>然后会看到这样的输出：</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'>  <span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;**</span> <span class="n">CURRENT</span> <span class="n">SOURCES</span> <span class="o">**&lt;/</span><span class="n">em</span><span class="o">&gt;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="nl">https</span><span class="p">:</span><span class="c1">//ruby.taobao.org</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p>这就说明我们切换到淘宝的 Ruby 镜像了，再次安装 Octopress 所需要的依赖库就会发现现在可以了。</p>
+
+<p>最后安装下默认主题：</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'>  <span class="cp"># rake 全称：ruby make</span>
+</span><span class='line'>  <span class="err">$</span> <span class="n">rake</span> <span class="n">install</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<blockquote>
+  <p>上面提到的 Ruby 镜像问题，还有另外两种解决方法:</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>比较原始的方法——手动更改：打开 octopress 文件夹 -&gt; 打开 Gemfile 文件 -&gt; 将 source “https://rubygems.org” 改为 source “https://ruby.taobao.org” 就可以了。</p>
+  </li>
+  <li>
+    <p>相对方便点，因为我们使用的是 Gemfile，所以我们可以用 Bundler 的 <a href="http://bundler.io/v1.5/bundle_config.html#gem-source-mirrors">Gem 源代码镜像命令</a>，这样我们就不用改 Gemfile 的 source 了。</p>
+  </li>
+</ul>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'>  <span class="err">$</span> <span class="n">cd</span> <span class="n">octopress</span>
+</span><span class='line'>  <span class="err">$</span> <span class="n">bundle</span> <span class="n">config</span> <span class="n">mirror</span><span class="p">.</span><span class="nl">https</span><span class="p">:</span><span class="c1">//rubygems.org https://ruby.taobao.org</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<h2 id="section-1">4. 预览效果</h2>
+
+<p>好，经过上面的功夫，我们已经在本地搭建了一个简易版的 Octopress 博客。</p>
+
+<p>我们来看看效果吧。在终端执行命令：</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'>  <span class="err">$</span> <span class="n">sudo</span> <span class="n">rake</span> <span class="n">preview</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p>打开浏览器，输入 <code>http://localhost:4000/</code>，就可以看到效果了。虽然比较简陋，但让人挺高兴的，你觉得呢？</p>
+
+<p><img src="http://jonyfang.github.io/images/octopress/octo_newpage.png" alt="octopress 本地显示效果" /></p>
+
+<p>到这里，我们算是初步结束了本地安装过程，下一篇我们会把本地的 Octopress 部署到 Github，那么下篇再见喽～</p>
+
+<blockquote>
+  <p>本篇参考：</p>
+
+  <p><a href="http://octopress.org/docs/setup/">Octopress Setup</a></p>
+
+  <p><a href="http://bundler.io/v1.5/bundle_config.html#gem-source-mirrors">Gem Source Mirrors</a></p>
+</blockquote>
+]]></content>
+  </entry>
+  
+</feed>
