@@ -4,7 +4,7 @@
   <title><![CDATA[Categorie: Octopress | I'm Jony]]></title>
   <link href="http://jonyfang.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://jonyfang.github.io/"/>
-  <updated>2015-10-13T14:00:36+08:00</updated>
+  <updated>2015-10-13T14:21:02+08:00</updated>
   <id>http://jonyfang.github.io/</id>
   <author>
     <name><![CDATA[Jony Fang]]></name>
@@ -156,14 +156,9 @@
   <p>上面提到的 Ruby 镜像问题，还有另外两种解决方法:</p>
 </blockquote>
 
-<ul>
-  <li>
-    <p>比较原始的方法——手动更改：打开 octopress 文件夹 -&gt; 打开 Gemfile 文件 -&gt; 将 source “https://rubygems.org” 改为 source “https://ruby.taobao.org” 就可以了。</p>
-  </li>
-  <li>
-    <p>相对方便点，因为我们使用的是 Gemfile，所以我们可以用 Bundler 的 <a href="http://bundler.io/v1.5/bundle_config.html#gem-source-mirrors">Gem 源代码镜像命令</a>，这样我们就不用改 Gemfile 的 source 了。</p>
-  </li>
-</ul>
+<p>（1）比较原始的方法——手动更改：打开 octopress 文件夹 -&gt; 打开 Gemfile 文件 -&gt; 将 source “https://rubygems.org” 改为 source “https://ruby.taobao.org” 就可以了。</p>
+
+<p>（2）相对方便点，因为我们使用的是 Gemfile，所以我们可以用 Bundler 的 <a href="http://bundler.io/v1.5/bundle_config.html#gem-source-mirrors">Gem 源代码镜像命令</a>，这样我们就不用改 Gemfile 的 source 了。</p>
 
 <p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
