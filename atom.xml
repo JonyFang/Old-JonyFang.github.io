@@ -4,7 +4,7 @@
   <title><![CDATA[I'm Jony]]></title>
   <link href="http://jonyfang.github.io/atom.xml" rel="self"/>
   <link href="http://jonyfang.github.io/"/>
-  <updated>2015-10-13T13:52:53+08:00</updated>
+  <updated>2015-10-13T14:00:36+08:00</updated>
   <id>http://jonyfang.github.io/</id>
   <author>
     <name><![CDATA[Jony Fang]]></name>
@@ -61,27 +61,27 @@
 <p>打开终端，执行如下命令，安装 RVM，同时也会安装最新的 Ruby：</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="objc"><span class="line">  <span class="err">$</span> <span class="n">curl</span> <span class="o">-</span><span class="n">L</span> <span class="nl">https</span><span class="p">:</span><span class="c1">//get.rvm.io | bash -s stable --ruby</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line">  <span class="err">$</span> <span class="n">curl</span> <span class="o">-</span><span class="n">L</span> <span class="ss">https</span><span class="p">:</span><span class="sr">//</span><span class="n">get</span><span class="o">.</span><span class="n">rvm</span><span class="o">.</span><span class="n">io</span> <span class="o">|</span> <span class="n">bash</span> <span class="o">-</span><span class="n">s</span> <span class="n">stable</span> <span class="o">--</span><span class="n">ruby</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>安装完，执行如下命令，查看 Ruby 版本 (-v = –version)</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="objc"><span class="line">  <span class="err">$</span> <span class="n">ruby</span> <span class="o">-</span><span class="n">v</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line">  <span class="err">$</span> <span class="n">ruby</span> <span class="o">-</span><span class="n">v</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>如果你的 Ruby 版本不低于 1.9.3，可直接跳转到 安装 RubyGems。否则需要执行如下命令：</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class="objc"><span class="line">  <span class="err">$</span> <span class="n">rvm</span> <span class="n">install</span> <span class="mf">2.0.0</span>
-</span><span class="line">  <span class="err">$</span> <span class="n">rvm</span> <span class="n">use</span> <span class="mf">2.0.0</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line">  <span class="err">$</span> <span class="n">rvm</span> <span class="n">install</span> <span class="mi">2</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span>
+</span><span class="line">  <span class="err">$</span> <span class="n">rvm</span> <span class="n">use</span> <span class="mi">2</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>安装 RubyGems：</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="objc"><span class="line">  <span class="err">$</span> <span class="n">rvm</span> <span class="n">rubygems</span> <span class="n">latest</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line">  <span class="err">$</span> <span class="n">rvm</span> <span class="n">rubygems</span> <span class="n">latest</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>现在我们再执行命令 ruby -v 查看 Ruby版本，会看到现在已经是 2.0.0 了。</p>
@@ -95,7 +95,7 @@
 <p>首先，将 Octopress 的项目 clone 到本地，终端执行如下命令：</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="objc"><span class="line">  <span class="err">$</span> <span class="n">git</span> <span class="n">clone</span> <span class="nl">git</span><span class="p">:</span><span class="c1">//github.com/imathis/octopress.git octopress</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line">  <span class="err">$</span> <span class="n">git</span> <span class="nb">clone</span> <span class="ss">git</span><span class="p">:</span><span class="sr">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">imathis</span><span class="o">/</span><span class="n">octopress</span><span class="o">.</span><span class="n">git</span> <span class="n">octopress</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>进入 octopress 目录，安装 Octopress 所需要的依赖库（dependencies）：</p>
@@ -107,10 +107,10 @@
 <span class="line-number">5</span>
 <span class="line-number">6</span>
 <span class="line-number">7</span>
-</pre></td><td class="code"><pre><code class="objc"><span class="line">  <span class="err">$</span> <span class="n">cd</span> <span class="n">octopress</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line">  <span class="err">$</span> <span class="n">cd</span> <span class="n">octopress</span>
 </span><span class="line">
-</span><span class="line">  <span class="cp"># 安装过程中可能会遇到权限问题，我们需要在命令前面加上 sudo 再执行，并输入登录密码。</span>
-</span><span class="line">  <span class="cp"># sudo 全称：super user do，也就是以 root 用户身份来执行</span>
+</span><span class="line">  <span class="c1"># 安装过程中可能会遇到权限问题，我们需要在命令前面加上 sudo 再执行，并输入登录密码。</span>
+</span><span class="line">  <span class="c1"># sudo 全称：super user do，也就是以 root 用户身份来执行</span>
 </span><span class="line">
 </span><span class="line">  <span class="err">$</span> <span class="n">sudo</span> <span class="n">gem</span> <span class="n">install</span> <span class="n">bundler</span>
 </span><span class="line">  <span class="err">$</span> <span class="n">bundle</span> <span class="n">install</span>
@@ -126,9 +126,9 @@
 <span class="line-number">2</span>
 <span class="line-number">3</span>
 <span class="line-number">4</span>
-</pre></td><td class="code"><pre><code class="objc"><span class="line">  <span class="err">$</span> <span class="n">gem</span> <span class="n">sources</span> <span class="o">-</span><span class="n">a</span> <span class="nl">https</span><span class="p">:</span><span class="c1">//ruby.taobao.org/ -r https://rubygems.org/</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line">  <span class="err">$</span> <span class="n">gem</span> <span class="n">sources</span> <span class="o">-</span><span class="n">a</span> <span class="ss">https</span><span class="p">:</span><span class="sr">//</span><span class="n">ruby</span><span class="o">.</span><span class="n">taobao</span><span class="o">.</span><span class="n">org</span><span class="o">/</span> <span class="o">-</span><span class="n">r</span> <span class="ss">https</span><span class="p">:</span><span class="sr">//</span><span class="n">rubygems</span><span class="o">.</span><span class="n">org</span><span class="o">/</span>
 </span><span class="line">
-</span><span class="line">  <span class="cp"># 下一命令查看切换后结果</span>
+</span><span class="line">  <span class="c1"># 下一命令查看切换后结果</span>
 </span><span class="line">  <span class="err">$</span> <span class="n">gem</span> <span class="n">sources</span> <span class="o">-</span><span class="n">l</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
@@ -137,9 +137,9 @@
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 <span class="line-number">3</span>
-</pre></td><td class="code"><pre><code class="objc"><span class="line">  <span class="o">***</span> <span class="n">CURRENT</span> <span class="n">SOURCES</span> <span class="o">***</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line">  <span class="o">***</span> <span class="no">CURRENT</span> <span class="no">SOURCES</span> <span class="o">***</span>
 </span><span class="line">
-</span><span class="line">  <span class="nl">https</span><span class="p">:</span><span class="c1">//ruby.taobao.org</span>
+</span><span class="line">  <span class="ss">https</span><span class="p">:</span><span class="sr">//</span><span class="n">ruby</span><span class="o">.</span><span class="n">taobao</span><span class="o">.</span><span class="n">org</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>这就说明我们切换到淘宝的 Ruby 镜像了，再次安装 Octopress 所需要的依赖库就会发现现在可以了。</p>
@@ -148,7 +148,7 @@
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class="objc"><span class="line">  <span class="cp"># rake 全称：ruby make</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line">  <span class="c1"># rake 全称：ruby make</span>
 </span><span class="line">  <span class="err">$</span> <span class="n">rake</span> <span class="n">install</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
@@ -167,8 +167,8 @@
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class="objc"><span class="line">  <span class="err">$</span> <span class="n">cd</span> <span class="n">octopress</span>
-</span><span class="line">  <span class="err">$</span> <span class="n">bundle</span> <span class="n">config</span> <span class="n">mirror</span><span class="p">.</span><span class="nl">https</span><span class="p">:</span><span class="c1">//rubygems.org https://ruby.taobao.org</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line">  <span class="err">$</span> <span class="n">cd</span> <span class="n">octopress</span>
+</span><span class="line">  <span class="err">$</span> <span class="n">bundle</span> <span class="n">config</span> <span class="n">mirror</span><span class="o">.</span><span class="n">https</span><span class="ss">:/</span><span class="o">/</span><span class="n">rubygems</span><span class="o">.</span><span class="n">org</span> <span class="ss">https</span><span class="p">:</span><span class="sr">//</span><span class="n">ruby</span><span class="o">.</span><span class="n">taobao</span><span class="o">.</span><span class="n">org</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <h2 id="section-1">4. 预览效果</h2>
@@ -178,7 +178,7 @@
 <p>我们来看看效果吧。在终端执行命令：</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="objc"><span class="line">  <span class="err">$</span> <span class="n">sudo</span> <span class="n">rake</span> <span class="n">preview</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line">  <span class="err">$</span> <span class="n">sudo</span> <span class="n">rake</span> <span class="n">preview</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>打开浏览器，输入 <code>http://localhost:4000/</code>，就可以看到效果了。虽然比较简陋，但让人挺高兴的，你觉得呢？</p>
