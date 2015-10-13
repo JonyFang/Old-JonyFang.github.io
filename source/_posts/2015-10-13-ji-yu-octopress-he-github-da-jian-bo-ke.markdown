@@ -43,26 +43,26 @@ GitHub Pages 这里用于显示托管在 GitHub 上的静态网页，是 GitHub 
 
 打开终端，执行如下命令，安装 RVM，同时也会安装最新的 Ruby：
 
-{% codeblock lang:objc %}
+{% codeblock lang:ruby %}
   $ curl -L https://get.rvm.io | bash -s stable --ruby
 {% endcodeblock %}
 
 安装完，执行如下命令，查看 Ruby 版本 (-v = --version)
 
-{% codeblock lang:objc %}
+{% codeblock lang:ruby %}
   $ ruby -v
 {% endcodeblock %}
 
 如果你的 Ruby 版本不低于 1.9.3，可直接跳转到 安装 RubyGems。否则需要执行如下命令：
 
-{% codeblock lang:objc %}
+{% codeblock lang:ruby %}
   $ rvm install 2.0.0
   $ rvm use 2.0.0
 {% endcodeblock %}
 
 安装 RubyGems：
 
-{% codeblock lang:objc %}
+{% codeblock lang:ruby %}
   $ rvm rubygems latest
 {% endcodeblock %}
 
@@ -76,13 +76,13 @@ GitHub Pages 这里用于显示托管在 GitHub 上的静态网页，是 GitHub 
 
 首先，将 Octopress 的项目 clone 到本地，终端执行如下命令：
 
-{% codeblock lang:objc %}
+{% codeblock lang:ruby %}
   $ git clone git://github.com/imathis/octopress.git octopress
 {% endcodeblock %}
 
 进入 octopress 目录，安装 Octopress 所需要的依赖库（dependencies）：
 
-{% codeblock lang:objc %}
+{% codeblock lang:ruby %}
   $ cd octopress
 
   # 安装过程中可能会遇到权限问题，我们需要在命令前面加上 sudo 再执行，并输入登录密码。
@@ -98,7 +98,7 @@ GitHub Pages 这里用于显示托管在 GitHub 上的静态网页，是 GitHub 
 
 幸运的是国内某大神帮我们解决了这一心头大患，我们可以用淘宝的Ruby镜像来替换原来的镜像。只需终端执行下面的命令即可：
 
-{% codeblock lang:objc %}
+{% codeblock lang:ruby %}
   $ gem sources -a https://ruby.taobao.org/ -r https://rubygems.org/
   
   # 下一命令查看切换后结果
@@ -107,7 +107,7 @@ GitHub Pages 这里用于显示托管在 GitHub 上的静态网页，是 GitHub 
 
 然后会看到这样的输出：
 
-{% codeblock lang:objc %}
+{% codeblock lang:ruby %}
   *** CURRENT SOURCES ***
 
   https://ruby.taobao.org
@@ -117,7 +117,7 @@ GitHub Pages 这里用于显示托管在 GitHub 上的静态网页，是 GitHub 
 
 最后安装下默认主题：
 
-{% codeblock lang:objc %}
+{% codeblock lang:ruby %}
   # rake 全称：ruby make
   $ rake install
 {% endcodeblock %}
@@ -129,7 +129,7 @@ GitHub Pages 这里用于显示托管在 GitHub 上的静态网页，是 GitHub 
 
 * 相对方便点，因为我们使用的是 Gemfile，所以我们可以用 Bundler 的 [Gem 源代码镜像命令](http://bundler.io/v1.5/bundle_config.html#gem-source-mirrors)，这样我们就不用改 Gemfile 的 source 了。
 
-{% codeblock lang:objc %}
+{% codeblock lang:ruby %}
   $ cd octopress
   $ bundle config mirror.https://rubygems.org https://ruby.taobao.org
 {% endcodeblock %}
@@ -141,7 +141,7 @@ GitHub Pages 这里用于显示托管在 GitHub 上的静态网页，是 GitHub 
 
 我们来看看效果吧。在终端执行命令：
 
-{% codeblock lang:objc %}
+{% codeblock lang:ruby %}
   $ sudo rake preview
 {% endcodeblock %}
 
