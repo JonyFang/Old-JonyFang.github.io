@@ -3,7 +3,7 @@ layout: post
 title: "基于 Octopress &amp; Github Pages 搭建博客（二）"
 date: 2015-10-16 02:37:44 +0800
 comments: true
-categories: 
+categories: octopress
 ---
 * list element with functor item
 {:toc}
@@ -56,14 +56,14 @@ PS：创建完后不要添加任何内容，另外自己过程中产生了两个
 
 下面具体分析下 Octopress 是怎么做的（可通过查看 Rakefile 得知）：
 
-1. 命令要求我们输入 Github Pages 仓库的 URL，也就是我们新建的名为 username.github.io 仓库的 URL。这样命名是为了通过字符串截取 URL 拿到子串（http://username.github.io）作为我们博客的域名；
+(1). 命令要求我们输入 Github Pages 仓库的 URL，也就是我们新建的名为 username.github.io 仓库的 URL。这样命名是为了通过字符串截取 URL 拿到子串（http://username.github.io）作为我们博客的域名；
 
 {% codeblock lang:ruby %}
   # Rakefile 中可查看 URL 截取方式：
   repo_url = get_stdin("Repository url: ")
 {% endcodeblock %}
 
-2. 将指向（pointing to）imathis/octopress 远程库的名字 `‘origin’` 改为 `‘octopress’`；
+(2). 将指向（pointing to）imathis/octopress 远程库的名字 `‘origin’` 改为 `‘octopress’`；
 
 Git clone 一个仓库时，会将 clone 下来的仓库命名为 origin，没有限定 clone 条件的情况下，会下载仓库中所有数据，并建立一个指向该仓库 master 分支的指针，本地命名为 `origin/master`。
 
@@ -94,7 +94,7 @@ Git clone 一个仓库时，会将 clone 下来的仓库命名为 origin，没�
   octopress	  git://github.com/imathis/octopress.git (push)
 {% endcodeblock %}
 
-3. 添加你的 Github Pages 仓库作为默认的 origin remote，并将远程库中指向 imathis/octopress 中 master 分支的指针指向现在的 origin（即 username/username.github.io）的 master 分支，
+(3). 添加你的 Github Pages 仓库作为默认的 origin remote，并将远程库中指向 imathis/octopress 中 master 分支的指针指向现在的 origin（即 username/username.github.io）的 master 分支，
 
 {% codeblock lang:ruby %}
   # 查看 Rakefile
@@ -117,7 +117,7 @@ Git clone 一个仓库时，会将 clone 下来的仓库命名为 origin，没�
 
 到这里，应该能猜到上一步将指向 `imathis/octopress` 远程库的名字 `origin` 改为 `octopress` 的原因了。
 
-4. 将本地 master 分支名字从 `master` 改为 `source`
+(4). 将本地 master 分支名字从 `master` 改为 `source`
 
 {% codeblock lang:ruby %}
   # 查看 Rakefile
@@ -133,7 +133,7 @@ Git clone 一个仓库时，会将 clone 下来的仓库命名为 origin，没�
   * source
 {% endcodeblock %}
 
-5. 根据提供的 Github Pages 仓库的 `SSH` 或 `HTTPS` 的 URL，截取仓库名 `username.github.io` 作为博客的 URL（上面 1 有提到）。然后将 octopress 目录下 `_config.yml` 文件中 url 参数值改为 `http：//username.github.io`。
+(5). 根据提供的 Github Pages 仓库的 `SSH` 或 `HTTPS` 的 URL，截取仓库名 `username.github.io` 作为博客的 URL（上面 1 有提到）。然后将 octopress 目录下 `_config.yml` 文件中 url 参数值改为 `http：//username.github.io`。
 
 {% codeblock lang:ruby %}
   # octopress 下 Rakefile 查看
@@ -145,7 +145,7 @@ Git clone 一个仓库时，会将 clone 下来的仓库命名为 origin，没�
   f.write jekyll_config
 {% endcodeblock %}
 
-6. 在 octopress 目录下新建 `_deploy` 目录，并在 _deploy目录下新建 `master` 分支；
+(6). 在 octopress 目录下新建 `_deploy` 目录，并在 _deploy目录下新建 `master` 分支；
 
 前面4 ，我们将本地 master 分支名字从 `master` 改为 `source`，这里一起分析下原因。4和6放在一起容易理解点。
 
