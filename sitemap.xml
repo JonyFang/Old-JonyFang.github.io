@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://jonyfang.github.io/blog/2015/10/16/ji-yu-octopress-and-github-pages-da-jian-bo-ke-(er-)/</loc>
+    <lastmod>2015-10-16T02:37:44+08:00</lastmod>
+  </url>
+  <url>
     <loc>http://jonyfang.github.io/blog/2015/10/13/ji-yu-octopress-he-github-da-jian-bo-ke/</loc>
     <lastmod>2015-10-13T13:13:00+08:00</lastmod>
   </url>
