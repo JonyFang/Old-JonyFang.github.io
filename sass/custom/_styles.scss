@@ -1,11 +1,13 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
 
-$white: #FFFFFF;
-
+$white: RGB(256, 256, 256);
+$pageColor: RGB(246, 244, 236);
+$backgroundColor: RGB(229, 228, 219);
+$navigationColor: RGB(245, 245, 245);
 
 html {
-    background: #FAFAFA;
+    background: $backgroundColor;
 }
 
 
@@ -18,12 +20,12 @@ body {
     }
 
     > header {
-        background: RGB(100, 102, 102);
+        background: RGB(90, 90, 91);
         text-align: center;
     }
 
     > nav {
-        background: RGB(245, 245, 245);
+        background: $navigationColor;
         border-bottom: 0px;
 
         a {
@@ -44,16 +46,16 @@ body {
     }
 
     > div {
-        background: $white;
+        background: $pageColor;
         border-bottom: 0px;
 
         > div {
-            background: $white;
+            background: $pageColor;
         }
     }
 
     > footer {
-        background: $white;
+        background: $pageColor;
         text-shadow: none;
         color: #AAAAAA;
     }
