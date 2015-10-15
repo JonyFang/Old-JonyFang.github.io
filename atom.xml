@@ -4,7 +4,7 @@
   <title><![CDATA[I'm Jony]]></title>
   <link href="http://jonyfang.github.io/atom.xml" rel="self"/>
   <link href="http://jonyfang.github.io/"/>
-  <updated>2015-10-16T03:00:18+08:00</updated>
+  <updated>2015-10-16T03:03:39+08:00</updated>
   <id>http://jonyfang.github.io/</id>
   <author>
     <name><![CDATA[Jony Fang]]></name>
@@ -51,10 +51,10 @@
 <p>注册 Github 账号，新建 <a href="https://github.com/new">Github repository</a>。<code>项目名称</code>（Repository name）命名格式为 <code>username.github.io</code> ，<code>username</code> 是你的 <code>Github 用户名</code>（或 organization name，这里和后面我们先不讨论 origanization）。例如我的用户名是 JonyFang，所以输入 JonyFang.github.io 即可。点击 <code>Create repository</code> 创建。</p>
 
 <p class="info">
-PS：创建完后不要添加任何内容，另外自己过程中产生了两个疑问
-
+创建完后不要添加任何内容，另外自己过程中产生了两个疑问
+<br />
 1.为什么用 github.io 而不是 github.com？
-
+<br />
 2.为什么是 Repository name 一定要按照 username.github.io 填写？
 </p>
 
