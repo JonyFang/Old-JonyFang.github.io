@@ -4,7 +4,7 @@
   <title><![CDATA[I'm Jony]]></title>
   <link href="http://jonyfang.github.io/atom.xml" rel="self"/>
   <link href="http://jonyfang.github.io/"/>
-  <updated>2015-10-16T03:03:39+08:00</updated>
+  <updated>2015-10-16T03:06:35+08:00</updated>
   <id>http://jonyfang.github.io/</id>
   <author>
     <name><![CDATA[Jony Fang]]></name>
@@ -269,7 +269,7 @@
 <p>好，到这里，如果顺利完成前面所有内容的话，我们已经将 <code>Octopress</code> 部署到 <code>Github Pages</code> 了。如果你想换成自己的域名可以参考这里的方法（<a href="http://octopress.org/docs/deploying/github/#custom_domains">Custom Domains</a>），不再赘述了。</p>
 
 <p class="info">
-这里分析下，`rake generate` 和 `rake deploy`。
+这里分析下，<code>rake generate</code> 和 <code>rake deploy</code>。
 </p>
 
 <p>rake generate：生成 <code>jekyll</code> 站点（Generating Site with Jekyll）</p>
