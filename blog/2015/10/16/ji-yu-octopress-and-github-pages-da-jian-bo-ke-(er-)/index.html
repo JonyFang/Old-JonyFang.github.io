@@ -9,7 +9,7 @@
   <meta name="author" content="Jony Fang">
 
   
-  <meta name="description" content="1. 前言 2. 将 Octopress 部署到 Github Pages 1.1 新建 Github repository 1.2. 配置 Github Pages 1.3. 生成并部署站点 2. 发布博文过程 2.1. 新建一篇博文 2.2. 预览新建的博文 2.3. 发布新建的博文 1. &hellip;">
+  <meta name="description" content="1. 前言 2. 将 Octopress 部署到 Github Pages 2.1 新建 Github repository 2.2. 配置 Github Pages 2.3. 生成并部署站点 3. 发布博文过程 3.1. 新建一篇博文 3.2. 预览新建的博文 3.3. 发布新建的博文 1. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -94,17 +94,15 @@
 <div class="entry-content"><ul id="markdown-toc">
   <li><a href="#section" id="markdown-toc-section">1. 前言</a></li>
   <li><a href="#octopress--github-pages" id="markdown-toc-octopress--github-pages">2. 将 Octopress 部署到 Github Pages</a>    <ul>
-      <li><a href="#github-repository" id="markdown-toc-github-repository">1.1 新建 Github repository</a></li>
+      <li><a href="#github-repository" id="markdown-toc-github-repository">2.1 新建 Github repository</a></li>
+      <li><a href="#github-pages" id="markdown-toc-github-pages">2.2. 配置 Github Pages</a></li>
+      <li><a href="#section-1" id="markdown-toc-section-1">2.3. 生成并部署站点</a></li>
     </ul>
   </li>
-  <li><a href="#github-pages" id="markdown-toc-github-pages">1.2. 配置 Github Pages</a>    <ul>
-      <li><a href="#section-1" id="markdown-toc-section-1">1.3. 生成并部署站点</a></li>
-    </ul>
-  </li>
-  <li><a href="#section-2" id="markdown-toc-section-2">2. 发布博文过程</a>    <ul>
-      <li><a href="#section-3" id="markdown-toc-section-3">2.1. 新建一篇博文</a></li>
-      <li><a href="#section-4" id="markdown-toc-section-4">2.2. 预览新建的博文</a></li>
-      <li><a href="#section-5" id="markdown-toc-section-5">2.3. 发布新建的博文</a></li>
+  <li><a href="#section-2" id="markdown-toc-section-2">3. 发布博文过程</a>    <ul>
+      <li><a href="#section-3" id="markdown-toc-section-3">3.1. 新建一篇博文</a></li>
+      <li><a href="#section-4" id="markdown-toc-section-4">3.2. 预览新建的博文</a></li>
+      <li><a href="#section-5" id="markdown-toc-section-5">3.3. 发布新建的博文</a></li>
     </ul>
   </li>
 </ul>
@@ -119,7 +117,7 @@
 
 <p>Github 大家应该都有了解过，也是我很喜欢的平台之一，功能真心强大并且可免费使用，这里我们拿来托管我们的博客。</p>
 
-<h3 id="github-repository">1.1 新建 Github repository</h3>
+<h3 id="github-repository">2.1 新建 Github repository</h3>
 
 <p>注册 Github 账号，新建 <a href="https://github.com/new">Github repository</a>。<code>项目名称</code>（Repository name）命名格式为 <code>username.github.io</code> ，<code>username</code> 是你的 <code>Github 用户名</code>（或 organization name，这里和后面我们先不讨论 origanization）。例如我的用户名是 JonyFang，所以输入 JonyFang.github.io 即可。点击 <code>Create repository</code> 创建。</p>
 
@@ -135,7 +133,7 @@
 
 <p>第二个问题，和 Github 内部的结构有关，其次后面会通过 URL 截取填写的 <code>username.github.io</code> 作为博客域名。这样填写格式与 Github 内部结构的具体联系还需要再研究下。若有大神围观，望指教下：）</p>
 
-<h2 id="github-pages">1.2. 配置 Github Pages</h2>
+<h3 id="github-pages">2.2. 配置 Github Pages</h3>
 
 <p>终端执行如下命令：</p>
 
@@ -317,7 +315,7 @@
 
 <p>再回头来看 <code>rake setup_github_pages</code> ，是不是清晰多了呢？</p>
 
-<h3 id="section-1">1.3. 生成并部署站点</h3>
+<h3 id="section-1">2.3. 生成并部署站点</h3>
 
 <p>执行如下命令，（将 <code>octopress/_deploy</code> 下数据 push 到 <code>master</code> 分支）：</p>
 
@@ -394,9 +392,9 @@
 </span><span class="line">  <span class="no">Bundler</span><span class="o">.</span><span class="n">with_clean_env</span> <span class="p">{</span> <span class="nb">system</span> <span class="s2">&quot;git push origin </span><span class="si">#{</span><span class="n">deploy_branch</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<h2 id="section-2">2. 发布博文过程</h2>
+<h2 id="section-2">3. 发布博文过程</h2>
 
-<h3 id="section-3">2.1. 新建一篇博文</h3>
+<h3 id="section-3">3.1. 新建一篇博文</h3>
 
 <p>打开终端，输入：</p>
 
@@ -458,7 +456,7 @@
 
 <p>在最后面的－－－下面就可以开始我们的正文啦～</p>
 
-<h3 id="section-4">2.2. 预览新建的博文</h3>
+<h3 id="section-4">3.2. 预览新建的博文</h3>
 
 <p>终端执行如下命令：</p>
 
@@ -472,7 +470,7 @@
 
 <p>在浏览器中打开<a href="http://localhost:4000/">http://localhost:4000</a>,即可以预览我们刚 post 的博客效果。</p>
 
-<h3 id="section-5">2.3. 发布新建的博文</h3>
+<h3 id="section-5">3.3. 发布新建的博文</h3>
 
 <p>终端执行：</p>
 
