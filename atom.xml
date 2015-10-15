@@ -4,7 +4,7 @@
   <title><![CDATA[I'm Jony]]></title>
   <link href="http://jonyfang.github.io/atom.xml" rel="self"/>
   <link href="http://jonyfang.github.io/"/>
-  <updated>2015-10-16T02:57:12+08:00</updated>
+  <updated>2015-10-16T03:00:18+08:00</updated>
   <id>http://jonyfang.github.io/</id>
   <author>
     <name><![CDATA[Jony Fang]]></name>
@@ -80,7 +80,9 @@ PS：创建完后不要添加任何内容，另外自己过程中产生了两个
 
 <p>用户（users）的 Github Pages 使用 <code>master</code> 分支作为 <code>Web 服务</code>（web server）的公开目录，为我们的 <code>Pages url</code> （http://username.github.io）提供内容文件。因此，我们会有这样的需求，<code>source</code> 分支用来做与<code>博客源码</code>相关的事（存放全部博客源码），<code>master</code> 分支上 commit 生成的博客内容<code>供 Web 访问</code>。而 Octopress 帮我们把这件事给搞定了，通过这行 code（好 NB～）。</p>
 
-<p>下面具体分析下 Octopress 是怎么做的（可通过查看 Rakefile 得知）：</p>
+<p class="info">
+下面具体分析下 Octopress 是怎么做的（可通过查看 Rakefile 得知）：
+</p>
 
 <p>(1). 命令要求我们输入 Github Pages 仓库的 URL，也就是我们新建的名为 username.github.io 仓库的 URL。这样命名是为了通过字符串截取 URL 拿到子串（http://username.github.io）作为我们博客的域名；</p>
 
