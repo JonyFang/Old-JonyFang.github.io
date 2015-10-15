@@ -4,7 +4,7 @@
   <title><![CDATA[I'm Jony]]></title>
   <link href="http://jonyfang.github.io/atom.xml" rel="self"/>
   <link href="http://jonyfang.github.io/"/>
-  <updated>2015-10-16T02:48:09+08:00</updated>
+  <updated>2015-10-16T02:57:12+08:00</updated>
   <id>http://jonyfang.github.io/</id>
   <author>
     <name><![CDATA[Jony Fang]]></name>
@@ -82,9 +82,7 @@ PS：创建完后不要添加任何内容，另外自己过程中产生了两个
 
 <p>下面具体分析下 Octopress 是怎么做的（可通过查看 Rakefile 得知）：</p>
 
-<ol>
-  <li>命令要求我们输入 Github Pages 仓库的 URL，也就是我们新建的名为 username.github.io 仓库的 URL。这样命名是为了通过字符串截取 URL 拿到子串（http://username.github.io）作为我们博客的域名；</li>
-</ol>
+<p>(1). 命令要求我们输入 Github Pages 仓库的 URL，也就是我们新建的名为 username.github.io 仓库的 URL。这样命名是为了通过字符串截取 URL 拿到子串（http://username.github.io）作为我们博客的域名；</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -92,9 +90,7 @@ PS：创建完后不要添加任何内容，另外自己过程中产生了两个
 </span><span class="line">  <span class="n">repo_url</span> <span class="o">=</span> <span class="n">get_stdin</span><span class="p">(</span><span class="s2">&quot;Repository url: &quot;</span><span class="p">)</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<ol>
-  <li>将指向（pointing to）imathis/octopress 远程库的名字 <code>‘origin’</code> 改为 <code>‘octopress’</code>；</li>
-</ol>
+<p>(2). 将指向（pointing to）imathis/octopress 远程库的名字 <code>‘origin’</code> 改为 <code>‘octopress’</code>；</p>
 
 <p>Git clone 一个仓库时，会将 clone 下来的仓库命名为 origin，没有限定 clone 条件的情况下，会下载仓库中所有数据，并建立一个指向该仓库 master 分支的指针，本地命名为 <code>origin/master</code>。</p>
 
@@ -134,9 +130,7 @@ PS：创建完后不要添加任何内容，另外自己过程中产生了两个
 </span><span class="line">  <span class="n">octopress</span>	  <span class="ss">git</span><span class="p">:</span><span class="sr">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">imathis</span><span class="o">/</span><span class="n">octopress</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">push</span><span class="p">)</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<ol>
-  <li>添加你的 Github Pages 仓库作为默认的 origin remote，并将远程库中指向 imathis/octopress 中 master 分支的指针指向现在的 origin（即 username/username.github.io）的 master 分支，</li>
-</ol>
+<p>(3). 添加你的 Github Pages 仓库作为默认的 origin remote，并将远程库中指向 imathis/octopress 中 master 分支的指针指向现在的 origin（即 username/username.github.io）的 master 分支，</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -168,9 +162,7 @@ PS：创建完后不要添加任何内容，另外自己过程中产生了两个
 
 <p>到这里，应该能猜到上一步将指向 <code>imathis/octopress</code> 远程库的名字 <code>origin</code> 改为 <code>octopress</code> 的原因了。</p>
 
-<ol>
-  <li>将本地 master 分支名字从 <code>master</code> 改为 <code>source</code></li>
-</ol>
+<p>(4). 将本地 master 分支名字从 <code>master</code> 改为 <code>source</code></p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -190,9 +182,7 @@ PS：创建完后不要添加任何内容，另外自己过程中产生了两个
 </span><span class="line">  <span class="o">*</span> <span class="n">source</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<ol>
-  <li>根据提供的 Github Pages 仓库的 <code>SSH</code> 或 <code>HTTPS</code> 的 URL，截取仓库名 <code>username.github.io</code> 作为博客的 URL（上面 1 有提到）。然后将 octopress 目录下 <code>_config.yml</code> 文件中 url 参数值改为 <code>http：//username.github.io</code>。</li>
-</ol>
+<p>(5). 根据提供的 Github Pages 仓库的 <code>SSH</code> 或 <code>HTTPS</code> 的 URL，截取仓库名 <code>username.github.io</code> 作为博客的 URL（上面 1 有提到）。然后将 octopress 目录下 <code>_config.yml</code> 文件中 url 参数值改为 <code>http：//username.github.io</code>。</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -210,9 +200,7 @@ PS：创建完后不要添加任何内容，另外自己过程中产生了两个
 </span><span class="line">  <span class="n">f</span><span class="o">.</span><span class="n">write</span> <span class="n">jekyll_config</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<ol>
-  <li>在 octopress 目录下新建 <code>_deploy</code> 目录，并在 _deploy目录下新建 <code>master</code> 分支；</li>
-</ol>
+<p>(6). 在 octopress 目录下新建 <code>_deploy</code> 目录，并在 _deploy目录下新建 <code>master</code> 分支；</p>
 
 <p>前面4 ，我们将本地 master 分支名字从 <code>master</code> 改为 <code>source</code>，这里一起分析下原因。4和6放在一起容易理解点。</p>
 
