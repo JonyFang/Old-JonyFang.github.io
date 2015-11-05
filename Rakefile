@@ -268,7 +268,7 @@ multitask :push do
     Bundler.with_clean_env { system "git push origin #{deploy_branch}" }
     puts "\n## Github Pages deploy complete"
 
-    # push to GetCafe
+    #push to GetCafe
     system "git remote add gitcafe git@gitcafe.com:JonyFang/JonyFang.git >> /dev/null 2>&1"
     system "git push -u gitcafe master:gitcafe-pages"
   end
