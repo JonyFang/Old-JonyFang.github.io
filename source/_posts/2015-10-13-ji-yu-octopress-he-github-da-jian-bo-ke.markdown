@@ -28,11 +28,11 @@ categories: Octopress
 
 
 ## 2. 准备工作
-<!-- more -->
 
 ### 2.1. 安装 Git
 
 前往 Git 官网 [点击这里](http://git-scm.com/) ，按下图提示下载安装（一般 Mac OS X自带 Git 环境，终端执行 git -v 可查看 Git 版本）。
+<!-- more -->
 
 ![git_downloads](http://jonyfang.github.io/images/octopress/git_downloads.png)
 

@@ -20,17 +20,17 @@ categories: octopress
 
 Github 大家应该都有了解过，也是我很喜欢的平台之一，功能真心强大并且可免费使用，这里我们拿来托管我们的博客。
 
-### 2.1 新建 Github repository
+### 2.1. 新建 Github repository
 
 注册 Github 账号，新建 [Github repository](https://github.com/new)。`项目名称`（Repository name）命名格式为 `username.github.io` ，`username` 是你的 `Github 用户名`（或 organization name，这里和后面我们先不讨论 origanization）。例如我的用户名是 JonyFang，所以输入 JonyFang.github.io 即可。点击 `Create repository` 创建。
 
-<p class="info">
+
 创建完后不要添加任何内容，另外自己过程中产生了两个疑问
 <br>
 1.为什么用 github.io 而不是 github.com？
 <br>
 2.为什么是 Repository name 一定要按照 username.github.io 填写？
-</p>
+{:.info}
 
 第一个问题，[这里](https://github.com/blog/1452-new-github-pages-domain-github-io#security-vulnerability)解释了为什么把 `github.com` 改为了 `github.io`，简而言之是为了安全。
 
@@ -53,9 +53,9 @@ Github 大家应该都有了解过，也是我很喜欢的平台之一，功能�
 
 用户（users）的 Github Pages 使用 `master` 分支作为 `Web 服务`（web server）的公开目录，为我们的 `Pages url` （http://username.github.io）提供内容文件。因此，我们会有这样的需求，`source` 分支用来做与`博客源码`相关的事（存放全部博客源码），`master` 分支上 commit 生成的博客内容`供 Web 访问`。而 Octopress 帮我们把这件事给搞定了，通过这行 code（好 NB～）。
 
-<p class="info">
+
 下面具体分析下 Octopress 是怎么做的（可通过查看 Rakefile 得知）：
-</p>
+{:.info}
 
 (1). 命令要求我们输入 Github Pages 仓库的 URL，也就是我们新建的名为 username.github.io 仓库的 URL。这样命名是为了通过字符串截取 URL 拿到子串（http://username.github.io）作为我们博客的域名；
 
@@ -199,9 +199,9 @@ Git clone 一个仓库时，会将 clone 下来的仓库命名为 origin，没�
 
 好，到这里，如果顺利完成前面所有内容的话，我们已经将 `Octopress` 部署到 `Github Pages` 了。如果你想换成自己的域名可以参考这里的方法（[Custom Domains](http://octopress.org/docs/deploying/github/#custom_domains)），不再赘述了。
 
-<p class="info">
+
 这里分析下，<code>rake generate</code> 和 <code>rake deploy</code>。
-</p>
+{:.info}
 
 rake generate：生成 `jekyll` 站点（Generating Site with Jekyll）
 
@@ -314,9 +314,8 @@ rake deploy：将站点部署到 `Github Pages`。由于 `_deploy` 目录所代�
 OK，到此，本地 octopress 博客部署到 Github Pages 完成了，打开访问你的个人博客看看效果吧。额，因为还没有做布局修改，留到下一篇介绍～
 
 
-<p class="info">
 部署这一块，自己花了挺长时间研究的，大体上理清了自己之前在做时的一些疑问。现在回头再看 Github 上的目录和本地的目录，一下子明朗了不少。不知道你是不是也觉得呢？
-</p>
+{:.info}
 
 
 >本篇参考：
