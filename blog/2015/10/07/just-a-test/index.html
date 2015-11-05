@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>I'm Jony</title>
+  <title>Just a Test - I'm Jony</title>
   <meta name="author" content="Jony Fang">
 
   
-  <meta name="description" content="1. 前言 2. 将 Octopress 部署到 Github Pages 2.1 新建 Github repository 2.2. 配置 Github Pages 2.3. 生成并部署站点 3. 发布博文过程 3.1. 新建一篇博文 3.2. 预览新建的博文 3.3. 发布新建的博文 1. &hellip;">
+  <meta name="description" content="这是一个有意思的 info 测试，这是一个标示测试换行测试 那么，这是另一个有意思的 warning 测试，链接测试 Octopress 官网 你好啊 小宝贝 woshi 'nia' 1. 第一篇First 1.1 About first 2.第二篇Second 2.1 About Second &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://jonyfang.github.io/">
+  <link rel="canonical" href="http://jonyfang.github.io/blog/2015/10/07/just-a-test/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="I'm Jony" type="application/atom+xml">
@@ -67,167 +67,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2015/10/16/ji-yu-octopress-and-github-pages-da-jian-bo-ke-(er-)/">基于 Octopress &amp; Github Pages 搭建博客（二）</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2015-10-16T02:37:44+08:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>2:37 am</span></time>
-        
-           | <a href="/blog/2015/10/16/ji-yu-octopress-and-github-pages-da-jian-bo-ke-(er-)/#disqus_thread"
-             data-disqus-identifier="http://jonyfang.github.io/blog/2015/10/16/ji-yu-octopress-and-github-pages-da-jian-bo-ke-(er-)/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><ul id="markdown-toc">
-  <li><a href="#section" id="markdown-toc-section">1. 前言</a></li>
-  <li><a href="#octopress--github-pages" id="markdown-toc-octopress--github-pages">2. 将 Octopress 部署到 Github Pages</a>    <ul>
-      <li><a href="#github-repository" id="markdown-toc-github-repository">2.1 新建 Github repository</a></li>
-      <li><a href="#github-pages" id="markdown-toc-github-pages">2.2. 配置 Github Pages</a></li>
-      <li><a href="#section-1" id="markdown-toc-section-1">2.3. 生成并部署站点</a></li>
-    </ul>
-  </li>
-  <li><a href="#section-2" id="markdown-toc-section-2">3. 发布博文过程</a>    <ul>
-      <li><a href="#section-3" id="markdown-toc-section-3">3.1. 新建一篇博文</a></li>
-      <li><a href="#section-4" id="markdown-toc-section-4">3.2. 预览新建的博文</a></li>
-      <li><a href="#section-5" id="markdown-toc-section-5">3.3. 发布新建的博文</a></li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="section">1. 前言</h2>
-
-<p>经过<a href="http://jonyfang.github.io/blog/2015/10/13/ji-yu-octopress-he-github-da-jian-bo-ke/">上一篇</a>，我们在本地搭出了 Octopress 雏形，这一篇首先我们要将本地的 Octopress 博客部署到 Github Pages ，然后发布一篇博文。部署过程中分析了原理，可能会比较枯燥，但是能让我们更了解 Octopress，所以我依旧坚持写下来了。</p>
-
-<p>废话少说，开工～</p>
-
-<h2 id="octopress--github-pages">2. 将 Octopress 部署到 Github Pages</h2>
-
-<p>Github 大家应该都有了解过，也是我很喜欢的平台之一，功能真心强大并且可免费使用，这里我们拿来托管我们的博客。</p>
-
-<h3 id="github-repository">2.1 新建 Github repository</h3>
-
-<p>注册 Github 账号，新建 <a href="https://github.com/new">Github repository</a>。<code>项目名称</code>（Repository name）命名格式为 <code>username.github.io</code> ，<code>username</code> 是你的 <code>Github 用户名</code>（或 organization name，这里和后面我们先不讨论 origanization）。例如我的用户名是 JonyFang，所以输入 JonyFang.github.io 即可。点击 <code>Create repository</code> 创建。</p>
-
-<p class="info">
-创建完后不要添加任何内容，另外自己过程中产生了两个疑问
-<br />
-1.为什么用 github.io 而不是 github.com？
-<br />
-2.为什么是 Repository name 一定要按照 username.github.io 填写？
-</p>
-
-<p>第一个问题，<a href="https://github.com/blog/1452-new-github-pages-domain-github-io#security-vulnerability">这里</a>解释了为什么把 <code>github.com</code> 改为了 <code>github.io</code>，简而言之是为了安全。</p>
-
-<p>第二个问题，和 Github 内部的结构有关，其次后面会通过 URL 截取填写的 <code>username.github.io</code> 作为博客域名。这样填写格式与 Github 内部结构的具体联系还需要再研究下。若有大神围观，望指教下：）</p>
-
-<h3 id="github-pages">2.2. 配置 Github Pages</h3>
-
-<p>终端执行如下命令：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class="ruby"><span class="line">  <span class="err">$</span> <span class="n">cd</span> <span class="n">octopress</span>
-</span><span class="line">  <span class="err">$</span> <span class="n">rake</span> <span class="n">setup_github_pages</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>该命令会要求我们输入 Github 仓库的 URL 。复制粘贴下我们新建仓库的 <code>SSH</code> 或 <code>HTTPS</code> URL 即可。
-（例如：git@github.com:username/username.github.io.git）</p>
-
-<p>那么这里 rake setup_github_pages 做了什么呢？
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2015/10/16/ji-yu-octopress-and-github-pages-da-jian-bo-ke-(er-)/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/10/13/ji-yu-octopress-he-github-da-jian-bo-ke/">基于 Octopress & Github Pages 搭建博客（一）</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2015-10-13T13:13:00+08:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>13</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>1:13 pm</span></time>
-        
-           | <a href="/blog/2015/10/13/ji-yu-octopress-he-github-da-jian-bo-ke/#disqus_thread"
-             data-disqus-identifier="http://jonyfang.github.io/blog/2015/10/13/ji-yu-octopress-he-github-da-jian-bo-ke/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p class="info">一直以来想有个属于自己的博客空间，或许是出于一种归属感吧。就这样知道了 WordPress、Jekyll、Hexo 和 Octopress。一番对比后选择了 Octopress，相信追随大神的脚步应该不会错。Octopress 接触有一个多星期了，幸运的是经过一番折腾算是弄出点了模样。这里总结下<code>基于 Octopress 及 Github 搭建博客</code>的过程及自己<code>中间遇到的一些问题的解决办法</code>。技术上不一定完全精确，若有大神围观望指正：)
-<br /><br />
-使用的是 Mac OS X 系统，不一定适用于 Windows 的童鞋。（勿拍砖…）
-<br /><br />
-这是最终的实现效果：<a href="http://jonyfang.github.io/" target="_blank"> I’m Jony</a></p>
-
-<ul id="markdown-toc">
-  <li><a href="#octopress--jekyll--github-pages-" id="markdown-toc-octopress--jekyll--github-pages-">1. Octopress 与 Jekyll &amp; Github Pages 的关系</a></li>
-  <li><a href="#section" id="markdown-toc-section">2. 准备工作</a>    <ul>
-      <li><a href="#git" id="markdown-toc-git">2.1. 安装 Git</a></li>
-      <li><a href="#ruby" id="markdown-toc-ruby">2.2. 安装 Ruby</a></li>
-    </ul>
-  </li>
-  <li><a href="#octopress" id="markdown-toc-octopress">3. 本地安装 Octopress</a></li>
-  <li><a href="#section-1" id="markdown-toc-section-1">4. 预览效果</a></li>
-</ul>
-
-<h2 id="octopress--jekyll--github-pages-">1. Octopress 与 Jekyll &amp; Github Pages 的关系</h2>
-
-<p><code>Octopress</code> 是基于 <code>Jekyll</code> 的静态博客框架。</p>
-
-<p><code>GitHub Pages</code> 这里用于显示托管在 <code>GitHub</code> 上的静态网页，是 GitHub 提供的一项服务。</p>
-
-<p>总的来说也就是我们使用基于 <code>Jekyll</code> 的 <code>Octopress</code> 生成本地的静态网站，然后将静态的网站托管到 <code>Github</code> 为我们提供的 <code>Github Pages</code> 服务上。最后访问<code>博客地址</code>就可以显示我们的个人博客网站了。</p>
-
-<h2 id="section">2. 准备工作</h2>
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2015/10/13/ji-yu-octopress-he-github-da-jian-bo-ke/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/10/07/just-a-test/">Just a Test</a></h1>
+      <h1 class="entry-title">Just a Test</h1>
     
     
       <p class="meta">
@@ -238,15 +83,15 @@
 
 <time class='entry-date' datetime='2015-10-07T23:45:17+08:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>7</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:45 pm</span></time>
         
-           | <a href="/blog/2015/10/07/just-a-test/#disqus_thread"
-             data-disqus-identifier="http://jonyfang.github.io/blog/2015/10/07/just-a-test/">Comments</a>
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://jonyfang.github.io">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p class="info">
+<div class="entry-content"><p class="info">
 这是一个有意思的 info 测试，这是一个<code>标示</code>测试<br />换行测试
 </p>
 
@@ -324,23 +169,69 @@
 </span><span class="line">  <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;%@&quot;</span><span class="p">,</span> <span class="p">[[</span><span class="n">string4</span> <span class="k">class</span><span class="p">]</span> <span class="n">description</span><span class="p">]);</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
+<!-- more -->
+
+<h2 id="about-second-2">2.2 About Second 2</h2>
+
+<p>这还是一个测试</p>
+
+<h1 id="third">3.Third</h1>
+
+<h2 id="about-third">3.1 About Third</h2>
+<p>这，额，还是一个测试</p>
+
+<p>This is just a test ~</p>
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2015/10/07/just-a-test/">Read on &rarr;</a>
-    </footer>
-  
 
 
-    </article>
+  <footer>
+    <p class="meta">
+      
   
-  <div class="pagination">
+
+<span class="byline author vcard">Posted by <span class="fn">Jony Fang</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2015-10-07T23:45:17+08:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>7</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:45 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/test/'>test</a>
+  
+</span>
+
+
+    </p>
     
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
+      <div class="sharing">
+  
+  
+  
 </div>
+
+    
+    <p class="meta">
+      
+      
+        <a class="basic-alignment right" href="/blog/2015/10/13/ji-yu-octopress-he-github-da-jian-bo-ke/" title="Next Post: 基于 Octopress & Github Pages 搭建博客（一）">基于 Octopress & Github Pages 搭建博客（一） &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
 <aside class="sidebar">
   
     <section>
@@ -373,6 +264,7 @@
   
 </aside>
 
+
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -387,7 +279,10 @@
       var disqus_shortname = 'JonyFang';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://jonyfang.github.io/blog/2015/10/07/just-a-test/';
+        var disqus_url = 'http://jonyfang.github.io/blog/2015/10/07/just-a-test/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

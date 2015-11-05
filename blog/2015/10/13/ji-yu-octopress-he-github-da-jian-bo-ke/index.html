@@ -91,13 +91,11 @@
   </header>
 
 
-<div class="entry-content"><p class="info">
-一直以来想有个属于自己的博客空间，或许是出于一种归属感吧。就这样知道了 WordPress、Jekyll、Hexo 和 Octopress。一番对比后选择了 Octopress，相信追随大神的脚步应该不会错。Octopress 接触有一个多星期了，幸运的是经过一番折腾算是弄出点了模样。这里总结下<code>基于 Octopress 及 Github 搭建博客</code>的过程及自己中间<code>遇到的一些问题的解决办法</code>。技术上不一定完全精确，若有大神围观望指正：)
+<div class="entry-content"><p class="info">一直以来想有个属于自己的博客空间，或许是出于一种归属感吧。就这样知道了 WordPress、Jekyll、Hexo 和 Octopress。一番对比后选择了 Octopress，相信追随大神的脚步应该不会错。Octopress 接触有一个多星期了，幸运的是经过一番折腾算是弄出点了模样。这里总结下<code>基于 Octopress 及 Github 搭建博客</code>的过程及自己<code>中间遇到的一些问题的解决办法</code>。技术上不一定完全精确，若有大神围观望指正：)
 <br /><br />
-使用的是 Mac OS X 系统，不一定适用于 Windows 的童鞋。（勿拍砖...）
+使用的是 Mac OS X 系统，不一定适用于 Windows 的童鞋。（勿拍砖…）
 <br /><br />
-这是最终的实现效果：<a href="http://jonyfang.github.io/" target="_blank"> I'm Jony</a>
-</p>
+这是最终的实现效果：<a href="http://jonyfang.github.io/" target="_blank"> I’m Jony</a></p>
 
 <ul id="markdown-toc">
   <li><a href="#octopress--jekyll--github-pages-" id="markdown-toc-octopress--jekyll--github-pages-">1. Octopress 与 Jekyll &amp; Github Pages 的关系</a></li>
@@ -189,9 +187,7 @@
 </span><span class="line">  <span class="err">$</span> <span class="n">bundle</span> <span class="n">install</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p class="warning">
-这里在不翻墙的情况下，可能会遇到一个问题：<code>sudo gem install bundler</code> 执行后，一直没有响应。这是由于国内网络原因（你懂的），导致<a href="http://rubygems.org/" target="_blank"> rubygems.org </a>存放在 <code>Amazon S3</code> 上面的资源文件间歇性连接失败。所以你会遇到 <code>gem install rack</code> 或 <code>bundle install</code> 的时候半天没有响应的情况。
-</p>
+<p class="warning">这里在不翻墙的情况下，可能会遇到一个问题：<code>sudo gem install bundler</code> 执行后，一直没有响应。这是由于国内网络原因（你懂的），导致<a href="http://rubygems.org/" target="_blank"> rubygems.org </a>存放在 <code>Amazon S3</code> 上面的资源文件间歇性连接失败。所以你会遇到 <code>gem install rack</code> 或 <code>bundle install</code> 的时候半天没有响应的情况。</p>
 
 <p>幸运的是国内某大神帮我们解决了这一心头大患，我们可以用<code>淘宝的 Ruby 镜像</code>来替换原来的镜像。只需终端执行下面的命令即可：</p>
 
@@ -225,13 +221,11 @@
 </span><span class="line">  <span class="err">$</span> <span class="n">rake</span> <span class="n">install</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<blockquote>
-  <p>上面提到的 <code>Ruby 镜像</code>问题，还有另外两种解决方法:</p>
-</blockquote>
-
-<p>（1）比较原始的方法——手动更改：打开 <code>octopress</code> 文件夹 -&gt; 打开 <code>Gemfile</code> 文件 -&gt; 将 <code>source "https://rubygems.org"</code> 改为 <code>source "https://ruby.taobao.org"</code> 就可以了。</p>
-
-<p>（2）第二种相对方便点，因为我们使用的是 Gemfile，所以我们可以用 Bundler 的 <a href="http://bundler.io/v1.5/bundle_config.html#gem-source-mirrors">Gem 源代码镜像命令</a>，这样我们就不用改 Gemfile 的 source 了。</p>
+<p class="addition">上面提到的 <code>Ruby 镜像</code>问题，还有另外两种解决方法:
+<br /><br />
+（1）比较原始的方法——手动更改：打开 <code>octopress</code> 文件夹 -&gt; 打开 <code>Gemfile</code> 文件 -&gt; 将 <code>source "https://rubygems.org"</code> 改为 <code>source "https://ruby.taobao.org"</code> 就可以了。
+<br /><br />
+（2）第二种相对方便点，因为我们使用的是 Gemfile，所以我们可以用 Bundler 的 <a href="http://bundler.io/v1.5/bundle_config.html#gem-source-mirrors">Gem 源代码镜像命令</a>，这样我们就不用改 Gemfile 的 source 了。</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -298,6 +292,8 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2015/10/07/just-a-test/" title="Previous Post: Just A Test">&laquo; Just A Test</a>
+      
       
         <a class="basic-alignment right" href="/blog/2015/10/16/ji-yu-octopress-and-github-pages-da-jian-bo-ke-(er-)/" title="Next Post: 基于 Octopress &amp; Github Pages 搭建博客（二）">基于 Octopress &amp; Github Pages 搭建博客（二） &raquo;</a>
       
@@ -333,6 +329,10 @@
     
       <li class="post">
         <a href="/blog/2015/10/13/ji-yu-octopress-he-github-da-jian-bo-ke/">基于 Octopress & Github Pages 搭建博客（一）</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/10/07/just-a-test/">Just a Test</a>
       </li>
     
   </ul>
