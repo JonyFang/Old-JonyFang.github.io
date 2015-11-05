@@ -6,13 +6,12 @@ comments: true
 categories: Octopress
 ---
 
-<p class="info">
-一直以来想有个属于自己的博客空间，或许是出于一种归属感吧。就这样知道了 WordPress、Jekyll、Hexo 和 Octopress。一番对比后选择了 Octopress，相信追随大神的脚步应该不会错。Octopress 接触有一个多星期了，幸运的是经过一番折腾算是弄出点了模样。这里总结下<code>基于 Octopress 及 Github 搭建博客</code>的过程及自己中间<code>遇到的一些问题的解决办法</code>。技术上不一定完全精确，若有大神围观望指正：)
+一直以来想有个属于自己的博客空间，或许是出于一种归属感吧。就这样知道了 WordPress、Jekyll、Hexo 和 Octopress。一番对比后选择了 Octopress，相信追随大神的脚步应该不会错。Octopress 接触有一个多星期了，幸运的是经过一番折腾算是弄出点了模样。这里总结下`基于 Octopress 及 Github 搭建博客`的过程及自己`中间遇到的一些问题的解决办法`。技术上不一定完全精确，若有大神围观望指正：)
 <br><br>
 使用的是 Mac OS X 系统，不一定适用于 Windows 的童鞋。（勿拍砖...）
 <br><br>
 这是最终的实现效果：<a href="http://jonyfang.github.io/" target="_blank"> I'm Jony</a>
-</p>
+{:.info}
 
 
 * list element with functor item
@@ -92,9 +91,9 @@ categories: Octopress
   $ bundle install
 {% endcodeblock %}
 
-<p class="warning">
-这里在不翻墙的情况下，可能会遇到一个问题：<code>sudo gem install bundler</code> 执行后，一直没有响应。这是由于国内网络原因（你懂的），导致<a href="http://rubygems.org/" target="_blank"> rubygems.org </a>存放在 <code>Amazon S3</code> 上面的资源文件间歇性连接失败。所以你会遇到 <code>gem install rack</code> 或 <code>bundle install</code> 的时候半天没有响应的情况。
-</p>
+
+这里在不翻墙的情况下，可能会遇到一个问题：`sudo gem install bundler` 执行后，一直没有响应。这是由于国内网络原因（你懂的），导致<a href="http://rubygems.org/" target="_blank"> rubygems.org </a>存放在 `Amazon S3` 上面的资源文件间歇性连接失败。所以你会遇到 `gem install rack` 或 `bundle install` 的时候半天没有响应的情况。
+{:.warning}
 
 幸运的是国内某大神帮我们解决了这一心头大患，我们可以用`淘宝的 Ruby 镜像`来替换原来的镜像。只需终端执行下面的命令即可：
 
@@ -123,11 +122,12 @@ categories: Octopress
 {% endcodeblock %}
 
 
-> 上面提到的 `Ruby 镜像`问题，还有另外两种解决方法:
-
+上面提到的 `Ruby 镜像`问题，还有另外两种解决方法:
+<br><br>
 （1）比较原始的方法——手动更改：打开 `octopress` 文件夹 -> 打开 `Gemfile` 文件 -> 将 `source "https://rubygems.org"` 改为 `source "https://ruby.taobao.org"` 就可以了。
-
+<br><br>
 （2）第二种相对方便点，因为我们使用的是 Gemfile，所以我们可以用 Bundler 的 [Gem 源代码镜像命令](http://bundler.io/v1.5/bundle_config.html#gem-source-mirrors)，这样我们就不用改 Gemfile 的 source 了。
+{:.addition}
 
 {% codeblock lang:ruby %}
   $ cd octopress
