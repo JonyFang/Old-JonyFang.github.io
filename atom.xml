@@ -4,7 +4,7 @@
   <title><![CDATA[I'm Jony]]></title>
   <link href="http://jonyfang.github.io/atom.xml" rel="self"/>
   <link href="http://jonyfang.github.io/"/>
-  <updated>2015-11-05T15:55:53+08:00</updated>
+  <updated>2015-11-05T15:57:38+08:00</updated>
   <id>http://jonyfang.github.io/</id>
   <author>
     <name><![CDATA[Jony Fang]]></name>
@@ -599,104 +599,6 @@
 
   <p><a href="http://bundler.io/v1.5/bundle_config.html#gem-source-mirrors">Gem Source Mirrors</a></p>
 </blockquote>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Just a Test]]></title>
-    <link href="http://jonyfang.github.io/blog/2015/10/07/just-a-test/"/>
-    <updated>2015-10-07T23:45:17+08:00</updated>
-    <id>http://jonyfang.github.io/blog/2015/10/07/just-a-test</id>
-    <content type="html"><![CDATA[<p class="info">
-这是一个有意思的 info 测试，这是一个<code>标示</code>测试<br />换行测试
-</p>
-
-<p class="warning">
-那么，这是另一个有意思的 warning 测试，<br />链接测试<a href="http://octopress.org/" target="_blank"> Octopress 官网</a>
-</p>
-
-<p class="info">你好啊 <code>小宝贝</code></p>
-
-<p class="addition">woshi <code>'nia'</code></p>
-
-<ul id="markdown-toc">
-  <li><a href="#first" id="markdown-toc-first">1. 第一篇First</a>    <ul>
-      <li><a href="#about-first" id="markdown-toc-about-first">1.1 About first</a></li>
-    </ul>
-  </li>
-  <li><a href="#second" id="markdown-toc-second">2.第二篇Second</a>    <ul>
-      <li><a href="#about-second-1" id="markdown-toc-about-second-1">2.1 About Second 1</a></li>
-      <li><a href="#about-second-2" id="markdown-toc-about-second-2">2.2 About Second 2</a></li>
-    </ul>
-  </li>
-  <li><a href="#third" id="markdown-toc-third">3.Third</a>    <ul>
-      <li><a href="#about-third" id="markdown-toc-about-third">3.1 About Third</a></li>
-    </ul>
-  </li>
-</ul>
-
-<h1 id="first">1. 第一篇First</h1>
-
-<h2 id="about-first">1.1 About first</h2>
-
-<p>这是一个测试</p>
-
-<p><img src="http://jonyfang.github.io/images/blog_images/10.8_daily.jpg" alt="1-1 Train yourself to let go of everything you fear to lose." /></p>
-
-<p>Train yourself to let go of everything you fear to lose.</p>
-
-<p>试着放下所有你害怕失去的东西。</p>
-
-<h1 id="second">2.第二篇Second</h1>
-
-<h2 id="about-second-1">2.1 About Second 1</h2>
-
-<p>这也是一个测试</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>[lang: ANTLR] [Obj-c test] </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">UIImage *image = [[UIImage alloc] init];</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class="objc"><span class="line"><span class="p">[</span><span class="n">rectangle</span> <span class="nl">setX</span><span class="p">:</span> <span class="mi">10</span> <span class="nl">y</span><span class="p">:</span> <span class="mi">10</span> <span class="nl">width</span><span class="p">:</span> <span class="mi">20</span> <span class="nl">height</span><span class="p">:</span> <span class="mi">20</span><span class="p">];</span>
-</span><span class="line"><span class="bp">UIImage</span> <span class="o">*</span><span class="n">image</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">UIImage</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-</pre></td><td class="code"><pre><code class="objc"><span class="line">  <span class="bp">NSString</span> <span class="o">*</span><span class="n">string1</span> <span class="o">=</span> <span class="s">@&quot;helloworld&quot;</span><span class="p">;</span>
-</span><span class="line">  <span class="bp">NSString</span> <span class="o">*</span><span class="n">string2</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSString</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithFormat</span><span class="p">:</span><span class="s">@&quot;:%@&quot;</span><span class="p">,</span> <span class="s">@&quot;helloworld&quot;</span><span class="p">];</span>
-</span><span class="line">  <span class="bp">NSString</span> <span class="o">*</span><span class="n">string3</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSHomeDirectory</span><span class="p">()</span> <span class="nl">stringByAppendingPathComponent</span><span class="p">:</span><span class="n">string1</span><span class="p">];</span>
-</span><span class="line">  <span class="bp">NSTextStorage</span> <span class="o">*</span><span class="n">storage</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSTextStorage</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithString</span><span class="p">:</span><span class="n">string1</span><span class="p">];</span>
-</span><span class="line">  <span class="bp">NSString</span> <span class="o">*</span><span class="n">string4</span> <span class="o">=</span> <span class="p">[</span><span class="n">storage</span> <span class="n">string</span><span class="p">];</span>
-</span><span class="line">
-</span><span class="line">  <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;%@&quot;</span><span class="p">,</span> <span class="p">[[</span><span class="n">string1</span> <span class="k">class</span><span class="p">]</span> <span class="n">description</span><span class="p">]);</span>
-</span><span class="line">  <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;%@&quot;</span><span class="p">,</span> <span class="p">[[</span><span class="n">string2</span> <span class="k">class</span><span class="p">]</span> <span class="n">description</span><span class="p">]);</span>
-</span><span class="line">  <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;%@&quot;</span><span class="p">,</span> <span class="p">[[</span><span class="n">string3</span> <span class="k">class</span><span class="p">]</span> <span class="n">description</span><span class="p">]);</span>
-</span><span class="line">  <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;%@&quot;</span><span class="p">,</span> <span class="p">[[</span><span class="n">string4</span> <span class="k">class</span><span class="p">]</span> <span class="n">description</span><span class="p">]);</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<!-- more -->
-
-<h2 id="about-second-2">2.2 About Second 2</h2>
-
-<p>这还是一个测试</p>
-
-<h1 id="third">3.Third</h1>
-
-<h2 id="about-third">3.1 About Third</h2>
-<p>这，额，还是一个测试</p>
-
-<p>This is just a test ~</p>
 ]]></content>
   </entry>
   
