@@ -20,15 +20,15 @@ categories: octopress
 
 Github 大家应该都有了解过，也是我很喜欢的平台之一，功能真心强大并且可免费使用，这里我们拿来托管我们的博客。
 
-### 1.1 新建 Github repository
+### 2.1 新建 Github repository
 
 注册 Github 账号，新建 [Github repository](https://github.com/new)。`项目名称`（Repository name）命名格式为 `username.github.io` ，`username` 是你的 `Github 用户名`（或 organization name，这里和后面我们先不讨论 origanization）。例如我的用户名是 JonyFang，所以输入 JonyFang.github.io 即可。点击 `Create repository` 创建。
 
 <p class="info">
-PS：创建完后不要添加任何内容，另外自己过程中产生了两个疑问
-
+创建完后不要添加任何内容，另外自己过程中产生了两个疑问
+<br>
 1.为什么用 github.io 而不是 github.com？
-
+<br>
 2.为什么是 Repository name 一定要按照 username.github.io 填写？
 </p>
 
@@ -36,8 +36,7 @@ PS：创建完后不要添加任何内容，另外自己过程中产生了两个
 
 第二个问题，和 Github 内部的结构有关，其次后面会通过 URL 截取填写的 `username.github.io` 作为博客域名。这样填写格式与 Github 内部结构的具体联系还需要再研究下。若有大神围观，望指教下：）
 
-
-## 1.2. 配置 Github Pages
+### 2.2. 配置 Github Pages
 
 终端执行如下命令：
 
@@ -54,7 +53,9 @@ PS：创建完后不要添加任何内容，另外自己过程中产生了两个
 
 用户（users）的 Github Pages 使用 `master` 分支作为 `Web 服务`（web server）的公开目录，为我们的 `Pages url` （http://username.github.io）提供内容文件。因此，我们会有这样的需求，`source` 分支用来做与`博客源码`相关的事（存放全部博客源码），`master` 分支上 commit 生成的博客内容`供 Web 访问`。而 Octopress 帮我们把这件事给搞定了，通过这行 code（好 NB～）。
 
+<p class="info">
 下面具体分析下 Octopress 是怎么做的（可通过查看 Rakefile 得知）：
+</p>
 
 (1). 命令要求我们输入 Github Pages 仓库的 URL，也就是我们新建的名为 username.github.io 仓库的 URL。这样命名是为了通过字符串截取 URL 拿到子串（http://username.github.io）作为我们博客的域名；
 
@@ -177,7 +178,7 @@ Git clone 一个仓库时，会将 clone 下来的仓库命名为 origin，没�
 再回头来看 `rake setup_github_pages` ，是不是清晰多了呢？
 
 
-### 1.3. 生成并部署站点
+### 2.3. 生成并部署站点
 
 执行如下命令，（将 `octopress/_deploy` 下数据 push 到 `master` 分支）：
 
@@ -199,7 +200,7 @@ Git clone 一个仓库时，会将 clone 下来的仓库命名为 origin，没�
 好，到这里，如果顺利完成前面所有内容的话，我们已经将 `Octopress` 部署到 `Github Pages` 了。如果你想换成自己的域名可以参考这里的方法（[Custom Domains](http://octopress.org/docs/deploying/github/#custom_domains)），不再赘述了。
 
 <p class="info">
-这里分析下，`rake generate` 和 `rake deploy`。
+这里分析下，<code>rake generate</code> 和 <code>rake deploy</code>。
 </p>
 
 rake generate：生成 `jekyll` 站点（Generating Site with Jekyll）
@@ -235,9 +236,9 @@ rake deploy：将站点部署到 `Github Pages`。由于 `_deploy` 目录所代�
 {% endcodeblock %}
 
 
-## 2. 发布博文过程
+## 3. 发布博文过程
 
-### 2.1. 新建一篇博文
+### 3.1. 新建一篇博文
 
 打开终端，输入：
 
@@ -282,7 +283,7 @@ rake deploy：将站点部署到 `Github Pages`。由于 `_deploy` 目录所代�
 
 在最后面的－－－下面就可以开始我们的正文啦～
 
-### 2.2. 预览新建的博文
+### 3.2. 预览新建的博文
 
 终端执行如下命令：
 
@@ -294,7 +295,7 @@ rake deploy：将站点部署到 `Github Pages`。由于 `_deploy` 目录所代�
 
 在浏览器中打开[http://localhost:4000](http://localhost:4000/),即可以预览我们刚 post 的博客效果。
 
-### 2.3. 发布新建的博文
+### 3.3. 发布新建的博文
 
 终端执行：
 
@@ -316,3 +317,8 @@ OK，到此，本地 octopress 博客部署到 Github Pages 完成了，打开�
 <p class="info">
 部署这一块，自己花了挺长时间研究的，大体上理清了自己之前在做时的一些疑问。现在回头再看 Github 上的目录和本地的目录，一下子明朗了不少。不知道你是不是也觉得呢？
 </p>
+
+
+>本篇参考：
+>
+>[Deploying to Github Pages](http://octopress.org/docs/deploying/github/#custom_domains)
