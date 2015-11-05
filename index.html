@@ -9,7 +9,7 @@
   <meta name="author" content="Jony Fang">
 
   
-  <meta name="description" content="1. 前言 2. 将 Octopress 部署到 Github Pages 2.1 新建 Github repository 2.2. 配置 Github Pages 2.3. 生成并部署站点 3. 发布博文过程 3.1. 新建一篇博文 3.2. 预览新建的博文 3.3. 发布新建的博文 1. &hellip;">
+  <meta name="description" content="1. 前言 2. 将 Octopress 部署到 Github Pages 2.1. 新建 Github repository 2.2. 配置 Github Pages 2.3. 生成并部署站点 3. 发布博文过程 3.1. 新建一篇博文 3.2. 预览新建的博文 3.3. 发布新建的博文 1 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -97,7 +97,7 @@
   <div class="entry-content"><ul id="markdown-toc">
   <li><a href="#section" id="markdown-toc-section">1. 前言</a></li>
   <li><a href="#octopress--github-pages" id="markdown-toc-octopress--github-pages">2. 将 Octopress 部署到 Github Pages</a>    <ul>
-      <li><a href="#github-repository" id="markdown-toc-github-repository">2.1 新建 Github repository</a></li>
+      <li><a href="#github-repository" id="markdown-toc-github-repository">2.1. 新建 Github repository</a></li>
       <li><a href="#github-pages" id="markdown-toc-github-pages">2.2. 配置 Github Pages</a></li>
       <li><a href="#section-1" id="markdown-toc-section-1">2.3. 生成并部署站点</a></li>
     </ul>
@@ -120,17 +120,15 @@
 
 <p>Github 大家应该都有了解过，也是我很喜欢的平台之一，功能真心强大并且可免费使用，这里我们拿来托管我们的博客。</p>
 
-<h3 id="github-repository">2.1 新建 Github repository</h3>
+<h3 id="github-repository">2.1. 新建 Github repository</h3>
 
 <p>注册 Github 账号，新建 <a href="https://github.com/new">Github repository</a>。<code>项目名称</code>（Repository name）命名格式为 <code>username.github.io</code> ，<code>username</code> 是你的 <code>Github 用户名</code>（或 organization name，这里和后面我们先不讨论 origanization）。例如我的用户名是 JonyFang，所以输入 JonyFang.github.io 即可。点击 <code>Create repository</code> 创建。</p>
 
-<p class="info">
-创建完后不要添加任何内容，另外自己过程中产生了两个疑问
+<p class="info">创建完后不要添加任何内容，另外自己过程中产生了两个疑问
 <br />
 1.为什么用 github.io 而不是 github.com？
 <br />
-2.为什么是 Repository name 一定要按照 username.github.io 填写？
-</p>
+2.为什么是 Repository name 一定要按照 username.github.io 填写？</p>
 
 <p>第一个问题，<a href="https://github.com/blog/1452-new-github-pages-domain-github-io#security-vulnerability">这里</a>解释了为什么把 <code>github.com</code> 改为了 <code>github.io</code>，简而言之是为了安全。</p>
 
@@ -211,6 +209,10 @@
 <p>总的来说也就是我们使用基于 <code>Jekyll</code> 的 <code>Octopress</code> 生成本地的静态网站，然后将静态的网站托管到 <code>Github</code> 为我们提供的 <code>Github Pages</code> 服务上。最后访问<code>博客地址</code>就可以显示我们的个人博客网站了。</p>
 
 <h2 id="section">2. 准备工作</h2>
+
+<h3 id="git">2.1. 安装 Git</h3>
+
+<p>前往 Git 官网 <a href="http://git-scm.com/">点击这里</a> ，按下图提示下载安装（一般 Mac OS X自带 Git 环境，终端执行 git -v 可查看 Git 版本）。
 </div>
   
   
