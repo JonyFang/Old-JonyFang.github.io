@@ -4,7 +4,7 @@
   <title><![CDATA[I'm Jony]]></title>
   <link href="http://jonyfang.github.io/atom.xml" rel="self"/>
   <link href="http://jonyfang.github.io/"/>
-  <updated>2015-10-16T03:12:40+08:00</updated>
+  <updated>2015-11-05T12:53:36+08:00</updated>
   <id>http://jonyfang.github.io/</id>
   <author>
     <name><![CDATA[Jony Fang]]></name>
@@ -420,6 +420,12 @@
 <p class="info">
 部署这一块，自己花了挺长时间研究的，大体上理清了自己之前在做时的一些疑问。现在回头再看 Github 上的目录和本地的目录，一下子明朗了不少。不知道你是不是也觉得呢？
 </p>
+
+<blockquote>
+  <p>本篇参考：</p>
+
+  <p><a href="http://octopress.org/docs/deploying/github/#custom_domains">Deploying to Github Pages</a></p>
+</blockquote>
 ]]></content>
   </entry>
   
