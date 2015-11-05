@@ -80,11 +80,11 @@ github_skip_forks: true
 #twitter_tweet_button: false
 
 # Google +1
-#google_plus_one: false
-#google_plus_one_size: medium
+google_plus_one: false
+google_plus_one_size: medium
 
 # Google Plus Profile
-Hidden: No visible button, just add author information to search results
+# Hidden: No visible button, just add author information to search results
 googleplus_user:
 googleplus_hidden: false
 
@@ -101,7 +101,7 @@ disqus_short_name: JonyFang
 disqus_show_comment_count: true
 
 # Google Analytics
-google_analytics_tracking_id:
+google_analytics_tracking_id: UA-69029852-2
 
 # Facebook Like
 #facebook_like: false
