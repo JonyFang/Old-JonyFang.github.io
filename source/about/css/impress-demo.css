@@ -240,11 +240,11 @@ a:focus {
 
 #jony b {
     display: inline-block;
-    -webkit-transition: 0.7s;
-    -moz-transition:    0.7s;
-    -ms-transition:     0.7s;
-    -o-transition:      0.7s;
-    transition:         0.7s;
+    -webkit-transition: 0.5s;
+    -moz-transition:    0.5s;
+    -ms-transition:     0.5s;
+    -o-transition:      0.5s;
+    transition:         0.5s;
 }
 
 #jony.present .front-trans {
@@ -256,11 +256,11 @@ a:focus {
     -o-transform:      translateX(-10px);
     transform:         translateX(-10px);
     
-    -webkit-transition-delay: 0.7s;
-    -moz-transition-delay:    0.7s;
-    -ms-transition-delay:     0.7s;
-    -o-transition-delay:      0.7s;
-    transition-delay:         0.7s;
+    -webkit-transition-delay: 0.5s;
+    -moz-transition-delay:    0.5s;
+    -ms-transition-delay:     0.5s;
+    -o-transition-delay:      0.5s;
+    transition-delay:         0.5s;
 }
 
 #jony.present .other-trans {
@@ -272,11 +272,11 @@ a:focus {
     -o-transform:      translateX(10px);
     transform:         translateX(10px);
     
-    -webkit-transition-delay: 0.5s;
-    -moz-transition-delay:    0.5s;
-    -ms-transition-delay:     0.5s;
-    -o-transition-delay:      0.5s;
-    transition-delay:         0.5s;
+    -webkit-transition-delay: 0.35s;
+    -moz-transition-delay:    0.35s;
+    -ms-transition-delay:     0.35s;
+    -o-transition-delay:      0.35s;
+    transition-delay:         0.35s;
 }
 
 #me { width: 600px }
@@ -306,11 +306,11 @@ a:focus {
     -o-transform:      translateY(10px);
     transform:         translateY(10px);
 
-    -webkit-transition-delay: 0.25s;
-    -moz-transition-delay:    0.25s;
-    -ms-transition-delay:     0.25s;
-    -o-transition-delay:      0.25s;
-    transition-delay:         0.25s;
+    -webkit-transition-delay: 0.35s;
+    -moz-transition-delay:    0.35s;
+    -ms-transition-delay:     0.35s;
+    -o-transition-delay:      0.35s;
+    transition-delay:         0.35s;
 }
 
 #me.present .ios {
@@ -378,11 +378,11 @@ a:focus {
 
 #tellmyself b {
     display: inline-block;
-    -webkit-transition: 0.5s;
-    -moz-transition:    0.5s;
-    -ms-transition:     0.5s;
-    -o-transition:      0.5s;
-    transition:         0.5s;
+    -webkit-transition: 0.35s;
+    -moz-transition:    0.35s;
+    -ms-transition:     0.35s;
+    -o-transition:      0.35s;
+    transition:         0.35s;
 }
 
 #tellmyself.present .trans {
@@ -395,11 +395,11 @@ a:focus {
     -o-transform:      translateX(50px);
     transform:         translateX(50px);
 
-    -webkit-transition-delay: 0.5s;
-    -moz-transition-delay:    0.5s;
-    -ms-transition-delay:     0.5s;
-    -o-transition-delay:      0.5s;
-    transition-delay:         0.5s;
+    -webkit-transition-delay: 0.35s;
+    -moz-transition-delay:    0.35s;
+    -ms-transition-delay:     0.35s;
+    -o-transition-delay:      0.35s;
+    transition-delay:         0.35s;
 }
 
 #tips {
