@@ -4,7 +4,7 @@
   <title><![CDATA[I'm Jony]]></title>
   <link href="http://jonyfang.github.io/atom.xml" rel="self"/>
   <link href="http://jonyfang.github.io/"/>
-  <updated>2015-11-12T09:26:49+08:00</updated>
+  <updated>2015-11-12T13:46:32+08:00</updated>
   <id>http://jonyfang.github.io/</id>
   <author>
     <name><![CDATA[Jony Fang]]></name>
@@ -12,6 +12,385 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Git 常用命令和 Git Flow 梳理]]></title>
+    <link href="http://jonyfang.github.io/blog/2015/11/12/git_command_and_git_branching_model/"/>
+    <updated>2015-11-12T00:30:00+08:00</updated>
+    <id>http://jonyfang.github.io/blog/2015/11/12/git_command_and_git_branching_model</id>
+    <content type="html"><![CDATA[<p><img src="http://jonyfang.github.io/images/git_flow/git.png" alt="git" /></p>
+
+<ul id="markdown-toc">
+  <li><a href="#git-" id="markdown-toc-git-">Git 常用命令</a>    <ul>
+      <li><a href="#section" id="markdown-toc-section">1. 新开分支</a></li>
+      <li><a href="#section-1" id="markdown-toc-section-1">2. 切换到另一个分支</a></li>
+      <li><a href="#section-2" id="markdown-toc-section-2">3. 新开分支并切换到新分支</a></li>
+      <li><a href="#section-3" id="markdown-toc-section-3">4. 查看分支列表</a></li>
+      <li><a href="#section-4" id="markdown-toc-section-4">5. 查看远程分支列表</a></li>
+      <li><a href="#section-5" id="markdown-toc-section-5">6. 向远程仓库提交本地新开的分支</a></li>
+      <li><a href="#section-6" id="markdown-toc-section-6">7. 删除远程分支</a></li>
+      <li><a href="#section-7" id="markdown-toc-section-7">8. 删除本地分支</a></li>
+      <li><a href="#section-8" id="markdown-toc-section-8">9. 更新分支列表信息</a></li>
+    </ul>
+  </li>
+  <li><a href="#git-flow-" id="markdown-toc-git-flow-">Git Flow 梳理</a>    <ul>
+      <li><a href="#section-9" id="markdown-toc-section-9">1.主要分支</a></li>
+      <li><a href="#section-10" id="markdown-toc-section-10">2.辅助分支</a>        <ul>
+          <li><a href="#feature-branches" id="markdown-toc-feature-branches">2.1.Feature branches（功能分支）</a></li>
+          <li><a href="#release-branches" id="markdown-toc-release-branches">2.2.Release branches（预发布分支）</a></li>
+          <li><a href="#hotfix-branches" id="markdown-toc-hotfix-branches">2.3.Hotfix branches（热修复分支）</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#section-11" id="markdown-toc-section-11">总结</a></li>
+</ul>
+
+<h1 id="git-">Git 常用命令</h1>
+
+<p>这里列出了一些比较常用的 git 命令，每个命令介绍后面都带一个简单例子～</p>
+
+<h3 id="section">1. 新开分支</h3>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">branch</span> <span class="err">新分支名</span>
+</span><span class="line">	
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">branch</span> <span class="n">develop</span><span class="err">（新建分支</span> <span class="n">develop</span><span class="err">）</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h3 id="section-1">2. 切换到另一个分支</h3>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="err">分支名</span>
+</span><span class="line">
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="n">develop</span><span class="err">（切换到</span> <span class="n">develop</span> <span class="err">分支）</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h3 id="section-2">3. 新开分支并切换到新分支</h3>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="err">新分支名</span>
+</span><span class="line">
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">develop</span> <span class="err">（新开</span> <span class="n">develop</span> <span class="err">分支，并切换到此分支）</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h3 id="section-3">4. 查看分支列表</h3>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">a</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>头部带 remotes/origin 的，表示远程分支</p>
+
+<h3 id="section-4">5. 查看远程分支列表</h3>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">r</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<!-- more -->
+
+<h3 id="section-5">6. 向远程仓库提交本地新开的分支</h3>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="err">新开分支名</span>
+</span><span class="line">
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">develop</span><span class="err">（提交新建的</span> <span class="n">develop</span> <span class="err">分支）</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h3 id="section-6">7. 删除远程分支</h3>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="o">--</span><span class="n">delete</span> <span class="err">远程分支名</span>
+</span><span class="line">
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="o">--</span><span class="n">delete</span> <span class="n">develop</span><span class="err">（删除远程仓库中的</span> <span class="n">develop</span> <span class="err">分支）</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h3 id="section-7">8. 删除本地分支</h3>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">d</span> <span class="err">分支名</span>
+</span><span class="line">
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">d</span> <span class="n">develop</span><span class="err">（删除本地的</span> <span class="n">develop</span> <span class="err">分支）</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h3 id="section-8">9. 更新分支列表信息</h3>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">fetch</span> <span class="o">-</span><span class="nb">p</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>用于协作时，项目队友添加或删除了远程分支的分支，可以通过这种方式来刷新分支列表信息</p>
+
+<hr />
+
+<h1 id="git-flow-">Git Flow 梳理</h1>
+
+<p><span class="caption-wrapper"><img class="caption" src="http://jonyfang.github.io/images/git_flow/git_flow.png" width="575" height="" title="git flow 图示" /><span class="caption-text">git flow 完整图示</span></span></p>
+
+<p>Git 开发模式本质上是一套流程，团队每个成员遵守这套流程以确保完成可控的软件开发过程。<a href="http://nvie.com/posts/a-successful-git-branching-model/">原文参考</a></p>
+
+<h2 id="section-9">1.主要分支</h2>
+
+<p>在远程仓库中有两个主要分支的生命期可以无限长，分别是：</p>
+
+<p><strong><code>Master</code></strong></p>
+
+<p><strong><code>Develop</code></strong></p>
+
+<p><span class="caption-wrapper"><img class="caption" src="http://jonyfang.github.io/images/git_flow/develop_branch.png" width="267" height="" title="develop 和 master 关系图" /><span class="caption-text">develop 和 master 关系图</span></span></p>
+
+<p><strong>master 分支（origin/master）</strong></p>
+
+<p>代码仓库中有且仅有的一条主分支，默认为 master ，在创建版本库时会自动创建。所有提供给用户使用的正式版本的源码，都会在这个分支上发布。也就是说主分支 master 用来发布重大版本。</p>
+
+<p><strong>develop 分支（origin/develop）</strong></p>
+
+<p>日常开发工作都会在 develop 分支上面完成。develop 分支可以用来生成代码的最新隔夜版本（nightly builds）。</p>
+
+<p><strong>创建 <code>develop</code> 分支</strong></p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">develop</span> <span class="n">master</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>当我们在<code>develop</code>上完成了新版本的功能，最终会把所有的修改 <code>merge</code> 到 <strong><code>master</code></strong> 分支。针对每次 <strong><code>master</code></strong> 的修改都会打一个 Tag 作为可发布产品的版本号。</p>
+
+<h2 id="section-10">2.辅助分支</h2>
+
+<p>开发过程中不可能项目人所有都在一个 <code>develop</code> 分支中开发，版本管理会很混乱。所以除了主要分支外，我们还需要一些辅助分支来协助团队成员间的并行开发。</p>
+
+<p><strong>所用到的辅助分支大体分三类：</strong></p>
+
+<ul>
+  <li><strong>Feature branches（功能分支）</strong></li>
+  <li><strong>Release branches（预发布分支）</strong></li>
+  <li><strong>Hotfix branches（热修复分支）</strong></li>
+</ul>
+
+<p>通过分支名我们能知道各类型分支都有特定作用，对于他们各自的起始分支和最终的合并分支也都有严格规定。呼，虽然可能会麻烦点，但让人一目了然的效果还是很诱人的。</p>
+
+<p>下面逐一介绍下各类型分支的创建使用和移除方法，过程中我在 <code>Github</code> 中创建一个虚拟的项目用来熟悉整个流程，或许你也可以像我一样做一遍。哈，动手总会有意外收获嘛。废话少说，继续正题～</p>
+
+<h3 id="feature-branches">2.1.Feature branches（功能分支）</h3>
+
+<p><span class="caption-wrapper"><img class="caption" src="http://jonyfang.github.io/images/git_flow/feature_branches.png" width="133" height="" title="feature_branches" /><span class="caption-text">feature_branches</span></span></p>
+
+<p><strong>应用场景：</strong></p>
+
+<p>当要开始一个新功能的开发时，我门可以创建一个 <code>Feature branche</code> 。等待这个新功能开发完成并确定应用到新版本中就合并回 <code>develop</code>，那么如果不是就会被很遗憾的丢弃。。。</p>
+
+<p><strong>应用规则：</strong></p>
+
+<ol>
+  <li>
+    <p>从 <code>develop</code> 分支创建，最终合并回 <code>develop</code> 分支;</p>
+  </li>
+  <li>
+    <p>分支名：feature／＊;</p>
+  </li>
+</ol>
+
+<p>Tips：这里很多地方说用 <strong>feature-＊</strong> 的方式命名，因为公司项目中用的 <strong>feature／＊</strong>方式，也就习惯了，其实意思是一样的。</p>
+
+<h4 id="creat-a-feature-branch">(1).Creat a feature branch</h4>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">feature</span><span class="o">/</span><span class="nb">test</span> <span class="n">develop</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>do something in <code>feature/test</code> branch</p>
+
+<p>push 本地 <code>feature/test</code> 到远处代码库；</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">feature</span><span class="o">/</span><span class="nb">test</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h4 id="develop--featuretest">(2).切换到 <strong>develop</strong> 合并 <strong>feature/test</strong></h4>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="n">develop</span>
+</span><span class="line">
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">merge</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">ff</span> <span class="n">feature</span><span class="o">/</span><span class="nb">test</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>”- -no-ff” 的作用是创建一个新的 “commit” 对象用于当前合并操作。这样既可以避免丢失该功能分支的历史存在信息，又可以集中该功能分支所有历史提交。并且如果想回退版本也会比较方便。</p>
+
+<p><span class="caption-wrapper"><img class="caption" src="http://jonyfang.github.io/images/git_flow/git_merge_noff.png" width="478" height="" title="git merge --no-ff 图示" /><span class="caption-text">git merge - -no-ff 图示</span></span></p>
+
+<h4 id="featuretest-">(3).移除本地和远程仓库的 <strong>feature/test</strong> 分支</h4>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">d</span> <span class="n">feature</span><span class="o">/</span><span class="nb">test</span>
+</span><span class="line">
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="o">--</span><span class="n">delete</span> <span class="n">feature</span><span class="o">/</span><span class="nb">test</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h3 id="release-branches">2.2.Release branches（预发布分支）</h3>
+
+<p><strong>应用场景：</strong></p>
+
+<p>“Release branches” 用来做新版本发布前的准备工作，在上面可以做一些小的 bug 修复、准备发布版本号等等和发布有关的小改动，其实已经是一个比较成熟的版本了。另外这样我们既可以在预发布分支上做一些发布前准备，也不会影响 “develop” 分支上下一版本的新功能开发。</p>
+
+<p><strong>应用规则：</strong></p>
+
+<ol>
+  <li>
+    <p>从 <code>develop</code> 分支创建，最终合并回 <code>develop</code> 和 <code>master</code>;</p>
+  </li>
+  <li>
+    <p>分支名：release-＊;</p>
+  </li>
+</ol>
+
+<h4 id="creat-a-release-branch">(1).Creat a release branch</h4>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">release</span><span class="o">-</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span> <span class="n">develop</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>do something in <code>release-1.1</code> branch</p>
+
+<h4 id="master--release-11">(2).切换到 <strong>master</strong> 合并 <strong>release-1.1</strong></h4>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="n">master</span>
+</span><span class="line">
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">merge</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">ff</span> <span class="n">release</span><span class="o">-</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span>
+</span><span class="line">
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">tag</span> <span class="o">-</span><span class="n">a</span> <span class="mi">1</span><span class="o">.</span><span class="mi">1</span>
+</span><span class="line">
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="mi">1</span><span class="o">.</span><span class="mi">1</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>当我们的 <code>release-1.1</code> 的 Review 完成，也就预示着我们可以发布了。打上相应的版本号，再 <strong>push</strong> 到远程仓库。</p>
+
+<h4 id="develop--release-11">(3).切换到 <strong>develop</strong> 合并 <strong>release-1.1</strong></h4>
+
+<p>预发布分支所做的修改同时也要合并回 <strong>develop</strong></p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="n">develop</span>
+</span><span class="line">
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">merge</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">ff</span> <span class="n">release</span><span class="o">-</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h4 id="release-11">(4).移除本地和远程仓库的 <strong>release-1.1</strong></h4>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">d</span> <span class="n">release</span><span class="o">-</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span>
+</span><span class="line">
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="o">--</span><span class="n">delete</span> <span class="n">release</span><span class="o">-</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h3 id="hotfix-branches">2.3.Hotfix branches（热修复分支）</h3>
+
+<p><span class="caption-wrapper"><img class="caption" src="http://jonyfang.github.io/images/git_flow/hotfixes.png" width="316" height="" title="Hotfix branches 图示" /><span class="caption-text">Hotfix branches 图示</span></span></p>
+
+<p><strong>应用场景：</strong></p>
+
+<p>“Hotfix branches” 主要用于处理线上版本出现的一些需要立刻修复的 bug 情况.</p>
+
+<p><strong>应用规则：</strong></p>
+
+<ol>
+  <li>
+    <p>从 <code>master</code> 分支上当前版本号的 <code>tag</code> 处切出，也就是从最新的 <code>master</code> 上创建，最终合并回 <code>develop</code> 和 <code>master</code>;</p>
+  </li>
+  <li>
+    <p>分支名：hotfix-＊;</p>
+  </li>
+</ol>
+
+<h4 id="creat-a-fixbug-branch">(1).Creat a fixbug branch</h4>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">fixbug</span><span class="o">-</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span> <span class="n">master</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>do something in <code>fixbug-1.1.1</code> branch</p>
+
+<h4 id="master--fixbug-111">(2).切换到 <strong>master</strong> 合并 <strong>fixbug-1.1.1</strong></h4>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="n">master</span>
+</span><span class="line">
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">merge</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">ff</span> <span class="n">fixbug</span><span class="o">-</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span>
+</span><span class="line">
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">tag</span> <span class="o">-</span><span class="n">a</span> <span class="mi">1</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span>
+</span><span class="line">
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="mi">1</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span><span class="sb">`</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>bug 修复完成，合并回 <code>master</code> 并打上版本号；</p>
+
+<h4 id="develop--fixbug111">(3).切换到 <strong>develop</strong> 合并 <strong>fixbug－1.1.1</strong></h4>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="n">develop</span>
+</span><span class="line">
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">merge</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">ff</span> <span class="n">fixbug</span><span class="o">-</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h4 id="fixbug-111">(4).移除本地和远程仓库的 <strong>fixbug-1.1.1</strong></h4>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">d</span> <span class="n">fixbug</span><span class="o">-</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span>
+</span><span class="line">
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="o">--</span><span class="n">delete</span> <span class="n">fixbug</span><span class="o">-</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h1 id="section-11">总结</h1>
+
+<p>啊哈，又到尾声了。上面的 <code>Git 常用命令</code>和 <code>Git Flow</code> 只是一些基本常识，并没有什么新的东西加入。在平时的团队协作中有些对于我自身而言还是比较新鲜的，比如 tag ，这些一般都交给老大来弄（因为他要 review）：D 。好像跑偏了。。。对自己而言，理一遍后的收获还是不小的，对 Git Flow 的整个流程有了大概的了解，但具体每个 git 命令内部是怎么处理的呢，这个留到后面再梳理一下～</p>
+
+<blockquote>
+  <p>参考内容：
+<br /><br />
+<a href="http://www.ruanyifeng.com/blog/2012/07/git.html">Git分支管理策略</a>
+<br />
+<a href="http://nvie.com/posts/a-successful-git-branching-model/">A successful Git branching model</a></p>
+</blockquote>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[基于 Octopress &amp; Github Pages 搭建博客（二）]]></title>
