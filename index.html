@@ -9,7 +9,7 @@
   <meta name="author" content="Jony Fang">
 
   
-  <meta name="description" content="Git 常用命令 1. 新开分支 2. 切换到另一个分支 3. 新开分支并切换到新分支 4. 查看分支列表 5. 查看远程分支列表 6. 向远程仓库提交本地新开的分支 7. 删除远程分支 8. 删除本地分支 9. 更新分支列表信息 Git Flow 梳理 1.主要分支 2.辅助分支 2.1. &hellip;">
+  <meta name="description" content="用 git 有一段时间了，之前没有详细地了解 git flow，导致协作过程中或多或少出现了一些头疼问题。最近静下心来理了下 git flow 的整个流程，再回头看开朗了不少，总结到这里。介绍的是一些常用的 Git 基础命令和 Git Flow，当然也很重要啦。如有不准确的地方欢迎指正。:) &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -108,6 +108,8 @@
 
   <div class="entry-content"><p><img src="http://jonyfang.github.io/images/git_flow/git.png" alt="git" /></p>
 
+<p class="info">用 git 有一段时间了，之前没有详细地了解 git flow，导致协作过程中或多或少出现了一些头疼问题。最近静下心来理了下 git flow 的整个流程，再回头看开朗了不少，总结到这里。介绍的是一些常用的 Git 基础命令和 Git Flow，当然也很重要啦。如有不准确的地方欢迎指正。:)</p>
+
 <ul id="markdown-toc">
   <li><a href="#git-" id="markdown-toc-git-">Git 常用命令</a>    <ul>
       <li><a href="#section" id="markdown-toc-section">1. 新开分支</a></li>
@@ -166,20 +168,6 @@
 </pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="err">新分支名</span>
 </span><span class="line">
 </span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">develop</span> <span class="err">（新开</span> <span class="n">develop</span> <span class="err">分支，并切换到此分支）</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h3 id="section-3">4. 查看分支列表</h3>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">a</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>头部带 remotes/origin 的，表示远程分支</p>
-
-<h3 id="section-4">5. 查看远程分支列表</h3>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">r</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 </div>
