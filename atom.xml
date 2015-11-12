@@ -4,7 +4,7 @@
   <title><![CDATA[I'm Jony]]></title>
   <link href="http://jonyfang.github.io/atom.xml" rel="self"/>
   <link href="http://jonyfang.github.io/"/>
-  <updated>2015-11-12T14:22:13+08:00</updated>
+  <updated>2015-11-12T14:48:23+08:00</updated>
   <id>http://jonyfang.github.io/</id>
   <author>
     <name><![CDATA[Jony Fang]]></name>
@@ -20,7 +20,7 @@
     <id>http://jonyfang.github.io/blog/2015/11/12/git_command_and_git_branching_model</id>
     <content type="html"><![CDATA[<p><img src="http://jonyfang.github.io/images/git_flow/git.png" alt="git" /></p>
 
-<p class="info">用 git 有一段时间了，之前没有详细地了解 git flow，导致协作过程中或多或少出现了一些头疼问题。最近静下心来理了下 git flow 的整个流程，再回头看开朗了不少，总结到这里。介绍的是一些常用的 Git 基础命令和 Git Flow，当然也很重要啦。如有不准确的地方欢迎指正。:)</p>
+<p class="info">用 git 有一段时间了，之前没有详细地了解 git flow，导致协作过程中或多或少出现了一些头疼问题。最近静下心来理了下 git flow 的整个流程，再回头看开朗了不少，总结到这里。介绍的是一些常用的 Git 基础命令和 Git Flow，整个，当然也很重要的，过程中自己在 Github 上建了一个模拟的 <a href="https://github.com/JonyFang/GitTestDemo">Demo</a> 用来熟悉 Git Flow。其实从理解到动手完成还是有点距离的，笨人有笨法嘛。如有不准确的地方欢迎指正。:)</p>
 
 <ul id="markdown-toc">
   <li><a href="#git-" id="markdown-toc-git-">Git 常用命令</a>    <ul>
