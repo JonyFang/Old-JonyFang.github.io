@@ -4,7 +4,7 @@
   <title><![CDATA[I'm Jony]]></title>
   <link href="http://jonyfang.github.io/atom.xml" rel="self"/>
   <link href="http://jonyfang.github.io/"/>
-  <updated>2015-11-12T14:10:06+08:00</updated>
+  <updated>2015-11-12T14:22:13+08:00</updated>
   <id>http://jonyfang.github.io/</id>
   <author>
     <name><![CDATA[Jony Fang]]></name>
@@ -396,9 +396,9 @@
   
   <entry>
     <title type="html"><![CDATA[基于 Octopress &amp; Github Pages 搭建博客（二）]]></title>
-    <link href="http://jonyfang.github.io/blog/2015/10/16/ji-yu-octopress-and-github-pages-da-jian-bo-ke-(er-)/"/>
+    <link href="http://jonyfang.github.io/blog/2015/10/16/starting_blog_with_octopress_2/"/>
     <updated>2015-10-16T02:37:44+08:00</updated>
-    <id>http://jonyfang.github.io/blog/2015/10/16/ji-yu-octopress-and-github-pages-da-jian-bo-ke-(er-)</id>
+    <id>http://jonyfang.github.io/blog/2015/10/16/starting_blog_with_octopress_2</id>
     <content type="html"><![CDATA[<ul id="markdown-toc">
   <li><a href="#section" id="markdown-toc-section">1. 前言</a></li>
   <li><a href="#octopress--github-pages" id="markdown-toc-octopress--github-pages">2. 将 Octopress 部署到 Github Pages</a>    <ul>
@@ -804,9 +804,9 @@
   
   <entry>
     <title type="html"><![CDATA[基于 Octopress & Github Pages 搭建博客（一）]]></title>
-    <link href="http://jonyfang.github.io/blog/2015/10/13/ji-yu-octopress-he-github-da-jian-bo-ke/"/>
+    <link href="http://jonyfang.github.io/blog/2015/10/13/starting_blog_with_octopress_1/"/>
     <updated>2015-10-13T13:13:00+08:00</updated>
-    <id>http://jonyfang.github.io/blog/2015/10/13/ji-yu-octopress-he-github-da-jian-bo-ke</id>
+    <id>http://jonyfang.github.io/blog/2015/10/13/starting_blog_with_octopress_1</id>
     <content type="html"><![CDATA[<p class="info">一直以来想有个属于自己的博客空间，或许是出于一种归属感吧。就这样知道了 WordPress、Jekyll、Hexo 和 Octopress。一番对比后选择了 Octopress，相信追随大神的脚步应该不会错。Octopress 接触有一个多星期了，幸运的是经过一番折腾算是弄出点了模样。这里总结下<code>基于 Octopress 及 Github 搭建博客</code>的过程及自己<code>中间遇到的一些问题的解决办法</code>。技术上不一定完全精确，若有大神围观望指正：)
 <br /><br />
 使用的是 Mac OS X 系统，不一定适用于 Windows 的童鞋。（勿拍砖…）
