@@ -86,7 +86,7 @@ Git clone 一个仓库时，会将 clone 下来的仓库命名为 origin，没�
   system "git remote rename origin octopress"
 {% endcodeblock %}
 
-这里内部执行了命令 `git remore rename origin octopress`，当 `rake setup_github_pages` 执行完毕，再 `git remote -v` 发现远程库名改为了 octopress。
+这里内部执行了命令 `git remote rename origin octopress`，当 `rake setup_github_pages` 执行完毕，再 `git remote -v` 发现远程库名改为了 octopress。
 
 {% codeblock lang:ruby %}
   $ git remote -v
