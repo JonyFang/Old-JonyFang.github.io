@@ -6,6 +6,7 @@ comments: true
 categories: octopress
 ---
 
+
 * list element with functor item
 {:toc}
 
