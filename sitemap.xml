@@ -5,6 +5,10 @@
     <lastmod>2015-11-12T00:30:00+08:00</lastmod>
   </url>
   <url>
+    <loc>http://jonyfang.github.io/blog/2015/11/09/update_cocoapods/</loc>
+    <lastmod>2015-11-09T06:40:00+08:00</lastmod>
+  </url>
+  <url>
     <loc>http://jonyfang.github.io/blog/2015/11/08/octopress_adapt_to_elcapitan/</loc>
     <lastmod>2015-11-08T16:30:00+08:00</lastmod>
   </url>
@@ -27,6 +31,9 @@
   </url>
   <url>
     <loc>http://jonyfang.github.io/blog/categories/octopress/</loc>
+  </url>
+  <url>
+    <loc>http://jonyfang.github.io/blog/categories/cocoapods/</loc>
   </url>
   <url>
     <loc>http://jonyfang.github.io/blog/categories/git/</loc>
