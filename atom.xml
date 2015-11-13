@@ -4,7 +4,7 @@
   <title><![CDATA[I'm Jony]]></title>
   <link href="http://jonyfang.github.io/atom.xml" rel="self"/>
   <link href="http://jonyfang.github.io/"/>
-  <updated>2015-11-12T14:57:30+08:00</updated>
+  <updated>2015-11-13T12:53:17+08:00</updated>
   <id>http://jonyfang.github.io/</id>
   <author>
     <name><![CDATA[Jony Fang]]></name>
@@ -57,9 +57,11 @@
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 <span class="line-number">3</span>
+<span class="line-number">4</span>
 </pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">branch</span> <span class="err">新分支名</span>
 </span><span class="line">	
-</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">branch</span> <span class="n">develop</span><span class="err">（新建分支</span> <span class="n">develop</span><span class="err">）</span>
+</span><span class="line"> <span class="c1">#新建分支 develop</span>
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">branch</span> <span class="n">develop</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <h3 id="section-1">2. 切换到另一个分支</h3>
@@ -67,9 +69,11 @@
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 <span class="line-number">3</span>
+<span class="line-number">4</span>
 </pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="err">分支名</span>
 </span><span class="line">
-</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="n">develop</span><span class="err">（切换到</span> <span class="n">develop</span> <span class="err">分支）</span>
+</span><span class="line"> <span class="c1">#切换到 develop 分支</span>
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="n">develop</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <h3 id="section-2">3. 新开分支并切换到新分支</h3>
@@ -77,9 +81,11 @@
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 <span class="line-number">3</span>
+<span class="line-number">4</span>
 </pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="err">新分支名</span>
 </span><span class="line">
-</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">develop</span> <span class="err">（新开</span> <span class="n">develop</span> <span class="err">分支，并切换到此分支）</span>
+</span><span class="line"> <span class="c1">#新开 develop 分支，并切换到此分支</span>
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">develop</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <!-- more -->
@@ -103,9 +109,11 @@
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 <span class="line-number">3</span>
+<span class="line-number">4</span>
 </pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="err">新开分支名</span>
 </span><span class="line">
-</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">develop</span><span class="err">（提交新建的</span> <span class="n">develop</span> <span class="err">分支）</span>
+</span><span class="line"> <span class="c1">#提交新建的 develop 分支</span>
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">develop</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <h3 id="section-6">7. 删除远程分支</h3>
@@ -113,9 +121,11 @@
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 <span class="line-number">3</span>
+<span class="line-number">4</span>
 </pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="o">--</span><span class="n">delete</span> <span class="err">远程分支名</span>
 </span><span class="line">
-</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="o">--</span><span class="n">delete</span> <span class="n">develop</span><span class="err">（删除远程仓库中的</span> <span class="n">develop</span> <span class="err">分支）</span>
+</span><span class="line"> <span class="c1">#删除远程仓库中的 develop 分支</span>
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="o">--</span><span class="n">delete</span> <span class="n">develop</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <h3 id="section-7">8. 删除本地分支</h3>
@@ -123,9 +133,11 @@
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 <span class="line-number">3</span>
+<span class="line-number">4</span>
 </pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">d</span> <span class="err">分支名</span>
 </span><span class="line">
-</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">d</span> <span class="n">develop</span><span class="err">（删除本地的</span> <span class="n">develop</span> <span class="err">分支）</span>
+</span><span class="line"> <span class="c1">#删除本地的 develop 分支</span>
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">d</span> <span class="n">develop</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <h3 id="section-8">9. 更新分支列表信息</h3>
@@ -165,7 +177,13 @@
 <p><strong>创建 <code>develop</code> 分支</strong></p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
 </pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">develop</span> <span class="n">master</span>
+</span><span class="line">
+</span><span class="line"> <span class="c1">#push develop 到远程仓库</span>
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">develop</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>当我们在<code>develop</code>上完成了新版本的功能，最终会把所有的修改 <code>merge</code> 到 <strong><code>master</code></strong> 分支。针对每次 <strong><code>master</code></strong> 的修改都会打一个 Tag 作为可发布产品的版本号。</p>
@@ -265,7 +283,13 @@
 <h4 id="creat-a-release-branch">(1).Creat a release branch</h4>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
 </pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">release</span><span class="o">-</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span> <span class="n">develop</span>
+</span><span class="line">
+</span><span class="line"> <span class="c1">#push 到远程仓库（可选）</span>
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">release</span><span class="o">-</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>do something in <code>release-1.1</code> branch</p>
@@ -334,7 +358,13 @@
 <h4 id="creat-a-fixbug-branch">(1).Creat a fixbug branch</h4>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
 </pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">fixbug</span><span class="o">-</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span> <span class="n">master</span>
+</span><span class="line">
+</span><span class="line"> <span class="c1">#push 到远程仓库（可选）</span>
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">fixbug</span><span class="o">-</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>do something in <code>fixbug-1.1.1</code> branch</p>
@@ -391,6 +421,147 @@
 <a href="http://nvie.com/posts/a-successful-git-branching-model/">A successful Git branching model</a></p>
 </blockquote>
 
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress 适配 OS X El Capitan]]></title>
+    <link href="http://jonyfang.github.io/blog/2015/11/08/octopress_adapt_to_elcapitan/"/>
+    <updated>2015-11-08T16:30:00+08:00</updated>
+    <id>http://jonyfang.github.io/blog/2015/11/08/octopress_adapt_to_elcapitan</id>
+    <content type="html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">1、前言</a></li>
+  <li><a href="#section-1" id="markdown-toc-section-1">2、解决办法</a>    <ul>
+      <li><a href="#git-" id="markdown-toc-git-">1. 清理 git 缓存</a></li>
+      <li><a href="#rvm" id="markdown-toc-rvm">2. 安装 RVM</a></li>
+      <li><a href="#ruby-223" id="markdown-toc-ruby-223">3. 安装 Ruby 2.2.3</a></li>
+      <li><a href="#octopress-" id="markdown-toc-octopress-">4. 安装 Octopress 依赖库</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="section">1、前言</h2>
+<p>这几天装上 OS X El Capitan ，Time Machine 恢复后测试 Octopress 遇到无法使用问题，这里总结下问题的解决过程。</p>
+
+<p>首先打开终端，运行：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">rake</span> <span class="n">preview</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>报错如下：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"><span class="err">$</span> <span class="n">rakepreviewStarting</span> <span class="n">to</span> <span class="n">watchsourcewith</span> <span class="no">Jekyll</span> <span class="ow">and</span> <span class="no">Compass</span><span class="o">.</span> <span class="no">Starting</span> <span class="no">Rack</span> <span class="n">on</span> <span class="n">port</span>
+</span><span class="line">
+</span><span class="line"><span class="mi">4000</span><span class="n">rake</span> <span class="n">aborted!</span><span class="no">Errno</span><span class="o">::</span><span class="ss">ENOENT</span><span class="p">:</span> <span class="no">No</span> <span class="n">such</span> <span class="n">file</span> <span class="ow">or</span> <span class="n">directory</span> <span class="o">-</span>
+</span><span class="line">
+</span><span class="line"><span class="n">compass</span><span class="o">/</span><span class="no">Users</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">git</span><span class="o">/</span><span class="n">octopress</span><span class="o">/</span><span class="ss">Rakefile</span><span class="p">:</span><span class="mi">85</span><span class="ss">:in</span>
+</span><span class="line">
+</span><span class="line"><span class="n">spawn</span><span class="o">/</span><span class="no">Users</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">git</span><span class="o">/</span><span class="n">octopress</span><span class="o">/</span><span class="ss">Rakefile</span><span class="p">:</span><span class="mi">85</span><span class="ss">:in</span> <span class="n">block</span> <span class="ss">inTasks</span><span class="p">:</span><span class="no">TOP</span><span class="o">=&gt;</span> <span class="n">preview</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>在没有升级 OS X EI Capitan 之前一切如常，首先想到是不是 Ruby 的问题</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">ruby</span> <span class="o">-</span><span class="n">v</span>
+</span><span class="line">
+</span><span class="line"> <span class="c1">#输出</span>
+</span><span class="line"> <span class="n">ruby</span> <span class="mi">2</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="n">p645</span> <span class="p">(</span><span class="mi">2015</span><span class="o">-</span><span class="mo">04</span><span class="o">-</span><span class="mi">13</span> <span class="n">revision</span> <span class="mi">50299</span><span class="p">)</span> <span class="o">[</span><span class="n">universal</span><span class="o">.</span><span class="n">x86_64</span><span class="o">-</span><span class="n">darwin15</span><span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>和以前一样还是 2.0.0 版本，到官网查看最新版本是 2.2.3，多次尝试更新 <code>ruby</code> 失败。</p>
+
+<h2 id="section-1">2、解决办法</h2>
+<p>更新 Ruby 可以通过 <code>rbenv</code> 或 <code>RVM</code>，因为我之前安装是通过 <code>RVM</code> 的方式，这里自己也是通过 <code>RVM</code> 的方式解决的。（附 Google 看到的：<a href="https://gorails.com/setup/osx/10.11-el-capitan">rbenv 更新 Ruby 方法</a>）
+<!-- more --></p>
+
+<h3 id="git-">1. 清理 git 缓存</h3>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="sr">/usr/</span><span class="n">local</span><span class="o">/.</span><span class="n">git</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h3 id="rvm">2. 安装 RVM</h3>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">curl</span> <span class="o">-</span><span class="n">L</span> <span class="ss">https</span><span class="p">:</span><span class="sr">//</span><span class="n">get</span><span class="o">.</span><span class="n">rvm</span><span class="o">.</span><span class="n">io</span> <span class="o">|</span> <span class="n">bash</span> <span class="o">-</span><span class="n">s</span> <span class="n">stable</span> <span class="o">--</span><span class="n">ruby</span>
+</span><span class="line"> <span class="err">$</span> <span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="sr">/usr/</span><span class="n">local</span><span class="o">/.</span><span class="n">git</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h3 id="ruby-223">3. 安装 Ruby 2.2.3</h3>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">rvm</span> <span class="n">install</span> <span class="mi">2</span><span class="o">.</span><span class="mi">2</span><span class="o">.</span><span class="mi">3</span>
+</span><span class="line"> <span class="err">$</span> <span class="n">rvm</span> <span class="n">use</span> <span class="mi">2</span><span class="o">.</span><span class="mi">2</span><span class="o">.</span><span class="mi">3</span>
+</span><span class="line"> <span class="err">$</span> <span class="n">rvm</span> <span class="n">rubygems</span> <span class="n">latest</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>查看下 Ruby 版本:</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">ruby</span> <span class="o">-</span><span class="n">v</span>
+</span><span class="line"> <span class="err">$</span> <span class="n">ruby</span> <span class="mi">2</span><span class="o">.</span><span class="mi">2</span><span class="o">.</span><span class="mi">3</span><span class="n">p173</span> <span class="p">(</span><span class="mi">2015</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">18</span> <span class="n">revision</span> <span class="mi">51636</span><span class="p">)</span> <span class="o">[</span><span class="n">x86_64</span><span class="o">-</span><span class="n">darwin14</span><span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>啊哈，切换过来了，其实也很简单，到这里就修复了吗？其实还没有，如你所见还有第4步。</p>
+
+<h3 id="octopress-">4. 安装 Octopress 依赖库</h3>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">cd</span> <span class="n">octopress</span>
+</span><span class="line"> <span class="err">$</span> <span class="n">sudo</span> <span class="n">gem</span> <span class="n">install</span> <span class="n">bundler</span>
+</span><span class="line"> <span class="err">$</span> <span class="n">bundle</span> <span class="n">install</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>当 bundler 安装完毕之后，来测试下 <code>rake</code> 命令是否修复了：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">rake</span> <span class="n">generate</span>
+</span><span class="line"> <span class="c1">## Generating Site with Jekyll</span>
+</span><span class="line">    <span class="n">write</span> <span class="n">source</span><span class="o">/</span><span class="n">stylesheets</span><span class="o">/</span><span class="n">screen</span><span class="o">.</span><span class="n">css</span>
+</span><span class="line"><span class="no">Configuration</span> <span class="ss">file</span><span class="p">:</span> <span class="sr">/Users/</span><span class="no">JonyFang</span><span class="o">/</span><span class="no">Desktop</span><span class="o">/</span><span class="n">octopress</span><span class="o">/</span><span class="n">_config</span><span class="o">.</span><span class="n">yml</span>
+</span><span class="line">            <span class="ss">Source</span><span class="p">:</span> <span class="n">source</span>
+</span><span class="line">       <span class="ss">Destination</span><span class="p">:</span> <span class="kp">public</span>
+</span><span class="line">      <span class="no">Generating</span><span class="o">.</span><span class="n">.</span><span class="o">.</span>
+</span><span class="line">                    <span class="n">done</span><span class="o">.</span>
+</span><span class="line"> <span class="no">Auto</span><span class="o">-</span><span class="ss">regeneration</span><span class="p">:</span> <span class="n">disabled</span><span class="o">.</span> <span class="no">Use</span> <span class="o">--</span><span class="n">watch</span> <span class="n">to</span> <span class="n">enable</span><span class="o">.</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>可以了～</p>
+
+<p>如果你也同样遇到升级 OS X EI Capitan 后 Octopress 无法使用的情况，希望能对你有所帮助。</p>
+
+<blockquote>
+  <p>本文参考：
+<br /><br />
+<a href="https://github.com/imathis/octopress/issues/1749">When I upgraded the Mac system, I can’t Preview</a>
+<br /><br />
+<a href="https://gorails.com/setup/osx/10.11-el-capitan">Setup Ruby On Rails on Mac OS X 10.11 El Capitan</a></p>
+</blockquote>
 ]]></content>
   </entry>
   
@@ -495,7 +666,7 @@
 </span><span class="line">  <span class="nb">system</span> <span class="s2">&quot;git remote rename origin octopress&quot;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>这里内部执行了命令 <code>git remore rename origin octopress</code>，当 <code>rake setup_github_pages</code> 执行完毕，再 <code>git remote -v</code> 发现远程库名改为了 octopress。</p>
+<p>这里内部执行了命令 <code>git remote rename origin octopress</code>，当 <code>rake setup_github_pages</code> 执行完毕，再 <code>git remote -v</code> 发现远程库名改为了 octopress。</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>

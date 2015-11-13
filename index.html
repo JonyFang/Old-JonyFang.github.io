@@ -145,9 +145,11 @@
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 <span class="line-number">3</span>
+<span class="line-number">4</span>
 </pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">branch</span> <span class="err">新分支名</span>
 </span><span class="line">	
-</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">branch</span> <span class="n">develop</span><span class="err">（新建分支</span> <span class="n">develop</span><span class="err">）</span>
+</span><span class="line"> <span class="c1">#新建分支 develop</span>
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">branch</span> <span class="n">develop</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <h3 id="section-1">2. 切换到另一个分支</h3>
@@ -155,9 +157,11 @@
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 <span class="line-number">3</span>
+<span class="line-number">4</span>
 </pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="err">分支名</span>
 </span><span class="line">
-</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="n">develop</span><span class="err">（切换到</span> <span class="n">develop</span> <span class="err">分支）</span>
+</span><span class="line"> <span class="c1">#切换到 develop 分支</span>
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="n">develop</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <h3 id="section-2">3. 新开分支并切换到新分支</h3>
@@ -165,9 +169,11 @@
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 <span class="line-number">3</span>
+<span class="line-number">4</span>
 </pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="err">新分支名</span>
 </span><span class="line">
-</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">develop</span> <span class="err">（新开</span> <span class="n">develop</span> <span class="err">分支，并切换到此分支）</span>
+</span><span class="line"> <span class="c1">#新开 develop 分支，并切换到此分支</span>
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">develop</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 </div>
@@ -175,6 +181,95 @@
   
     <footer>
       <a rel="full-article" href="/blog/2015/11/12/git_command_and_git_branching_model/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/11/08/octopress_adapt_to_elcapitan/">Octopress 适配 OS X El Capitan</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-11-08T16:30:00+08:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>8</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>4:30 pm</span></time>
+        
+           | <a href="/blog/2015/11/08/octopress_adapt_to_elcapitan/#disqus_thread"
+             data-disqus-identifier="http://jonyfang.github.io/blog/2015/11/08/octopress_adapt_to_elcapitan/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ul id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">1、前言</a></li>
+  <li><a href="#section-1" id="markdown-toc-section-1">2、解决办法</a>    <ul>
+      <li><a href="#git-" id="markdown-toc-git-">1. 清理 git 缓存</a></li>
+      <li><a href="#rvm" id="markdown-toc-rvm">2. 安装 RVM</a></li>
+      <li><a href="#ruby-223" id="markdown-toc-ruby-223">3. 安装 Ruby 2.2.3</a></li>
+      <li><a href="#octopress-" id="markdown-toc-octopress-">4. 安装 Octopress 依赖库</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="section">1、前言</h2>
+<p>这几天装上 OS X El Capitan ，Time Machine 恢复后测试 Octopress 遇到无法使用问题，这里总结下问题的解决过程。</p>
+
+<p>首先打开终端，运行：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">rake</span> <span class="n">preview</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>报错如下：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"><span class="err">$</span> <span class="n">rakepreviewStarting</span> <span class="n">to</span> <span class="n">watchsourcewith</span> <span class="no">Jekyll</span> <span class="ow">and</span> <span class="no">Compass</span><span class="o">.</span> <span class="no">Starting</span> <span class="no">Rack</span> <span class="n">on</span> <span class="n">port</span>
+</span><span class="line">
+</span><span class="line"><span class="mi">4000</span><span class="n">rake</span> <span class="n">aborted!</span><span class="no">Errno</span><span class="o">::</span><span class="ss">ENOENT</span><span class="p">:</span> <span class="no">No</span> <span class="n">such</span> <span class="n">file</span> <span class="ow">or</span> <span class="n">directory</span> <span class="o">-</span>
+</span><span class="line">
+</span><span class="line"><span class="n">compass</span><span class="o">/</span><span class="no">Users</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">git</span><span class="o">/</span><span class="n">octopress</span><span class="o">/</span><span class="ss">Rakefile</span><span class="p">:</span><span class="mi">85</span><span class="ss">:in</span>
+</span><span class="line">
+</span><span class="line"><span class="n">spawn</span><span class="o">/</span><span class="no">Users</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">git</span><span class="o">/</span><span class="n">octopress</span><span class="o">/</span><span class="ss">Rakefile</span><span class="p">:</span><span class="mi">85</span><span class="ss">:in</span> <span class="n">block</span> <span class="ss">inTasks</span><span class="p">:</span><span class="no">TOP</span><span class="o">=&gt;</span> <span class="n">preview</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>在没有升级 OS X EI Capitan 之前一切如常，首先想到是不是 Ruby 的问题</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">ruby</span> <span class="o">-</span><span class="n">v</span>
+</span><span class="line">
+</span><span class="line"> <span class="c1">#输出</span>
+</span><span class="line"> <span class="n">ruby</span> <span class="mi">2</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="n">p645</span> <span class="p">(</span><span class="mi">2015</span><span class="o">-</span><span class="mo">04</span><span class="o">-</span><span class="mi">13</span> <span class="n">revision</span> <span class="mi">50299</span><span class="p">)</span> <span class="o">[</span><span class="n">universal</span><span class="o">.</span><span class="n">x86_64</span><span class="o">-</span><span class="n">darwin15</span><span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>和以前一样还是 2.0.0 版本，到官网查看最新版本是 2.2.3，多次尝试更新 <code>ruby</code> 失败。</p>
+
+<h2 id="section-1">2、解决办法</h2>
+<p>更新 Ruby 可以通过 <code>rbenv</code> 或 <code>RVM</code>，因为我之前安装是通过 <code>RVM</code> 的方式，这里自己也是通过 <code>RVM</code> 的方式解决的。（附 Google 看到的：<a href="https://gorails.com/setup/osx/10.11-el-capitan">rbenv 更新 Ruby 方法</a>）
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2015/11/08/octopress_adapt_to_elcapitan/">Read on &rarr;</a>
     </footer>
   
 
@@ -357,6 +452,10 @@
     
       <li class="post">
         <a href="/blog/2015/11/12/git_command_and_git_branching_model/">Git 常用命令和 Git Flow 梳理</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/11/08/octopress_adapt_to_elcapitan/">Octopress 适配 OS X El Capitan</a>
       </li>
     
       <li class="post">

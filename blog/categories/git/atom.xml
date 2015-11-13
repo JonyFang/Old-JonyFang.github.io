@@ -4,7 +4,7 @@
   <title><![CDATA[Categorie: Git | I'm Jony]]></title>
   <link href="http://jonyfang.github.io/blog/categories/git/atom.xml" rel="self"/>
   <link href="http://jonyfang.github.io/"/>
-  <updated>2015-11-12T14:57:30+08:00</updated>
+  <updated>2015-11-13T12:53:17+08:00</updated>
   <id>http://jonyfang.github.io/</id>
   <author>
     <name><![CDATA[Jony Fang]]></name>
@@ -57,9 +57,11 @@
 <p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
+<span class='line-number'>4</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="err">$</span> <span class="n">git</span> <span class="n">branch</span> <span class="err">新分支名</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;$ git branch develop（新建分支 develop）</span>
+</span><span class='line'><span class="sr">&lt;p&gt;#新建分支 develop</span>
+</span><span class='line'><span class="sr"> $ git branch develop</span>
 </span></code></pre></td></tr></table></div></figure></p>
 
 <h3 id="section-1">2. 切换到另一个分支</h3>
@@ -67,9 +69,11 @@
 <p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
+<span class='line-number'>4</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="err">分支名</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;$ git checkout develop（切换到 develop 分支）</span>
+</span><span class='line'><span class="sr">&lt;p&gt;#切换到 develop 分支</span>
+</span><span class='line'><span class="sr"> $ git checkout develop</span>
 </span></code></pre></td></tr></table></div></figure></p>
 
 <h3 id="section-2">3. 新开分支并切换到新分支</h3>
@@ -77,9 +81,11 @@
 <p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
+<span class='line-number'>4</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="err">新分支名</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;$ git checkout -b develop （新开 develop 分支，并切换到此分支）</span>
+</span><span class='line'><span class="sr">&lt;p&gt;#新开 develop 分支，并切换到此分支</span>
+</span><span class='line'><span class="sr"> $ git checkout -b develop</span>
 </span></code></pre></td></tr></table></div></figure></p>
 
 <!-- more -->
@@ -103,9 +109,11 @@
 <p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
+<span class='line-number'>4</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="err">$</span> <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="err">新开分支名</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;$ git push origin develop（提交新建的 develop 分支）</span>
+</span><span class='line'><span class="sr">&lt;p&gt;#提交新建的 develop 分支</span>
+</span><span class='line'><span class="sr"> $ git push origin develop</span>
 </span></code></pre></td></tr></table></div></figure></p>
 
 <h3 id="section-6">7. 删除远程分支</h3>
@@ -113,9 +121,11 @@
 <p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
+<span class='line-number'>4</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="err">$</span> <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="err">–</span><span class="n">delete</span> <span class="err">远程分支名</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;$ git push origin –delete develop（删除远程仓库中的 develop 分支）</span>
+</span><span class='line'><span class="sr">&lt;p&gt;#删除远程仓库中的 develop 分支</span>
+</span><span class='line'><span class="sr"> $ git push origin –delete develop</span>
 </span></code></pre></td></tr></table></div></figure></p>
 
 <h3 id="section-7">8. 删除本地分支</h3>
@@ -123,9 +133,11 @@
 <p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
+<span class='line-number'>4</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="err">$</span> <span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">d</span> <span class="err">分支名</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;$ git branch -d develop（删除本地的 develop 分支）</span>
+</span><span class='line'><span class="sr">&lt;p&gt;#删除本地的 develop 分支</span>
+</span><span class='line'><span class="sr"> $ git branch -d develop</span>
 </span></code></pre></td></tr></table></div></figure></p>
 
 <h3 id="section-8">9. 更新分支列表信息</h3>
@@ -165,7 +177,13 @@
 <p><strong>创建 <code>develop</code> 分支</strong></p>
 
 <p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">develop</span> <span class="n">master</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">develop</span> <span class="n">master</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;#push develop 到远程仓库</span>
+</span><span class='line'><span class="sr"> $ git push origin develop</span>
 </span></code></pre></td></tr></table></div></figure></p>
 
 <p>当我们在<code>develop</code>上完成了新版本的功能，最终会把所有的修改 <code>merge</code> 到 <strong><code>master</code></strong> 分支。针对每次 <strong><code>master</code></strong> 的修改都会打一个 Tag 作为可发布产品的版本号。</p>
@@ -265,7 +283,13 @@
 <h4 id="creat-a-release-branch">(1).Creat a release branch</h4>
 
 <p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">release</span><span class="o">-</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span> <span class="n">develop</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">release</span><span class="o">-</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span> <span class="n">develop</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;#push 到远程仓库（可选）</span>
+</span><span class='line'><span class="sr"> $ git push origin release-1.1</span>
 </span></code></pre></td></tr></table></div></figure></p>
 
 <p>do something in <code>release-1.1</code> branch</p>
@@ -334,7 +358,13 @@
 <h4 id="creat-a-fixbug-branch">(1).Creat a fixbug branch</h4>
 
 <p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">fixbug</span><span class="o">-</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span> <span class="n">master</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">fixbug</span><span class="o">-</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span> <span class="n">master</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;#push 到远程仓库（可选）</span>
+</span><span class='line'><span class="sr"> $ git push origin fixbug-1.1.1</span>
 </span></code></pre></td></tr></table></div></figure></p>
 
 <p>do something in <code>fixbug-1.1.1</code> branch</p>

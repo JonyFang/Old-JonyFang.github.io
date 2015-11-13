@@ -142,9 +142,11 @@
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 <span class="line-number">3</span>
+<span class="line-number">4</span>
 </pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">branch</span> <span class="err">新分支名</span>
 </span><span class="line">	
-</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">branch</span> <span class="n">develop</span><span class="err">（新建分支</span> <span class="n">develop</span><span class="err">）</span>
+</span><span class="line"> <span class="c1">#新建分支 develop</span>
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">branch</span> <span class="n">develop</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <h3 id="section-1">2. 切换到另一个分支</h3>
@@ -152,9 +154,11 @@
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 <span class="line-number">3</span>
+<span class="line-number">4</span>
 </pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="err">分支名</span>
 </span><span class="line">
-</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="n">develop</span><span class="err">（切换到</span> <span class="n">develop</span> <span class="err">分支）</span>
+</span><span class="line"> <span class="c1">#切换到 develop 分支</span>
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="n">develop</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <h3 id="section-2">3. 新开分支并切换到新分支</h3>
@@ -162,9 +166,11 @@
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 <span class="line-number">3</span>
+<span class="line-number">4</span>
 </pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="err">新分支名</span>
 </span><span class="line">
-</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">develop</span> <span class="err">（新开</span> <span class="n">develop</span> <span class="err">分支，并切换到此分支）</span>
+</span><span class="line"> <span class="c1">#新开 develop 分支，并切换到此分支</span>
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">develop</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <!-- more -->
@@ -188,9 +194,11 @@
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 <span class="line-number">3</span>
+<span class="line-number">4</span>
 </pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="err">新开分支名</span>
 </span><span class="line">
-</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">develop</span><span class="err">（提交新建的</span> <span class="n">develop</span> <span class="err">分支）</span>
+</span><span class="line"> <span class="c1">#提交新建的 develop 分支</span>
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">develop</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <h3 id="section-6">7. 删除远程分支</h3>
@@ -198,9 +206,11 @@
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 <span class="line-number">3</span>
+<span class="line-number">4</span>
 </pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="o">--</span><span class="n">delete</span> <span class="err">远程分支名</span>
 </span><span class="line">
-</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="o">--</span><span class="n">delete</span> <span class="n">develop</span><span class="err">（删除远程仓库中的</span> <span class="n">develop</span> <span class="err">分支）</span>
+</span><span class="line"> <span class="c1">#删除远程仓库中的 develop 分支</span>
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="o">--</span><span class="n">delete</span> <span class="n">develop</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <h3 id="section-7">8. 删除本地分支</h3>
@@ -208,9 +218,11 @@
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 <span class="line-number">3</span>
+<span class="line-number">4</span>
 </pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">d</span> <span class="err">分支名</span>
 </span><span class="line">
-</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">d</span> <span class="n">develop</span><span class="err">（删除本地的</span> <span class="n">develop</span> <span class="err">分支）</span>
+</span><span class="line"> <span class="c1">#删除本地的 develop 分支</span>
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">d</span> <span class="n">develop</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <h3 id="section-8">9. 更新分支列表信息</h3>
@@ -250,7 +262,13 @@
 <p><strong>创建 <code>develop</code> 分支</strong></p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
 </pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">develop</span> <span class="n">master</span>
+</span><span class="line">
+</span><span class="line"> <span class="c1">#push develop 到远程仓库</span>
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">develop</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>当我们在<code>develop</code>上完成了新版本的功能，最终会把所有的修改 <code>merge</code> 到 <strong><code>master</code></strong> 分支。针对每次 <strong><code>master</code></strong> 的修改都会打一个 Tag 作为可发布产品的版本号。</p>
@@ -350,7 +368,13 @@
 <h4 id="creat-a-release-branch">(1).Creat a release branch</h4>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
 </pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">release</span><span class="o">-</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span> <span class="n">develop</span>
+</span><span class="line">
+</span><span class="line"> <span class="c1">#push 到远程仓库（可选）</span>
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">release</span><span class="o">-</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>do something in <code>release-1.1</code> branch</p>
@@ -419,7 +443,13 @@
 <h4 id="creat-a-fixbug-branch">(1).Creat a fixbug branch</h4>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
 </pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">fixbug</span><span class="o">-</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span> <span class="n">master</span>
+</span><span class="line">
+</span><span class="line"> <span class="c1">#push 到远程仓库（可选）</span>
+</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">fixbug</span><span class="o">-</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>do something in <code>fixbug-1.1.1</code> branch</p>
@@ -512,7 +542,7 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2015/10/16/starting_blog_with_octopress_2/" title="Previous Post: 基于 Octopress &amp; Github Pages 搭建博客（二）">&laquo; 基于 Octopress &amp; Github Pages 搭建博客（二）</a>
+        <a class="basic-alignment left" href="/blog/2015/11/08/octopress_adapt_to_elcapitan/" title="Previous Post: Octopress 适配 OS X El Capitan">&laquo; Octopress 适配 OS X El Capitan</a>
       
       
     </p>
@@ -543,6 +573,10 @@
     
       <li class="post">
         <a href="/blog/2015/11/12/git_command_and_git_branching_model/">Git 常用命令和 Git Flow 梳理</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/11/08/octopress_adapt_to_elcapitan/">Octopress 适配 OS X El Capitan</a>
       </li>
     
       <li class="post">
