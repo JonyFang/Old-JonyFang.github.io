@@ -4,7 +4,7 @@
   <title><![CDATA[Categorie: Cocoapods | I'm Jony]]></title>
   <link href="http://jonyfang.github.io/blog/categories/cocoapods/atom.xml" rel="self"/>
   <link href="http://jonyfang.github.io/"/>
-  <updated>2015-11-13T13:59:13+08:00</updated>
+  <updated>2015-11-14T10:31:25+08:00</updated>
   <id>http://jonyfang.github.io/</id>
   <author>
     <name><![CDATA[Jony Fang]]></name>
@@ -18,7 +18,7 @@
     <link href="http://jonyfang.github.io/blog/2015/11/09/update_cocoapods/"/>
     <updated>2015-11-09T06:40:00+08:00</updated>
     <id>http://jonyfang.github.io/blog/2015/11/09/update_cocoapods</id>
-    <content type="html"><![CDATA[<p><img src="http://jonyfang.github.io/images/cocoapods/cocoapods.png" alt="git" /></p>
+    <content type="html"><![CDATA[<p><img src="http://7xob7d.com1.z0.glb.clouddn.com/cocoapods.png" alt="git" /></p>
 
 <p>升级 OS X El Capitan 后，Time Machine 恢复下，随后因为遇到 octopress 无法更新博客问题，一番折腾 <a href="http://www.jianshu.com/p/ce5eff554279">octopress 适配了 OS X El Capitan</a>，然而事情总没有那么简单，又丢过来一个问题。</p>
 
