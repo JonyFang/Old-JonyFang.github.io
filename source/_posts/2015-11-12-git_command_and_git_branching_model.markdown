@@ -6,7 +6,7 @@ comments: true
 categories: git
 ---
 
-![git](http://jonyfang.github.io/images/git_flow/git.png)
+![git](http://7xob7d.com1.z0.glb.clouddn.com/git.png)
 
 用 git 有一段时间了，之前没有详细地了解 git flow，导致协作过程中或多或少出现了一些头疼问题。最近静下心来理了下 git flow 的整个流程，再回头看开朗了不少，总结到这里。介绍的是一些常用的 git 基础命令和 git flow，当然也很重要的，过程中自己在 Github 上建了一个模拟的 [Demo](https://github.com/JonyFang/GitTestDemo) 用来熟悉 git flow。其实从理解到动手完成还是有点距离的，笨人有笨法嘛。如有不准确的地方欢迎指正。: )
 {:.info}
@@ -103,7 +103,7 @@ categories: git
 
 #Git Flow 梳理
 
-<span class='caption-wrapper'><img class='caption' src='http://jonyfang.github.io/images/git_flow/git_flow.png' width='575' height='' title='git flow 图示'><span class='caption-text'>git flow 完整图示</span></span> 
+<span class='caption-wrapper'><img class='caption' src='http://7xob7d.com1.z0.glb.clouddn.com/git_flow.png' width='575' height='' title='git flow 图示'><span class='caption-text'>git flow 完整图示</span></span> 
 
 Git 开发模式本质上是一套流程，团队每个成员遵守这套流程以确保完成可控的软件开发过程。[原文参考](http://nvie.com/posts/a-successful-git-branching-model/)
 
@@ -154,7 +154,7 @@ Git 开发模式本质上是一套流程，团队每个成员遵守这套流程�
 
 ###2.1.Feature branches（功能分支）
 
-<span class='caption-wrapper'><img class='caption' src='http://jonyfang.github.io/images/git_flow/feature_branches.png' width='133' height='' title='feature_branches'><span class='caption-text'>feature_branches</span></span> 
+<span class='caption-wrapper'><img class='caption' src='http://7xob7d.com1.z0.glb.clouddn.com/feature_branches.png' width='133' height='' title='feature_branches'><span class='caption-text'>feature_branches</span></span> 
 
 
 **应用场景：**
@@ -193,7 +193,7 @@ Tips：这里很多地方说用 **feature-＊** 的方式命名，因为公司�
 	
 "- -no-ff" 的作用是创建一个新的 "commit" 对象用于当前合并操作。这样既可以避免丢失该功能分支的历史存在信息，又可以集中该功能分支所有历史提交。并且如果想回退版本也会比较方便。
 
-<span class='caption-wrapper'><img class='caption' src='http://jonyfang.github.io/images/git_flow/git_merge_noff.png' width='478' height='' title='git merge --no-ff 图示'><span class='caption-text'>git merge - -no-ff 图示</span></span> 
+<span class='caption-wrapper'><img class='caption' src='http://7xob7d.com1.z0.glb.clouddn.com/git_merge_noff.png' width='478' height='' title='git merge --no-ff 图示'><span class='caption-text'>git merge - -no-ff 图示</span></span> 
 
 ####(3).移除本地和远程仓库的 **feature/test** 分支
 
@@ -262,7 +262,7 @@ do something in `release-1.1` branch
 
 ###2.3.Hotfix branches（热修复分支）
 
-<span class='caption-wrapper'><img class='caption' src='http://jonyfang.github.io/images/git_flow/hotfixes.png' width='316' height='' title='Hotfix branches 图示'><span class='caption-text'>Hotfix branches 图示</span></span> 
+<span class='caption-wrapper'><img class='caption' src='http://7xob7d.com1.z0.glb.clouddn.com/hotfixes.png' width='316' height='' title='Hotfix branches 图示'><span class='caption-text'>Hotfix branches 图示</span></span> 
 
 **应用场景：**
 

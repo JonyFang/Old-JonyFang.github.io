@@ -6,7 +6,7 @@ comments: true
 categories: cocoapods
 ---
 
-![git](http://jonyfang.github.io/images/cocoapods/cocoapods.png)
+![git](http://7xob7d.com1.z0.glb.clouddn.com/cocoapods.png)
 
 升级 OS X El Capitan 后，Time Machine 恢复下，随后因为遇到 octopress 无法更新博客问题，一番折腾 [octopress 适配了 OS X El Capitan](http://www.jianshu.com/p/ce5eff554279)，然而事情总没有那么简单，又丢过来一个问题。
 
