@@ -58,7 +58,6 @@ spawn/Users/user/git/octopress/Rakefile:85:in block inTasks:TOP=> preview
 
 {% codeblock lang:ruby %}
  $ curl -L https://get.rvm.io | bash -s stable --ruby
- $ rm -rf /usr/local/.git
 {% endcodeblock %}
 
 ###3. 安装 Ruby 2.2.3
