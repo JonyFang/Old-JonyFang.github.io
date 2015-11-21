@@ -11,6 +11,8 @@ categories: git
 用 git 有一段时间了，之前没有详细地了解 git flow，导致协作过程中或多或少出现了一些头疼问题。最近静下心来理了下 git flow 的整个流程，再回头看开朗了不少，总结到这里。介绍的是一些常用的 git 基础命令和 git flow，当然也很重要的，过程中自己在 Github 上建了一个模拟的 [Demo](https://github.com/JonyFang/GitTestDemo) 用来熟悉 git flow。其实从理解到动手完成还是有点距离的，笨人有笨法嘛。如有不准确的地方欢迎指正。: )
 {:.info}
 
+<!-- more -->
+
 * list element with functor item
 {:toc}
 
@@ -45,8 +47,6 @@ categories: git
  #新开 develop 分支，并切换到此分支
  $ git checkout -b develop
 {% endcodeblock %}
-
-<!-- more -->
 
 ###4. 查看分支列表
 

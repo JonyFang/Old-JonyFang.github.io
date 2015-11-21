@@ -32,6 +32,8 @@ compass/Users/user/git/octopress/Rakefile:85:in
 spawn/Users/user/git/octopress/Rakefile:85:in block inTasks:TOP=> preview
 {% endcodeblock %}
 
+<!-- more -->
+
 在没有升级 OS X EI Capitan 之前一切如常，首先想到是不是 Ruby 的问题
 
 {% codeblock lang:ruby %}
@@ -46,7 +48,6 @@ spawn/Users/user/git/octopress/Rakefile:85:in block inTasks:TOP=> preview
 
 ##2、解决办法
 更新 Ruby 可以通过 `rbenv` 或 `RVM`，因为我之前安装是通过 `RVM` 的方式，这里自己也是通过 `RVM` 的方式解决的。（附 Google 看到的：[rbenv 更新 Ruby 方法](https://gorails.com/setup/osx/10.11-el-capitan)）
-<!-- more -->
 
 ###1. 清理 git 缓存
 

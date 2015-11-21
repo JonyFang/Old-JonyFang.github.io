@@ -6,13 +6,14 @@ comments: true
 categories: Octopress
 ---
 
-一直以来想有个属于自己的博客空间，或许是出于一种归属感吧。就这样知道了 WordPress、Jekyll、Hexo 和 Octopress。一番对比后选择了 Octopress，相信追随大神的脚步应该不会错。Octopress 接触有一个多星期了，幸运的是经过一番折腾算是弄出点了模样。这里总结下`基于 Octopress 及 Github 搭建博客`的过程及自己`中间遇到的一些问题的解决办法`。技术上不一定完全精确，若有大神围观望指正：)
+一直以来想有个属于自己的博客空间，或许是出于一种归属感吧。就这样知道了 WordPress、Jekyll、Hexo 和 Octopress。一番对比后选择了 Octopress，相信追随大神的脚步应该不会错。Octopress 接触有一个多星期了，幸运的是经过一番折腾算是弄出点了模样。这里总结下 **`基于 Octopress 及 Github 搭建博客`** 的过程及自己 **`中间遇到的一些问题的解决办法`**。技术上不一定完全精确，若有大神围观望指正：)
 <br><br>
 使用的是 Mac OS X 系统，不一定适用于 Windows 的童鞋。（勿拍砖...）
 <br><br>
 这是最终的实现效果：<a href="http://jonyfang.github.io/" target="_blank"> I'm Jony</a>
 {:.info}
 
+<!-- more -->
 
 * list element with functor item
 {:toc}
@@ -32,7 +33,6 @@ categories: Octopress
 ### 2.1. 安装 Git
 
 前往 Git 官网 [点击这里](http://git-scm.com/) ，按下图提示下载安装（一般 Mac OS X自带 Git 环境，终端执行 git -v 可查看 Git 版本）。
-<!-- more -->
 
 ![git_downloads](http://jonyfang.github.io/images/octopress/git_downloads.png)
 

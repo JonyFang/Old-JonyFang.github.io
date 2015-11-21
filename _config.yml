@@ -19,7 +19,7 @@ date_format: "ordinal"
 subscribe_rss: /atom.xml
 subscribe_email:
 # RSS feeds can list your email address if you like
-email: ahchunfang@gmail.com
+email: jony.chunfang@gmail.com
 
 # ----------------------- #
 #    Jekyll & Plugins     #
