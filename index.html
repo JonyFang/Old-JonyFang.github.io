@@ -110,72 +110,6 @@
 
 <p class="info">用 git 有一段时间了，之前没有详细地了解 git flow，导致协作过程中或多或少出现了一些头疼问题。最近静下心来理了下 git flow 的整个流程，再回头看开朗了不少，总结到这里。介绍的是一些常用的 git 基础命令和 git flow，当然也很重要的，过程中自己在 Github 上建了一个模拟的 <a href="https://github.com/JonyFang/GitTestDemo">Demo</a> 用来熟悉 git flow。其实从理解到动手完成还是有点距离的，笨人有笨法嘛。如有不准确的地方欢迎指正。: )</p>
 
-<ul id="markdown-toc">
-  <li><a href="#git-" id="markdown-toc-git-">Git 常用命令</a>    <ul>
-      <li><a href="#section" id="markdown-toc-section">1. 新开分支</a></li>
-      <li><a href="#section-1" id="markdown-toc-section-1">2. 切换到另一个分支</a></li>
-      <li><a href="#section-2" id="markdown-toc-section-2">3. 新开分支并切换到新分支</a></li>
-      <li><a href="#section-3" id="markdown-toc-section-3">4. 查看分支列表</a></li>
-      <li><a href="#section-4" id="markdown-toc-section-4">5. 查看远程分支列表</a></li>
-      <li><a href="#section-5" id="markdown-toc-section-5">6. 向远程仓库提交本地新开的分支</a></li>
-      <li><a href="#section-6" id="markdown-toc-section-6">7. 删除远程分支</a></li>
-      <li><a href="#section-7" id="markdown-toc-section-7">8. 删除本地分支</a></li>
-      <li><a href="#section-8" id="markdown-toc-section-8">9. 更新分支列表信息</a></li>
-    </ul>
-  </li>
-  <li><a href="#git-flow-" id="markdown-toc-git-flow-">Git Flow 梳理</a>    <ul>
-      <li><a href="#section-9" id="markdown-toc-section-9">1.主要分支</a></li>
-      <li><a href="#section-10" id="markdown-toc-section-10">2.辅助分支</a>        <ul>
-          <li><a href="#feature-branches" id="markdown-toc-feature-branches">2.1.Feature branches（功能分支）</a></li>
-          <li><a href="#release-branches" id="markdown-toc-release-branches">2.2.Release branches（预发布分支）</a></li>
-          <li><a href="#hotfix-branches" id="markdown-toc-hotfix-branches">2.3.Hotfix branches（热修复分支）</a></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li><a href="#section-11" id="markdown-toc-section-11">总结</a></li>
-</ul>
-
-<h1 id="git-">Git 常用命令</h1>
-
-<p>这里列出了一些比较常用的 git 命令，每个命令介绍后面都带一个简单例子～</p>
-
-<h3 id="section">1. 新开分支</h3>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">branch</span> <span class="err">新分支名</span>
-</span><span class="line">	
-</span><span class="line"> <span class="c1">#新建分支 develop</span>
-</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">branch</span> <span class="n">develop</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h3 id="section-1">2. 切换到另一个分支</h3>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="err">分支名</span>
-</span><span class="line">
-</span><span class="line"> <span class="c1">#切换到 develop 分支</span>
-</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="n">develop</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h3 id="section-2">3. 新开分支并切换到新分支</h3>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="err">新分支名</span>
-</span><span class="line">
-</span><span class="line"> <span class="c1">#新开 develop 分支，并切换到此分支</span>
-</span><span class="line"> <span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">develop</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
 </div>
   
   
@@ -305,22 +239,6 @@
 </span><span class="line"><span class="n">spawn</span><span class="o">/</span><span class="no">Users</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">git</span><span class="o">/</span><span class="n">octopress</span><span class="o">/</span><span class="ss">Rakefile</span><span class="p">:</span><span class="mi">85</span><span class="ss">:in</span> <span class="n">block</span> <span class="ss">inTasks</span><span class="p">:</span><span class="no">TOP</span><span class="o">=&gt;</span> <span class="n">preview</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>在没有升级 OS X EI Capitan 之前一切如常，首先想到是不是 Ruby 的问题</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">ruby</span> <span class="o">-</span><span class="n">v</span>
-</span><span class="line">
-</span><span class="line"> <span class="c1">#输出</span>
-</span><span class="line"> <span class="n">ruby</span> <span class="mi">2</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="n">p645</span> <span class="p">(</span><span class="mi">2015</span><span class="o">-</span><span class="mo">04</span><span class="o">-</span><span class="mi">13</span> <span class="n">revision</span> <span class="mi">50299</span><span class="p">)</span> <span class="o">[</span><span class="n">universal</span><span class="o">.</span><span class="n">x86_64</span><span class="o">-</span><span class="n">darwin15</span><span class="o">]</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>和以前一样还是 2.0.0 版本，到官网查看最新版本是 2.2.3，多次尝试更新 <code>ruby</code> 失败。</p>
-
-<h2 id="section-1">2、解决办法</h2>
-<p>更新 Ruby 可以通过 <code>rbenv</code> 或 <code>RVM</code>，因为我之前安装是通过 <code>RVM</code> 的方式，这里自己也是通过 <code>RVM</code> 的方式解决的。（附 Google 看到的：<a href="https://gorails.com/setup/osx/10.11-el-capitan">rbenv 更新 Ruby 方法</a>）
 </div>
   
   
@@ -378,38 +296,6 @@
 
 <p>废话少说，开工～</p>
 
-<h2 id="octopress--github-pages">2. 将 Octopress 部署到 Github Pages</h2>
-
-<p>Github 大家应该都有了解过，也是我很喜欢的平台之一，功能真心强大并且可免费使用，这里我们拿来托管我们的博客。</p>
-
-<h3 id="github-repository">2.1. 新建 Github repository</h3>
-
-<p>注册 Github 账号，新建 <a href="https://github.com/new">Github repository</a>。<code>项目名称</code>（Repository name）命名格式为 <code>username.github.io</code> ，<code>username</code> 是你的 <code>Github 用户名</code>（或 organization name，这里和后面我们先不讨论 origanization）。例如我的用户名是 JonyFang，所以输入 JonyFang.github.io 即可。点击 <code>Create repository</code> 创建。</p>
-
-<p class="info">创建完后不要添加任何内容，另外自己过程中产生了两个疑问
-<br />
-1.为什么用 github.io 而不是 github.com？
-<br />
-2.为什么是 Repository name 一定要按照 username.github.io 填写？</p>
-
-<p>第一个问题，<a href="https://github.com/blog/1452-new-github-pages-domain-github-io#security-vulnerability">这里</a>解释了为什么把 <code>github.com</code> 改为了 <code>github.io</code>，简而言之是为了安全。</p>
-
-<p>第二个问题，和 Github 内部的结构有关，其次后面会通过 URL 截取填写的 <code>username.github.io</code> 作为博客域名。这样填写格式与 Github 内部结构的具体联系还需要再研究下。若有大神围观，望指教下：）</p>
-
-<h3 id="github-pages">2.2. 配置 Github Pages</h3>
-
-<p>终端执行如下命令：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class="ruby"><span class="line">  <span class="err">$</span> <span class="n">cd</span> <span class="n">octopress</span>
-</span><span class="line">  <span class="err">$</span> <span class="n">rake</span> <span class="n">setup_github_pages</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>该命令会要求我们输入 Github 仓库的 URL 。复制粘贴下我们新建仓库的 <code>SSH</code> 或 <code>HTTPS</code> URL 即可。
-（例如：git@github.com:username/username.github.io.git）</p>
-
-<p>那么这里 rake setup_github_pages 做了什么呢？
 </div>
   
   
@@ -445,36 +331,12 @@
   </header>
 
 
-  <div class="entry-content"><p class="info">一直以来想有个属于自己的博客空间，或许是出于一种归属感吧。就这样知道了 WordPress、Jekyll、Hexo 和 Octopress。一番对比后选择了 Octopress，相信追随大神的脚步应该不会错。Octopress 接触有一个多星期了，幸运的是经过一番折腾算是弄出点了模样。这里总结下<code>基于 Octopress 及 Github 搭建博客</code>的过程及自己<code>中间遇到的一些问题的解决办法</code>。技术上不一定完全精确，若有大神围观望指正：)
+  <div class="entry-content"><p class="info">一直以来想有个属于自己的博客空间，或许是出于一种归属感吧。就这样知道了 WordPress、Jekyll、Hexo 和 Octopress。一番对比后选择了 Octopress，相信追随大神的脚步应该不会错。Octopress 接触有一个多星期了，幸运的是经过一番折腾算是弄出点了模样。这里总结下 <strong><code>基于 Octopress 及 Github 搭建博客</code></strong> 的过程及自己 <strong><code>中间遇到的一些问题的解决办法</code></strong>。技术上不一定完全精确，若有大神围观望指正：)
 <br /><br />
 使用的是 Mac OS X 系统，不一定适用于 Windows 的童鞋。（勿拍砖…）
 <br /><br />
 这是最终的实现效果：<a href="http://jonyfang.github.io/" target="_blank"> I’m Jony</a></p>
 
-<ul id="markdown-toc">
-  <li><a href="#octopress--jekyll--github-pages-" id="markdown-toc-octopress--jekyll--github-pages-">1. Octopress 与 Jekyll &amp; Github Pages 的关系</a></li>
-  <li><a href="#section" id="markdown-toc-section">2. 准备工作</a>    <ul>
-      <li><a href="#git" id="markdown-toc-git">2.1. 安装 Git</a></li>
-      <li><a href="#ruby" id="markdown-toc-ruby">2.2. 安装 Ruby</a></li>
-    </ul>
-  </li>
-  <li><a href="#octopress" id="markdown-toc-octopress">3. 本地安装 Octopress</a></li>
-  <li><a href="#section-1" id="markdown-toc-section-1">4. 预览效果</a></li>
-</ul>
-
-<h2 id="octopress--jekyll--github-pages-">1. Octopress 与 Jekyll &amp; Github Pages 的关系</h2>
-
-<p><code>Octopress</code> 是基于 <code>Jekyll</code> 的静态博客框架。</p>
-
-<p><code>GitHub Pages</code> 这里用于显示托管在 <code>GitHub</code> 上的静态网页，是 GitHub 提供的一项服务。</p>
-
-<p>总的来说也就是我们使用基于 <code>Jekyll</code> 的 <code>Octopress</code> 生成本地的静态网站，然后将静态的网站托管到 <code>Github</code> 为我们提供的 <code>Github Pages</code> 服务上。最后访问<code>博客地址</code>就可以显示我们的个人博客网站了。</p>
-
-<h2 id="section">2. 准备工作</h2>
-
-<h3 id="git">2.1. 安装 Git</h3>
-
-<p>前往 Git 官网 <a href="http://git-scm.com/">点击这里</a> ，按下图提示下载安装（一般 Mac OS X自带 Git 环境，终端执行 git -v 可查看 Git 版本）。
 </div>
   
   

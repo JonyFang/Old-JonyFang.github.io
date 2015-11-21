@@ -125,6 +125,8 @@
 
 <p>废话少说，开工～</p>
 
+<!-- more -->
+
 <h2 id="octopress--github-pages">2. 将 Octopress 部署到 Github Pages</h2>
 
 <p>Github 大家应该都有了解过，也是我很喜欢的平台之一，功能真心强大并且可免费使用，这里我们拿来托管我们的博客。</p>
@@ -156,8 +158,7 @@
 <p>该命令会要求我们输入 Github 仓库的 URL 。复制粘贴下我们新建仓库的 <code>SSH</code> 或 <code>HTTPS</code> URL 即可。
 （例如：git@github.com:username/username.github.io.git）</p>
 
-<p>那么这里 rake setup_github_pages 做了什么呢？
-<!-- more --></p>
+<p>那么这里 rake setup_github_pages 做了什么呢？</p>
 
 <p>用户（users）的 Github Pages 使用 <code>master</code> 分支作为 <code>Web 服务</code>（web server）的公开目录，为我们的 <code>Pages url</code> （http://username.github.io）提供内容文件。因此，我们会有这样的需求，<code>source</code> 分支用来做与<code>博客源码</code>相关的事（存放全部博客源码），<code>master</code> 分支上 commit 生成的博客内容<code>供 Web 访问</code>。而 Octopress 帮我们把这件事给搞定了，通过这行 code（好 NB～）。</p>
 

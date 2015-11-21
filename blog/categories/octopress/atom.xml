@@ -4,7 +4,7 @@
   <title><![CDATA[Categorie: Octopress | I'm Jony]]></title>
   <link href="http://jonyfang.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://jonyfang.github.io/"/>
-  <updated>2015-11-19T11:17:13+08:00</updated>
+  <updated>2015-11-21T21:11:55+08:00</updated>
   <id>http://jonyfang.github.io/</id>
   <author>
     <name><![CDATA[Jony Fang]]></name>
@@ -56,6 +56,8 @@
 </span><span class='line'><span class="sr">&lt;p&gt;spawn/</span><span class="no">Users</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">git</span><span class="o">/</span><span class="n">octopress</span><span class="o">/</span><span class="ss">Rakefile</span><span class="p">:</span><span class="mi">85</span><span class="ss">:in</span> <span class="n">block</span> <span class="ss">inTasks</span><span class="p">:</span><span class="no">TOP</span><span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">preview</span>
 </span></code></pre></td></tr></table></div></figure></p>
 
+<!-- more -->
+
 <p>在没有升级 OS X EI Capitan 之前一切如常，首先想到是不是 Ruby 的问题</p>
 
 <p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -71,8 +73,7 @@
 <p>和以前一样还是 2.0.0 版本，到官网查看最新版本是 2.2.3，多次尝试更新 <code>ruby</code> 失败。</p>
 
 <h2 id="section-1">2、解决办法</h2>
-<p>更新 Ruby 可以通过 <code>rbenv</code> 或 <code>RVM</code>，因为我之前安装是通过 <code>RVM</code> 的方式，这里自己也是通过 <code>RVM</code> 的方式解决的。（附 Google 看到的：<a href="https://gorails.com/setup/osx/10.11-el-capitan">rbenv 更新 Ruby 方法</a>）
-<!-- more --></p>
+<p>更新 Ruby 可以通过 <code>rbenv</code> 或 <code>RVM</code>，因为我之前安装是通过 <code>RVM</code> 的方式，这里自己也是通过 <code>RVM</code> 的方式解决的。（附 Google 看到的：<a href="https://gorails.com/setup/osx/10.11-el-capitan">rbenv 更新 Ruby 方法</a>）</p>
 
 <h3 id="git-">1. 清理 git 缓存</h3>
 
@@ -179,6 +180,8 @@
 
 <p>废话少说，开工～</p>
 
+<!-- more -->
+
 <h2 id="octopress--github-pages">2. 将 Octopress 部署到 Github Pages</h2>
 
 <p>Github 大家应该都有了解过，也是我很喜欢的平台之一，功能真心强大并且可免费使用，这里我们拿来托管我们的博客。</p>
@@ -210,8 +213,7 @@
 <p>该命令会要求我们输入 Github 仓库的 URL 。复制粘贴下我们新建仓库的 <code>SSH</code> 或 <code>HTTPS</code> URL 即可。
 （例如：git@github.com:username/username.github.io.git）</p>
 
-<p>那么这里 rake setup_github_pages 做了什么呢？
-<!-- more --></p>
+<p>那么这里 rake setup_github_pages 做了什么呢？</p>
 
 <p>用户（users）的 Github Pages 使用 <code>master</code> 分支作为 <code>Web 服务</code>（web server）的公开目录，为我们的 <code>Pages url</code> （http://username.github.io）提供内容文件。因此，我们会有这样的需求，<code>source</code> 分支用来做与<code>博客源码</code>相关的事（存放全部博客源码），<code>master</code> 分支上 commit 生成的博客内容<code>供 Web 访问</code>。而 Octopress 帮我们把这件事给搞定了，通过这行 code（好 NB～）。</p>
 
@@ -565,11 +567,13 @@
     <link href="http://jonyfang.github.io/blog/2015/10/13/starting_blog_with_octopress_1/"/>
     <updated>2015-10-13T13:13:00+08:00</updated>
     <id>http://jonyfang.github.io/blog/2015/10/13/starting_blog_with_octopress_1</id>
-    <content type="html"><![CDATA[<p class="info">一直以来想有个属于自己的博客空间，或许是出于一种归属感吧。就这样知道了 WordPress、Jekyll、Hexo 和 Octopress。一番对比后选择了 Octopress，相信追随大神的脚步应该不会错。Octopress 接触有一个多星期了，幸运的是经过一番折腾算是弄出点了模样。这里总结下<code>基于 Octopress 及 Github 搭建博客</code>的过程及自己<code>中间遇到的一些问题的解决办法</code>。技术上不一定完全精确，若有大神围观望指正：)
+    <content type="html"><![CDATA[<p class="info">一直以来想有个属于自己的博客空间，或许是出于一种归属感吧。就这样知道了 WordPress、Jekyll、Hexo 和 Octopress。一番对比后选择了 Octopress，相信追随大神的脚步应该不会错。Octopress 接触有一个多星期了，幸运的是经过一番折腾算是弄出点了模样。这里总结下 <strong><code>基于 Octopress 及 Github 搭建博客</code></strong> 的过程及自己 <strong><code>中间遇到的一些问题的解决办法</code></strong>。技术上不一定完全精确，若有大神围观望指正：)
 <br /><br />
 使用的是 Mac OS X 系统，不一定适用于 Windows 的童鞋。（勿拍砖…）
 <br /><br />
 这是最终的实现效果：<a href="http://jonyfang.github.io/" target="_blank"> I’m Jony</a></p>
+
+<!-- more -->
 
 <ul id="markdown-toc">
   <li><a href="#octopress--jekyll--github-pages-" id="markdown-toc-octopress--jekyll--github-pages-">1. Octopress 与 Jekyll &amp; Github Pages 的关系</a></li>
@@ -594,8 +598,7 @@
 
 <h3 id="git">2.1. 安装 Git</h3>
 
-<p>前往 Git 官网 <a href="http://git-scm.com/">点击这里</a> ，按下图提示下载安装（一般 Mac OS X自带 Git 环境，终端执行 git -v 可查看 Git 版本）。
-<!-- more --></p>
+<p>前往 Git 官网 <a href="http://git-scm.com/">点击这里</a> ，按下图提示下载安装（一般 Mac OS X自带 Git 环境，终端执行 git -v 可查看 Git 版本）。</p>
 
 <p><img src="http://jonyfang.github.io/images/octopress/git_downloads.png" alt="git_downloads" /></p>
 
