@@ -9,8 +9,8 @@
   <meta name="author" content="Jony Fang">
 
   
-  <meta name="description" content="1、前言 2、解决办法 1. 清理 git 缓存 2. 安装 RVM 3. 安装 Ruby 2.2.3 4. 安装 Octopress 依赖库 1、前言
-这几天装上 OS X El Capitan ，Time Machine 恢复后测试 Octopress 遇到无法使用问题， &hellip;">
+  <meta name="description" content="1、前言 2、解决办法 2.1. 安装 RVM 2.2. 安装 Ruby 2.2.3 2.3. 安装 Octopress 依赖库 1、前言
+这几天装上 OS X El Capitan ，Time Machine 恢复后测试 Octopress 遇到无法使用问题，这里总结下问题的解决过程。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -107,10 +107,9 @@
 <div class="entry-content"><ul id="markdown-toc">
   <li><a href="#section" id="markdown-toc-section">1、前言</a></li>
   <li><a href="#section-1" id="markdown-toc-section-1">2、解决办法</a>    <ul>
-      <li><a href="#git-" id="markdown-toc-git-">1. 清理 git 缓存</a></li>
-      <li><a href="#rvm" id="markdown-toc-rvm">2. 安装 RVM</a></li>
-      <li><a href="#ruby-223" id="markdown-toc-ruby-223">3. 安装 Ruby 2.2.3</a></li>
-      <li><a href="#octopress-" id="markdown-toc-octopress-">4. 安装 Octopress 依赖库</a></li>
+      <li><a href="#rvm" id="markdown-toc-rvm">2.1. 安装 RVM</a></li>
+      <li><a href="#ruby-223" id="markdown-toc-ruby-223">2.2. 安装 Ruby 2.2.3</a></li>
+      <li><a href="#octopress-" id="markdown-toc-octopress-">2.3. 安装 Octopress 依赖库</a></li>
     </ul>
   </li>
 </ul>
@@ -161,19 +160,15 @@
 <h2 id="section-1">2、解决办法</h2>
 <p>更新 Ruby 可以通过 <code>rbenv</code> 或 <code>RVM</code>，因为我之前安装是通过 <code>RVM</code> 的方式，这里自己也是通过 <code>RVM</code> 的方式解决的。（附 Google 看到的：<a href="https://gorails.com/setup/osx/10.11-el-capitan">rbenv 更新 Ruby 方法</a>）</p>
 
-<h3 id="git-">1. 清理 git 缓存</h3>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="sr">/usr/</span><span class="n">local</span><span class="o">/.</span><span class="n">git</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h3 id="rvm">2. 安装 RVM</h3>
+<h3 id="rvm">2.1. 安装 RVM</h3>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 </pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">curl</span> <span class="o">-</span><span class="n">L</span> <span class="ss">https</span><span class="p">:</span><span class="sr">//</span><span class="n">get</span><span class="o">.</span><span class="n">rvm</span><span class="o">.</span><span class="n">io</span> <span class="o">|</span> <span class="n">bash</span> <span class="o">-</span><span class="n">s</span> <span class="n">stable</span> <span class="o">--</span><span class="n">ruby</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<h3 id="ruby-223">3. 安装 Ruby 2.2.3</h3>
+<p class="addition">这里自己安装 <strong>RVM</strong> 过程中遇到安装冲突的情况，通过下面的命令清理缓存后恢复了。<code>$ rm -rf /usr/local/.git</code></p>
+
+<h3 id="ruby-223">2.2. 安装 Ruby 2.2.3</h3>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -193,7 +188,7 @@
 
 <p>啊哈，切换过来了，其实也很简单，到这里就修复了吗？其实还没有，如你所见还有第4步。</p>
 
-<h3 id="octopress-">4. 安装 Octopress 依赖库</h3>
+<h3 id="octopress-">2.3. 安装 Octopress 依赖库</h3>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
