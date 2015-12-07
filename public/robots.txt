@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: 
-
-Sitemap: http://jonyfang.com/sitemap.xml 

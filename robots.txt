@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://jonyfang.github.io/sitemap.xml 
+Sitemap: http://jonyfang.com/sitemap.xml 

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[I'm Jony]]></title>
-  <link href="http://jonyfang.github.io/atom.xml" rel="self"/>
-  <link href="http://jonyfang.github.io/"/>
-  <updated>2015-11-22T21:07:15+08:00</updated>
-  <id>http://jonyfang.github.io/</id>
+  <link href="http://jonyfang.com/atom.xml" rel="self"/>
+  <link href="http://jonyfang.com/"/>
+  <updated>2015-12-07T19:24:06+08:00</updated>
+  <id>http://jonyfang.com/</id>
   <author>
     <name><![CDATA[Jony Fang]]></name>
     <email><![CDATA[jony.chunfang@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Git 常用命令和 Git Flow 梳理]]></title>
-    <link href="http://jonyfang.github.io/blog/2015/11/12/git_command_and_git_branching_model/"/>
+    <link href="http://jonyfang.com/blog/2015/11/12/git_command_and_git_branching_model/"/>
     <updated>2015-11-12T00:30:00+08:00</updated>
-    <id>http://jonyfang.github.io/blog/2015/11/12/git_command_and_git_branching_model</id>
+    <id>http://jonyfang.com/blog/2015/11/12/git_command_and_git_branching_model</id>
     <content type="html"><![CDATA[<p><img src="http://7xob7d.com1.z0.glb.clouddn.com/git.png" alt="git" /></p>
 
 <p class="info">用 git 有一段时间了，之前没有详细地了解 git flow，导致协作过程中或多或少出现了一些头疼问题。最近静下心来理了下 git flow 的整个流程，再回头看开朗了不少，总结到这里。介绍的是一些常用的 git 基础命令和 git flow，当然也很重要的，过程中自己在 Github 上建了一个模拟的 <a href="https://github.com/JonyFang/GitTestDemo">Demo</a> 用来熟悉 git flow。其实从理解到动手完成还是有点距离的，笨人有笨法嘛。如有不准确的地方欢迎指正。: )</p>
@@ -426,9 +426,9 @@
   
   <entry>
     <title type="html"><![CDATA[Cocoapods 版本升级]]></title>
-    <link href="http://jonyfang.github.io/blog/2015/11/09/update_cocoapods/"/>
+    <link href="http://jonyfang.com/blog/2015/11/09/update_cocoapods/"/>
     <updated>2015-11-09T06:40:00+08:00</updated>
-    <id>http://jonyfang.github.io/blog/2015/11/09/update_cocoapods</id>
+    <id>http://jonyfang.com/blog/2015/11/09/update_cocoapods</id>
     <content type="html"><![CDATA[<p><img src="http://7xob7d.com1.z0.glb.clouddn.com/cocoapods.png" alt="git" /></p>
 
 <p>升级 OS X El Capitan 后，Time Machine 恢复下，随后因为遇到 octopress 无法更新博客问题，一番折腾 <a href="http://www.jianshu.com/p/ce5eff554279">octopress 适配了 OS X El Capitan</a>，然而事情总没有那么简单，又丢过来一个问题。</p>
@@ -509,9 +509,9 @@
   
   <entry>
     <title type="html"><![CDATA[Octopress 适配 OS X El Capitan]]></title>
-    <link href="http://jonyfang.github.io/blog/2015/11/08/octopress_adapt_to_elcapitan/"/>
+    <link href="http://jonyfang.com/blog/2015/11/08/octopress_adapt_to_elcapitan/"/>
     <updated>2015-11-08T16:30:00+08:00</updated>
-    <id>http://jonyfang.github.io/blog/2015/11/08/octopress_adapt_to_elcapitan</id>
+    <id>http://jonyfang.com/blog/2015/11/08/octopress_adapt_to_elcapitan</id>
     <content type="html"><![CDATA[<ul id="markdown-toc">
   <li><a href="#section" id="markdown-toc-section">1、前言</a></li>
   <li><a href="#section-1" id="markdown-toc-section-1">2、解决办法</a>    <ul>
@@ -644,9 +644,9 @@
   
   <entry>
     <title type="html"><![CDATA[基于 Octopress &amp; Github Pages 搭建博客（二）]]></title>
-    <link href="http://jonyfang.github.io/blog/2015/10/16/starting_blog_with_octopress_2/"/>
+    <link href="http://jonyfang.com/blog/2015/10/16/starting_blog_with_octopress_2/"/>
     <updated>2015-10-16T02:37:44+08:00</updated>
-    <id>http://jonyfang.github.io/blog/2015/10/16/starting_blog_with_octopress_2</id>
+    <id>http://jonyfang.com/blog/2015/10/16/starting_blog_with_octopress_2</id>
     <content type="html"><![CDATA[<ul id="markdown-toc">
   <li><a href="#section" id="markdown-toc-section">1. 前言</a></li>
   <li><a href="#octopress--github-pages" id="markdown-toc-octopress--github-pages">2. 将 Octopress 部署到 Github Pages</a>    <ul>
@@ -1053,9 +1053,9 @@
   
   <entry>
     <title type="html"><![CDATA[基于 Octopress & Github Pages 搭建博客（一）]]></title>
-    <link href="http://jonyfang.github.io/blog/2015/10/13/starting_blog_with_octopress_1/"/>
+    <link href="http://jonyfang.com/blog/2015/10/13/starting_blog_with_octopress_1/"/>
     <updated>2015-10-13T13:13:00+08:00</updated>
-    <id>http://jonyfang.github.io/blog/2015/10/13/starting_blog_with_octopress_1</id>
+    <id>http://jonyfang.com/blog/2015/10/13/starting_blog_with_octopress_1</id>
     <content type="html"><![CDATA[<p class="info">一直以来想有个属于自己的博客空间，或许是出于一种归属感吧。就这样知道了 WordPress、Jekyll、Hexo 和 Octopress。一番对比后选择了 Octopress，相信追随大神的脚步应该不会错。Octopress 接触有一个多星期了，幸运的是经过一番折腾算是弄出点了模样。这里总结下 <strong><code>基于 Octopress 及 Github 搭建博客</code></strong> 的过程及自己 <strong><code>中间遇到的一些问题的解决办法</code></strong>。技术上不一定完全精确，若有大神围观望指正：)
 <br /><br />
 使用的是 Mac OS X 系统，不一定适用于 Windows 的童鞋。（勿拍砖…）
