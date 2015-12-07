@@ -4,7 +4,7 @@
   <title><![CDATA[Categorie: Octopress | I'm Jony]]></title>
   <link href="http://jonyfang.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://jonyfang.com/"/>
-  <updated>2015-12-07T20:52:06+08:00</updated>
+  <updated>2015-12-07T23:17:47+08:00</updated>
   <id>http://jonyfang.com/</id>
   <author>
     <name><![CDATA[Jony Fang]]></name>
@@ -12,6 +12,49 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[从 Github 恢复 Octopress 到本地]]></title>
+    <link href="http://jonyfang.com/blog/2015/12/07/recover_your_local_octopress_repository/"/>
+    <updated>2015-12-07T20:08:00+08:00</updated>
+    <id>http://jonyfang.com/blog/2015/12/07/recover_your_local_octopress_repository</id>
+    <content type="html"><![CDATA[<p class="info">当遇到自己换到一台新的电脑，或本地的 octopress 环境出现了问题，我们都可以从 Github 恢复 Octopress 到本地，在了解了之前的部署操作后这里就很简单了的,进入正题吧。
+<br />
+(附部署操作：<a href="http://jonyfang.com/blog/2015/10/16/starting_blog_with_octopress_2/">基于 Octopress &amp; Github Pages 搭建博客（二）</a>)</p>
+<!-- more -->
+
+<p>Github 远程目录有两个分支，一个<strong><code>master</code></strong>，一个 <strong><code>source</code></strong>，首先把 <code>source</code> 分支 <code>clone</code> 下来:</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="err">$</span> <span class="n">git</span> <span class="nb">clone</span> <span class="o">-</span><span class="n">b</span> <span class="n">source</span> <span class="n">git</span><span class="vi">@github</span><span class="o">.</span><span class="n">com</span><span class="ss">:username</span><span class="o">/</span><span class="n">username</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">git</span> <span class="n">octopress</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p>进入 octopress 目录，安装 Octopress 所需要的依赖库（dependencies）：</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="err">$</span> <span class="n">cd</span> <span class="n">octopress</span>
+</span><span class='line'><span class="err">$</span> <span class="n">gem</span> <span class="n">install</span> <span class="n">bundler</span>
+</span><span class='line'><span class="err">$</span> <span class="n">bundle</span> <span class="n">install</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p>接着执行如下命令，提示后，输入 Github 仓库的 URL （例如：git@github.com:username/username.github.io.git）：</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="err">$</span> <span class="n">rake</span> <span class="n">setup_github_pages</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p>最后删除生成的 <code>_deploy</code>，克隆 <code>master</code> 分支到本地：</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="err">$</span> <span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="n">_deploy</span>
+</span><span class='line'><span class="err">$</span> <span class="n">git</span> <span class="nb">clone</span> <span class="n">git</span><span class="vi">@github</span><span class="o">.</span><span class="n">com</span><span class="ss">:username</span><span class="o">/</span><span class="n">username</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">git</span> <span class="n">_deploy</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Octopress 适配 OS X El Capitan]]></title>
