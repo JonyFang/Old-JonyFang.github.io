@@ -1,0 +1,10 @@
+<div class="highlight"><pre>  <span class="c1"># 查看 Rakefile，头部布局实现</span>
+  <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="err">‘</span><span class="n">w</span><span class="err">’</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">post</span><span class="o">|</span>
+  <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="err">“—”</span>
+  <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="err">“</span><span class="ss">layout</span><span class="p">:</span> <span class="n">post</span><span class="err">”</span>
+  <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="err">“</span><span class="ss">title</span><span class="p">:</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">title</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/&amp;amp;/</span><span class="p">,</span><span class="err">’</span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="err">’</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="err">”</span>
+  <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="err">“</span><span class="ss">date</span><span class="p">:</span> <span class="c1">#{Time.now.strftime(‘%Y-%m-%d %H:%M:%S %z’)}”</span>
+  <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="err">“</span><span class="ss">comments</span><span class="p">:</span> <span class="kp">true</span><span class="err">”</span>
+  <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="err">“</span><span class="ss">categories</span><span class="p">:</span> <span class="err">“</span>
+  <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="err">“—”</span>
+</pre></div>

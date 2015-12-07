@@ -1,0 +1,8 @@
+<div class="highlight"><pre>  <span class="c1"># octopress 下 Rakefile 查看</span>
+  
+  <span class="n">url</span> <span class="o">=</span> <span class="n">blog_url</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">project</span><span class="p">,</span> <span class="n">source_dir</span><span class="p">)</span>
+  <span class="n">jekyll_config</span> <span class="o">=</span> <span class="no">IO</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;_config.yml&#39;</span><span class="p">)</span>
+  <span class="n">jekyll_config</span><span class="o">.</span><span class="n">sub!</span><span class="p">(</span><span class="sr">/^url:.*$/</span><span class="p">,</span> <span class="s2">&quot;url: </span><span class="si">#{</span><span class="n">url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+  <span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;_config.yml&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span>
+  <span class="n">f</span><span class="o">.</span><span class="n">write</span> <span class="n">jekyll_config</span>
+</pre></div>

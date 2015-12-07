@@ -1,0 +1,9 @@
+<div class="highlight"><pre>  <span class="c1"># 查看 Rakefile </span>
+  <span class="n">cd</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">deploy_dir</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">do</span>
+  <span class="nb">system</span> <span class="s2">&quot;git init&quot;</span>
+  <span class="nb">system</span> <span class="s1">&#39;echo &quot;My Octopress Page is coming soon …&quot; &gt; index.html&#39;</span>
+  <span class="nb">system</span> <span class="s2">&quot;git add .&quot;</span>
+  <span class="nb">system</span> <span class="s2">&quot;git commit -m </span><span class="se">\&quot;</span><span class="s2">Octopress init</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
+  <span class="nb">system</span> <span class="s2">&quot;git branch -m gh-pages&quot;</span> <span class="k">unless</span> <span class="n">branch</span> <span class="o">==</span> <span class="s1">&#39;master&#39;</span>
+  <span class="nb">system</span> <span class="s2">&quot;git remote add origin </span><span class="si">#{</span><span class="n">repo_url</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>

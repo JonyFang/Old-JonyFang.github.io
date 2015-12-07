@@ -1,0 +1,8 @@
+<div class="highlight"><pre>  <span class="c1"># 查看 Rakefile</span>
+  <span class="nb">system</span> <span class="err">“</span><span class="n">git</span> <span class="n">add</span> <span class="o">-</span><span class="n">A</span><span class="err">”</span>
+  <span class="n">message</span> <span class="o">=</span> <span class="err">“</span><span class="no">Site</span> <span class="n">updated</span> <span class="n">at</span> <span class="c1">#{Time.now.utc}”</span>
+  <span class="nb">system</span> <span class="err">“</span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">message</span><span class="si">}</span><span class="s2">&quot;</span><span class="err">”</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+
+<span class="sr">&lt;p&gt;# 前面说过 deploy_branch  = “master”</span>
+<span class="sr">  Bundler.with_clean_env { system “git push origin </span><span class="si">#{</span><span class="n">deploy_branch</span><span class="si">}</span><span class="sr">” }</span>
+</pre></div>
