@@ -4,7 +4,7 @@
   <title><![CDATA[Categorie: 数据结构 | I'm Jony]]></title>
   <link href="http://jonyfang.com/blog/categories/shu-ju-jie-gou/atom.xml" rel="self"/>
   <link href="http://jonyfang.com/"/>
-  <updated>2015-12-26T00:54:57+08:00</updated>
+  <updated>2015-12-26T01:42:06+08:00</updated>
   <id>http://jonyfang.com/</id>
   <author>
     <name><![CDATA[Jony Fang]]></name>
@@ -18,7 +18,11 @@
     <link href="http://jonyfang.com/blog/2015/12/25/the_basic_conception_in_data_structure/"/>
     <updated>2015-12-25T22:01:00+08:00</updated>
     <id>http://jonyfang.com/blog/2015/12/25/the_basic_conception_in_data_structure</id>
-    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/566304-1dfbd22ed6015ab8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+    <content type="html"><![CDATA[<p><img src="http://7xob7d.com1.z0.glb.clouddn.com/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.jpg" alt="" /></p>
+
+<p class="info"><strong>首先会有个疑问，什么是数据结构呢？</strong>
+<br />
+数据结构（data structure），可以概括为是互相之间存在一种或多种特定关系的数据元素的集合。开篇配图来自网络…</p>
 
 <ul id="markdown-toc">
   <li><a href="#section" id="markdown-toc-section">一、数据结构起源</a></li>
@@ -42,10 +46,6 @@
   </li>
   <li><a href="#section-13" id="markdown-toc-section-13">五、总结</a></li>
 </ul>
-
-<p class="info"><strong>首先会有个疑问，什么是数据结构呢？</strong>
-<br />
-数据结构（data structure），可以概括为是互相之间存在一种或多种特定关系的数据元素的集合。开篇配图来自网络…</p>
 
 <!-- more -->
 
@@ -112,19 +112,19 @@
 
 <p>1). 集合结构：其中的数据元素除同属于一个集合外，之间没有其他关系；</p>
 
-<p><img src="http://upload-images.jianshu.io/upload_images/566304-fe367850028d80cd.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="集合结构" /></p>
+<p><img src="http://7xob7d.com1.z0.glb.clouddn.com/data_structure_01%E9%9B%86%E5%90%88%E7%BB%93%E6%9E%84.jpg" alt="集合结构" /></p>
 
 <p>2). 线性结构：其中的数据元素之间是一对一的关系；</p>
 
-<p><img src="http://upload-images.jianshu.io/upload_images/566304-0d40784f8ccfc4bd.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="线性结构" /></p>
+<p><img src="http://7xob7d.com1.z0.glb.clouddn.com/data_structure_01%E7%BA%BF%E5%9E%8B%E7%BB%93%E6%9E%84.jpg" alt="线性结构" /></p>
 
 <p>3). 树形结构：其中的数据元素之间存在一对多的层次关系；</p>
 
-<p><img src="http://upload-images.jianshu.io/upload_images/566304-e4b3d44da8092650.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="树形结构" /></p>
+<p><img src="http://7xob7d.com1.z0.glb.clouddn.com/data_structure_01%E6%A0%91%E5%BD%A2%E7%BB%93%E6%9E%84.jpg" alt="树形结构" /></p>
 
 <p>4). 图形结构：其中的数据元素之间存在多对多的关系。</p>
 
-<p><img src="http://upload-images.jianshu.io/upload_images/566304-cb6145cebfad9e77.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图形结构" /></p>
+<p><img src="http://7xob7d.com1.z0.glb.clouddn.com/data_structure_01%E5%9B%BE%E5%BD%A2%E7%BB%93%E6%9E%84.jpg" alt="图形结构" /></p>
 
 <h3 id="section-9">3.2、物理结构</h3>
 
@@ -138,13 +138,13 @@
 
 <p>顺序存储结构：把数据元素存放在地址连续的的存储单元里，其数据间的逻辑关系和物理关系一致；</p>
 
-<p><img src="http://upload-images.jianshu.io/upload_images/566304-ef950f8e80abce92.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="顺序存储结构" /></p>
+<p><img src="http://7xob7d.com1.z0.glb.clouddn.com/data_structure_01%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84.jpg" alt="顺序存储结构" /></p>
 
 <p>2).链式存储结构</p>
 
 <p>链式存储结构：把数据元素存放在任意的存储单元里，这组存储单元可以是连续的也可以是不连续的。数据元素的存储关系不反映其逻辑关系，用指针存放数据元素的地址，我们通过地址可以找到相关联数据元素的位置。</p>
 
-<p><img src="http://upload-images.jianshu.io/upload_images/566304-6cc32b0ff892949c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="链式存储结构" /></p>
+<p><img src="http://7xob7d.com1.z0.glb.clouddn.com/data_structure_01%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84.jpg" alt="链式存储结构" /></p>
 
 <ul>
   <li>两种物理结构对比来看，链式存储更为灵活</li>
@@ -192,9 +192,9 @@
 
 <p>直接上图吧，一图胜千言…</p>
 
-<p><img src="http://upload-images.jianshu.io/upload_images/566304-13e414a0153b344a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="数据结构层次" /></p>
+<p><img src="http://7xob7d.com1.z0.glb.clouddn.com/data_structure_01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%B1%82%E6%AC%A1.jpg" alt="数据结构层次" /></p>
 
-<p><img src="http://upload-images.jianshu.io/upload_images/566304-b280ee2693f02188.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="逻辑结构与物理结构" /></p>
+<p><img src="http://7xob7d.com1.z0.glb.clouddn.com/data_structure_01%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84%E4%B8%8E%E7%89%A9%E7%90%86%E7%BB%93%E6%9E%84.jpg" alt="逻辑结构与物理结构" /></p>
 
 <blockquote>
   <p><strong>本文参考：</strong>
