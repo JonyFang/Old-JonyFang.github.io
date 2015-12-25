@@ -7,17 +7,17 @@ categories: 数据结构
 ---
 
 
-![](http://upload-images.jianshu.io/upload_images/566304-1dfbd22ed6015ab8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-
-* list element with functor item
-{:toc}
+![](http://7xob7d.com1.z0.glb.clouddn.com/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.jpg)
 
 
 **首先会有个疑问，什么是数据结构呢？**
 <br>
 数据结构（data structure），可以概括为是互相之间存在一种或多种特定关系的数据元素的集合。开篇配图来自网络... 
 {:.info}
+
+
+* list element with functor item
+{:toc}
 
 
 <!-- more -->
@@ -76,19 +76,19 @@ categories: 数据结构
 
 1). 集合结构：其中的数据元素除同属于一个集合外，之间没有其他关系；
 
-![集合结构](http://upload-images.jianshu.io/upload_images/566304-fe367850028d80cd.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![集合结构](http://7xob7d.com1.z0.glb.clouddn.com/data_structure_01%E9%9B%86%E5%90%88%E7%BB%93%E6%9E%84.jpg)
 
 2). 线性结构：其中的数据元素之间是一对一的关系；
 
-![线性结构](http://upload-images.jianshu.io/upload_images/566304-0d40784f8ccfc4bd.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![线性结构](http://7xob7d.com1.z0.glb.clouddn.com/data_structure_01%E7%BA%BF%E5%9E%8B%E7%BB%93%E6%9E%84.jpg)
 
 3). 树形结构：其中的数据元素之间存在一对多的层次关系；
 
-![树形结构](http://upload-images.jianshu.io/upload_images/566304-e4b3d44da8092650.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![树形结构](http://7xob7d.com1.z0.glb.clouddn.com/data_structure_01%E6%A0%91%E5%BD%A2%E7%BB%93%E6%9E%84.jpg)
 
 4). 图形结构：其中的数据元素之间存在多对多的关系。
 
-![图形结构](http://upload-images.jianshu.io/upload_images/566304-cb6145cebfad9e77.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![图形结构](http://7xob7d.com1.z0.glb.clouddn.com/data_structure_01%E5%9B%BE%E5%BD%A2%E7%BB%93%E6%9E%84.jpg)
 
 ### 3.2、物理结构
 
@@ -100,13 +100,13 @@ categories: 数据结构
 
 顺序存储结构：把数据元素存放在地址连续的的存储单元里，其数据间的逻辑关系和物理关系一致；
 
-![顺序存储结构](http://upload-images.jianshu.io/upload_images/566304-ef950f8e80abce92.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![顺序存储结构](http://7xob7d.com1.z0.glb.clouddn.com/data_structure_01%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84.jpg)
 
 2).链式存储结构
 
 链式存储结构：把数据元素存放在任意的存储单元里，这组存储单元可以是连续的也可以是不连续的。数据元素的存储关系不反映其逻辑关系，用指针存放数据元素的地址，我们通过地址可以找到相关联数据元素的位置。
 
-![链式存储结构](http://upload-images.jianshu.io/upload_images/566304-6cc32b0ff892949c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![链式存储结构](http://7xob7d.com1.z0.glb.clouddn.com/data_structure_01%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84.jpg)
 
 - 两种物理结构对比来看，链式存储更为灵活
 
@@ -156,9 +156,9 @@ categories: 数据结构
 
 直接上图吧，一图胜千言...
 
-![数据结构层次](http://upload-images.jianshu.io/upload_images/566304-13e414a0153b344a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![数据结构层次](http://7xob7d.com1.z0.glb.clouddn.com/data_structure_01%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%B1%82%E6%AC%A1.jpg)
 
-![逻辑结构与物理结构](http://upload-images.jianshu.io/upload_images/566304-b280ee2693f02188.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![逻辑结构与物理结构](http://7xob7d.com1.z0.glb.clouddn.com/data_structure_01%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84%E4%B8%8E%E7%89%A9%E7%90%86%E7%BB%93%E6%9E%84.jpg)
 
 
 >**本文参考：**
