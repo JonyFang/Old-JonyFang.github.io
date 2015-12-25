@@ -4,7 +4,7 @@
   <title><![CDATA[Categorie: 数据结构 | I'm Jony]]></title>
   <link href="http://jonyfang.com/blog/categories/shu-ju-jie-gou/atom.xml" rel="self"/>
   <link href="http://jonyfang.com/"/>
-  <updated>2015-12-25T22:35:59+08:00</updated>
+  <updated>2015-12-25T22:47:13+08:00</updated>
   <id>http://jonyfang.com/</id>
   <author>
     <name><![CDATA[Jony Fang]]></name>
@@ -44,10 +44,8 @@
 </ul>
 
 <p class="info"><strong>首先会有个疑问，什么是数据结构呢？</strong>
-<br /><br />
-数据结构（data structure），可以概括为是互相之间存在一种或多种特定关系的数据元素的集合。
-<br /><br />
-开篇配图来自网络… 那开始吧 ：）</p>
+<br />
+数据结构（data structure），可以概括为是互相之间存在一种或多种特定关系的数据元素的集合。开篇配图来自网络…</p>
 
 <!-- more -->
 
@@ -198,11 +196,14 @@
 
 <p><img src="http://upload-images.jianshu.io/upload_images/566304-b280ee2693f02188.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="逻辑结构与物理结构" /></p>
 
-<p class="additon"><strong>本文参考：</strong>
+<blockquote>
+  <p><strong>本文参考：</strong>
 <br /><br />
 <strong><a href="http://book.douban.com/subject/6424904/">《大话数据结构》</a></strong>
 <br /><br />
 <strong><a href="https://zh.wikipedia.org/wiki/%E9%AB%98%E5%BE%B7%E7%BA%B3">Wikipedia - Donald E. Knuth</a></strong></p>
+</blockquote>
+
 ]]></content>
   </entry>
   
