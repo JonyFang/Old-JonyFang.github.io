@@ -7,11 +7,14 @@ categories: octopress
 ---
 
 
+这几天装上 OS X El Capitan ，Time Machine 恢复后测试 Octopress 遇到无法使用问题，这里总结下问题的解决过程。
+{:.info}
+
+
 * list element with functor item
 {:toc}
 
-##1、前言
-这几天装上 OS X El Capitan ，Time Machine 恢复后测试 Octopress 遇到无法使用问题，这里总结下问题的解决过程。
+<!-- more -->
 
 首先打开终端，运行：
 
@@ -32,8 +35,6 @@ compass/Users/user/git/octopress/Rakefile:85:in
 spawn/Users/user/git/octopress/Rakefile:85:in block inTasks:TOP=> preview
 {% endcodeblock %}
 
-<!-- more -->
-
 在没有升级 OS X EI Capitan 之前一切如常，首先想到是不是 Ruby 的问题
 
 {% codeblock lang:ruby %}
@@ -46,10 +47,10 @@ spawn/Users/user/git/octopress/Rakefile:85:in block inTasks:TOP=> preview
 和以前一样还是 2.0.0 版本，到官网查看最新版本是 2.2.3，多次尝试更新 `ruby` 失败。
 
 
-##2、解决办法
+## 一.解决办法
 更新 Ruby 可以通过 `rbenv` 或 `RVM`，因为我之前安装是通过 `RVM` 的方式，这里自己也是通过 `RVM` 的方式解决的。（附 Google 看到的：[rbenv 更新 Ruby 方法](https://gorails.com/setup/osx/10.11-el-capitan)）
 
-###2.1. 安装 RVM
+### 1.1. 安装 RVM
 
 {% codeblock lang:ruby %}
  $ curl -L https://get.rvm.io | bash -s stable --ruby
@@ -58,7 +59,7 @@ spawn/Users/user/git/octopress/Rakefile:85:in block inTasks:TOP=> preview
 这里自己安装 **RVM** 过程中遇到安装冲突的情况，通过下面的命令清理缓存后恢复了。`$ rm -rf /usr/local/.git`
 {:.addition}
 
-###2.2. 安装 Ruby 2.2.3
+### 1.2. 安装 Ruby 2.2.3
 
 {% codeblock lang:ruby %}
  $ rvm install 2.2.3
@@ -75,7 +76,7 @@ spawn/Users/user/git/octopress/Rakefile:85:in block inTasks:TOP=> preview
 
 啊哈，切换过来了，其实也很简单，到这里就修复了吗？其实还没有，如你所见还有第4步。
 
-###2.3. 安装 Octopress 依赖库
+### 1.3. 安装 Octopress 依赖库
 
 {% codeblock lang:ruby %}
  $ cd octopress

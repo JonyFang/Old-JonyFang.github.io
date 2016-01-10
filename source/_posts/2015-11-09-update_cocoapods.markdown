@@ -6,9 +6,11 @@ comments: true
 categories: cocoapods
 ---
 
-![git](http://7xob7d.com1.z0.glb.clouddn.com/cocoapods.png)
 
 升级 OS X El Capitan 后，Time Machine 恢复下，随后因为遇到 octopress 无法更新博客问题，一番折腾 [octopress 适配了 OS X El Capitan](http://www.jianshu.com/p/ce5eff554279)，然而事情总没有那么简单，又丢过来一个问题。
+{:.info}
+
+<!-- more -->
 
 * list element with functor item
 {:toc}
@@ -23,8 +25,6 @@ categories: cocoapods
 	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/rubygems/core_ext/kernel_gem.rb:47:in `gem'
 	from /usr/local/bin/pod:22:in `<main>'
 {% endcodeblock %}
-
-<!-- more -->
 
 查看 `Ruby` 版本：
 

@@ -5,23 +5,23 @@ date: 2015-10-16 02:37:44 +0800
 comments: true
 categories: octopress
 ---
+
+
+经过[上一篇](http://jonyfang.github.io/blog/2015/10/13/ji-yu-octopress-he-github-da-jian-bo-ke/)，我们在本地搭出了 Octopress 雏形，这一篇首先我们要将本地的 Octopress 博客部署到 Github Pages ，然后发布一篇博文。部署过程中分析了原理，可能会比较枯燥，但是能让我们更了解 Octopress，所以我依旧坚持写下来了。
+<br><br>
+废话少说，开工～
+{:.info}
+<!-- more -->
+
+
 * list element with functor item
 {:toc}
 
-
-## 1. 前言
-
-经过[上一篇](http://jonyfang.github.io/blog/2015/10/13/ji-yu-octopress-he-github-da-jian-bo-ke/)，我们在本地搭出了 Octopress 雏形，这一篇首先我们要将本地的 Octopress 博客部署到 Github Pages ，然后发布一篇博文。部署过程中分析了原理，可能会比较枯燥，但是能让我们更了解 Octopress，所以我依旧坚持写下来了。
-
-废话少说，开工～
-
-<!-- more -->
-
-## 2. 将 Octopress 部署到 Github Pages
+## 一. 将 Octopress 部署到 Github Pages
 
 Github 大家应该都有了解过，也是我很喜欢的平台之一，功能真心强大并且可免费使用，这里我们拿来托管我们的博客。
 
-### 2.1. 新建 Github repository
+### 1.1. 新建 Github repository
 
 注册 Github 账号，新建 [Github repository](https://github.com/new)。`项目名称`（Repository name）命名格式为 `username.github.io` ，`username` 是你的 `Github 用户名`（或 organization name，这里和后面我们先不讨论 origanization）。例如我的用户名是 JonyFang，所以输入 JonyFang.github.io 即可。点击 `Create repository` 创建。
 
@@ -37,7 +37,7 @@ Github 大家应该都有了解过，也是我很喜欢的平台之一，功能�
 
 第二个问题，和 Github 内部的结构有关，其次后面会通过 URL 截取填写的 `username.github.io` 作为博客域名。这样填写格式与 Github 内部结构的具体联系还需要再研究下。若有大神围观，望指教下：）
 
-### 2.2. 配置 Github Pages
+### 1.2. 配置 Github Pages
 
 终端执行如下命令：
 
@@ -178,7 +178,7 @@ Git clone 一个仓库时，会将 clone 下来的仓库命名为 origin，没�
 再回头来看 `rake setup_github_pages` ，是不是清晰多了呢？
 
 
-### 2.3. 生成并部署站点
+### 1.3. 生成并部署站点
 
 执行如下命令，（将 `octopress/_deploy` 下数据 push 到 `master` 分支）：
 
@@ -236,9 +236,9 @@ rake deploy：将站点部署到 `Github Pages`。由于 `_deploy` 目录所代�
 {% endcodeblock %}
 
 
-## 3. 发布博文过程
+## 二. 发布博文过程
 
-### 3.1. 新建一篇博文
+### 2.1. 新建一篇博文
 
 打开终端，输入：
 
@@ -283,7 +283,7 @@ rake deploy：将站点部署到 `Github Pages`。由于 `_deploy` 目录所代�
 
 在最后面的－－－下面就可以开始我们的正文啦～
 
-### 3.2. 预览新建的博文
+### 2.2. 预览新建的博文
 
 终端执行如下命令：
 
@@ -295,7 +295,7 @@ rake deploy：将站点部署到 `Github Pages`。由于 `_deploy` 目录所代�
 
 在浏览器中打开[http://localhost:4000](http://localhost:4000/),即可以预览我们刚 post 的博客效果。
 
-### 3.3. 发布新建的博文
+### 2.3. 发布新建的博文
 
 终端执行：
 

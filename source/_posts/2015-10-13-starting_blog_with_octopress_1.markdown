@@ -19,7 +19,7 @@ categories: Octopress
 {:toc}
 
 
-## 1. Octopress 与 Jekyll & Github Pages 的关系
+## 一. Octopress 与 Jekyll & Github Pages 的关系
 
 `Octopress` 是基于 `Jekyll` 的静态博客框架。
 
@@ -28,7 +28,7 @@ categories: Octopress
 总的来说也就是我们使用基于 `Jekyll` 的 `Octopress` 生成本地的静态网站，然后将静态的网站托管到 `Github` 为我们提供的 `Github Pages` 服务上。最后访问`博客地址`就可以显示我们的个人博客网站了。
 
 
-## 2. 准备工作
+## 二. 准备工作
 
 ### 2.1. 安装 Git
 
@@ -69,7 +69,7 @@ categories: Octopress
 
 呼，准备工作搞定！
 
-## 3. 本地安装 Octopress
+## 三. 本地安装 Octopress
 
 前面做了那么多准备，主角总算要上场了。
 
@@ -135,7 +135,7 @@ categories: Octopress
 {% endcodeblock %}
 
 
-## 4. 预览效果
+## 四. 预览效果
 
 好，经过上面的功夫，我们已经在本地搭建了一个简易版的 Octopress 博客。
 
