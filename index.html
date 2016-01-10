@@ -9,7 +9,7 @@
   <meta name="author" content="Jony Fang">
 
   
-  <meta name="description" content="首先会有个疑问，什么是数据结构呢？ 数据结构（data structure），可以概括为是互相之间存在一种或多种特定关系的数据元素的集合。开篇配图来自网络… 一、数据结构起源 二、基本概念和术语 2.1、数据 2.2、数据元素 2.3、数据项 2.4、数据对象 2.5、数据结构 三、 &hellip;">
+  <meta name="description" content="什么是线性表？ 线性表的两大存储结构是什么？ 各种存储结构是如何实现存取、插入删除等操作的？ 本篇主要解答了这几个问题，感兴趣的话一起来看看吧～ 一. 什么是线性表？ 二. 线性表的顺序存储结构 2.1、顺序存储需要什么？ 三. 顺序存储结构的插入与删除 3.1、获取元素 3.2、插入新元素 3. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -85,7 +85,147 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2015/12/25/the_basic_conception_in_data_structure/">数据结构浅析：数据结构基本概念</a></h1>
+      <h1 class="entry-title"><a href="/blog/2016/01/10/data_structure03.linear_list/">数据结构浅析（三）：线性表</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-01-10T20:30:00+08:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>8:30 pm</span></time>
+        
+           | <a href="/blog/2016/01/10/data_structure03.linear_list/#disqus_thread"
+             data-disqus-identifier="http://jonyfang.com/blog/2016/01/10/data_structure03.linear_list/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p class="info">什么是线性表？
+<br />
+线性表的两大存储结构是什么？
+<br />
+各种存储结构是如何实现存取、插入删除等操作的？
+<br />
+本篇主要解答了这几个问题，感兴趣的话一起来看看吧～</p>
+
+<ul id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">一. 什么是线性表？</a></li>
+  <li><a href="#section-1" id="markdown-toc-section-1">二. 线性表的顺序存储结构</a>    <ul>
+      <li><a href="#section-2" id="markdown-toc-section-2">2.1、顺序存储需要什么？</a></li>
+    </ul>
+  </li>
+  <li><a href="#section-3" id="markdown-toc-section-3">三. 顺序存储结构的插入与删除</a>    <ul>
+      <li><a href="#section-4" id="markdown-toc-section-4">3.1、获取元素</a></li>
+      <li><a href="#section-5" id="markdown-toc-section-5">3.2、插入新元素</a></li>
+      <li><a href="#section-6" id="markdown-toc-section-6">3.3、删除元素</a></li>
+    </ul>
+  </li>
+  <li><a href="#section-7" id="markdown-toc-section-7">四. 线性表的链式存储结构</a>    <ul>
+      <li><a href="#section-8" id="markdown-toc-section-8">4.1、头结点</a></li>
+      <li><a href="#section-9" id="markdown-toc-section-9">4.2、最后一个结点</a></li>
+    </ul>
+  </li>
+  <li><a href="#section-10" id="markdown-toc-section-10">五. 单链表</a>    <ul>
+      <li><a href="#section-11" id="markdown-toc-section-11">5.1、单链表的读取</a></li>
+      <li><a href="#section-12" id="markdown-toc-section-12">5.2、单链表的插入和删除</a></li>
+      <li><a href="#section-15" id="markdown-toc-section-15">5.3、单链表的整表创建</a></li>
+      <li><a href="#section-16" id="markdown-toc-section-16">5.4、单链表的整表删除</a></li>
+      <li><a href="#section-17" id="markdown-toc-section-17">5.5、单链表结构与顺序结构对比</a></li>
+    </ul>
+  </li>
+  <li><a href="#section-18" id="markdown-toc-section-18">六. 静态链表</a>    <ul>
+      <li><a href="#section-19" id="markdown-toc-section-19">6.1、什么是静态链表？</a></li>
+      <li><a href="#section-20" id="markdown-toc-section-20">6.2、静态链表的插入操作</a></li>
+      <li><a href="#section-21" id="markdown-toc-section-21">6.3、静态链表的删除操作</a></li>
+      <li><a href="#section-22" id="markdown-toc-section-22">6.4、静态链表优缺点</a></li>
+    </ul>
+  </li>
+  <li><a href="#section-23" id="markdown-toc-section-23">七. 循环链表</a></li>
+  <li><a href="#section-24" id="markdown-toc-section-24">八. 双向链表</a></li>
+</ul>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2016/01/10/data_structure03.linear_list/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2016/01/02/data_structure02.algorithm/">数据结构浅析（二）：算法</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-01-02T18:01:00+08:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2016</span></span> <span class='time'>6:01 pm</span></time>
+        
+           | <a href="/blog/2016/01/02/data_structure02.algorithm/#disqus_thread"
+             data-disqus-identifier="http://jonyfang.com/blog/2016/01/02/data_structure02.algorithm/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p class="info">我们常常会看到<a href="http://www.douban.com/search?cat=1001&amp;q=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95">《数据结构与算法》</a>之类的书，那么数据结构和算法为什么会在一起呢？通过上一篇 <a href="http://jonyfang.com/blog/2015/12/25/the_basic_conception_in_data_structure/">数据结构基本概念</a> 我们知道，数据结构是互相之间存在一种或多种特定关系的数据元素的集合。这里的 <code>一种或多种特定关系</code>的处理就涉及到算法，所以对于完整的程序设计 <code>数据结构</code> 和 <code>算法</code> 都很重要。</p>
+
+<ul id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">一. 什么是算法？</a></li>
+  <li><a href="#section-1" id="markdown-toc-section-1">二. 算法的特征</a></li>
+  <li><a href="#section-2" id="markdown-toc-section-2">三. 算法设计的要求</a>    <ul>
+      <li><a href="#section-3" id="markdown-toc-section-3">3.1、正确性</a></li>
+      <li><a href="#section-4" id="markdown-toc-section-4">3.2、可读性</a></li>
+      <li><a href="#section-5" id="markdown-toc-section-5">3.3、健壮性</a></li>
+      <li><a href="#section-6" id="markdown-toc-section-6">3.4、时间效率高和存储量低</a></li>
+    </ul>
+  </li>
+  <li><a href="#section-7" id="markdown-toc-section-7">四. 算法时间复杂度</a>    <ul>
+      <li><a href="#section-8" id="markdown-toc-section-8">4.1、什么是算法时间复杂度？</a></li>
+      <li><a href="#section-9" id="markdown-toc-section-9">4.2、怎么分析出算法的时间复杂度？</a></li>
+      <li><a href="#section-10" id="markdown-toc-section-10">4.3、常数阶</a></li>
+      <li><a href="#section-11" id="markdown-toc-section-11">4.4、线性阶</a></li>
+      <li><a href="#section-12" id="markdown-toc-section-12">4.5、对数阶</a></li>
+      <li><a href="#section-13" id="markdown-toc-section-13">4.6、平方阶</a></li>
+      <li><a href="#section-14" id="markdown-toc-section-14">4.7、常见时间复杂度</a></li>
+    </ul>
+  </li>
+  <li><a href="#section-15" id="markdown-toc-section-15">五. 算法空间复杂度</a></li>
+  <li><a href="#section-16" id="markdown-toc-section-16">六. 总结</a></li>
+</ul>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2016/01/02/data_structure02.algorithm/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/12/25/data_structure01.the_basic_conception_in_data_structure/">数据结构浅析（一）：数据结构基本概念</a></h1>
     
     
       <p class="meta">
@@ -96,17 +236,15 @@
 
 <time class='entry-date' datetime='2015-12-25T22:01:00+08:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>25</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>10:01 pm</span></time>
         
-           | <a href="/blog/2015/12/25/the_basic_conception_in_data_structure/#disqus_thread"
-             data-disqus-identifier="http://jonyfang.com/blog/2015/12/25/the_basic_conception_in_data_structure/">Comments</a>
+           | <a href="/blog/2015/12/25/data_structure01.the_basic_conception_in_data_structure/#disqus_thread"
+             data-disqus-identifier="http://jonyfang.com/blog/2015/12/25/data_structure01.the_basic_conception_in_data_structure/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><img src="http://7xob7d.com1.z0.glb.clouddn.com/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.jpg" alt="" /></p>
-
-<p class="info"><strong>首先会有个疑问，什么是数据结构呢？</strong>
+  <div class="entry-content"><p class="info"><strong>首先会有个疑问，什么是数据结构呢？</strong>
 <br />
 数据结构（data structure），可以概括为是互相之间存在一种或多种特定关系的数据元素的集合。开篇配图来自网络…</p>
 
@@ -137,7 +275,7 @@
   
   
     <footer>
-      <a rel="full-article" href="/blog/2015/12/25/the_basic_conception_in_data_structure/">Read on &rarr;</a>
+      <a rel="full-article" href="/blog/2015/12/25/data_structure01.the_basic_conception_in_data_structure/">Read on &rarr;</a>
     </footer>
   
 
@@ -206,9 +344,7 @@
   </header>
 
 
-  <div class="entry-content"><p><img src="http://7xob7d.com1.z0.glb.clouddn.com/git.png" alt="git" /></p>
-
-<p class="info">用 git 有一段时间了，之前没有详细地了解 git flow，导致协作过程中或多或少出现了一些头疼问题。最近静下心来理了下 git flow 的整个流程，再回头看开朗了不少，总结到这里。介绍的是一些常用的 git 基础命令和 git flow，当然也很重要的，过程中自己在 Github 上建了一个模拟的 <a href="https://github.com/JonyFang/GitTestDemo">Demo</a> 用来熟悉 git flow。其实从理解到动手完成还是有点距离的，笨人有笨法嘛。如有不准确的地方欢迎指正。: )</p>
+  <div class="entry-content"><p class="info">用 git 有一段时间了，之前没有详细地了解 git flow，导致协作过程中或多或少出现了一些头疼问题。最近静下心来理了下 git flow 的整个流程，再回头看开朗了不少，总结到这里。介绍的是一些常用的 git 基础命令和 git flow，当然也很重要的，过程中自己在 Github 上建了一个模拟的 <a href="https://github.com/JonyFang/GitTestDemo">Demo</a> 用来熟悉 git flow。其实从理解到动手完成还是有点距离的，笨人有笨法嘛。如有不准确的地方欢迎指正。: )</p>
 
 </div>
   
@@ -245,26 +381,7 @@
   </header>
 
 
-  <div class="entry-content"><p><img src="http://7xob7d.com1.z0.glb.clouddn.com/cocoapods.png" alt="git" /></p>
-
-<p>升级 OS X El Capitan 后，Time Machine 恢复下，随后因为遇到 octopress 无法更新博客问题，一番折腾 <a href="http://www.jianshu.com/p/ce5eff554279">octopress 适配了 OS X El Capitan</a>，然而事情总没有那么简单，又丢过来一个问题。</p>
-
-
-<p>和往常一样使用 Cocoapods ，执行命令：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">pod</span> <span class="n">install</span>
-</span><span class="line"> <span class="c1">#输出信息</span>
-</span><span class="line"><span class="sr">/System/</span><span class="no">Library</span><span class="o">/</span><span class="no">Frameworks</span><span class="o">/</span><span class="no">Ruby</span><span class="o">.</span><span class="n">framework</span><span class="o">/</span><span class="no">Versions</span><span class="o">/</span><span class="mi">2</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">ruby</span><span class="o">/</span><span class="mi">2</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">rubygems</span><span class="o">/</span><span class="n">dependency</span><span class="o">.</span><span class="n">rb</span><span class="p">:</span><span class="mi">296</span><span class="ss">:in</span> <span class="sb">`to_specs&#39;: Could not find &#39;cocoapods&#39; (&gt;= 0) among 59 total gem(s) (Gem::LoadError)</span>
-</span><span class="line"><span class="sb">	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/rubygems/dependency.rb:307:in `</span><span class="n">to_spec</span><span class="s1">&#39;</span>
-</span><span class="line"><span class="s1">	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/rubygems/core_ext/kernel_gem.rb:47:in `gem&#39;</span>
-</span><span class="line">	<span class="n">from</span> <span class="sr">/usr/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="ss">pod</span><span class="p">:</span><span class="mi">22</span><span class="ss">:in</span> <span class="sb">`&lt;main&gt;&#39;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+  <div class="entry-content"><p class="info">升级 OS X El Capitan 后，Time Machine 恢复下，随后因为遇到 octopress 无法更新博客问题，一番折腾 <a href="http://www.jianshu.com/p/ce5eff554279">octopress 适配了 OS X El Capitan</a>，然而事情总没有那么简单，又丢过来一个问题。</p>
 
 </div>
   
@@ -301,42 +418,16 @@
   </header>
 
 
-  <div class="entry-content"><ul id="markdown-toc">
-  <li><a href="#section" id="markdown-toc-section">1、前言</a></li>
-  <li><a href="#section-1" id="markdown-toc-section-1">2、解决办法</a>    <ul>
-      <li><a href="#rvm" id="markdown-toc-rvm">2.1. 安装 RVM</a></li>
-      <li><a href="#ruby-223" id="markdown-toc-ruby-223">2.2. 安装 Ruby 2.2.3</a></li>
-      <li><a href="#octopress-" id="markdown-toc-octopress-">2.3. 安装 Octopress 依赖库</a></li>
+  <div class="entry-content"><p class="info">这几天装上 OS X El Capitan ，Time Machine 恢复后测试 Octopress 遇到无法使用问题，这里总结下问题的解决过程。</p>
+
+<ul id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">一.解决办法</a>    <ul>
+      <li><a href="#rvm" id="markdown-toc-rvm">1.1. 安装 RVM</a></li>
+      <li><a href="#ruby-223" id="markdown-toc-ruby-223">1.2. 安装 Ruby 2.2.3</a></li>
+      <li><a href="#octopress-" id="markdown-toc-octopress-">1.3. 安装 Octopress 依赖库</a></li>
     </ul>
   </li>
 </ul>
-
-<h2 id="section">1、前言</h2>
-<p>这几天装上 OS X El Capitan ，Time Machine 恢复后测试 Octopress 遇到无法使用问题，这里总结下问题的解决过程。</p>
-
-<p>首先打开终端，运行：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="ruby"><span class="line"> <span class="err">$</span> <span class="n">rake</span> <span class="n">preview</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>报错如下：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-</pre></td><td class="code"><pre><code class="ruby"><span class="line"><span class="err">$</span> <span class="n">rakepreviewStarting</span> <span class="n">to</span> <span class="n">watchsourcewith</span> <span class="no">Jekyll</span> <span class="ow">and</span> <span class="no">Compass</span><span class="o">.</span> <span class="no">Starting</span> <span class="no">Rack</span> <span class="n">on</span> <span class="n">port</span>
-</span><span class="line">
-</span><span class="line"><span class="mi">4000</span><span class="n">rake</span> <span class="n">aborted!</span><span class="no">Errno</span><span class="o">::</span><span class="ss">ENOENT</span><span class="p">:</span> <span class="no">No</span> <span class="n">such</span> <span class="n">file</span> <span class="ow">or</span> <span class="n">directory</span> <span class="o">-</span>
-</span><span class="line">
-</span><span class="line"><span class="n">compass</span><span class="o">/</span><span class="no">Users</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">git</span><span class="o">/</span><span class="n">octopress</span><span class="o">/</span><span class="ss">Rakefile</span><span class="p">:</span><span class="mi">85</span><span class="ss">:in</span>
-</span><span class="line">
-</span><span class="line"><span class="n">spawn</span><span class="o">/</span><span class="no">Users</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">git</span><span class="o">/</span><span class="n">octopress</span><span class="o">/</span><span class="ss">Rakefile</span><span class="p">:</span><span class="mi">85</span><span class="ss">:in</span> <span class="n">block</span> <span class="ss">inTasks</span><span class="p">:</span><span class="no">TOP</span><span class="o">=&gt;</span> <span class="n">preview</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 </div>
   
@@ -373,28 +464,9 @@
   </header>
 
 
-  <div class="entry-content"><ul id="markdown-toc">
-  <li><a href="#section" id="markdown-toc-section">1. 前言</a></li>
-  <li><a href="#octopress--github-pages" id="markdown-toc-octopress--github-pages">2. 将 Octopress 部署到 Github Pages</a>    <ul>
-      <li><a href="#github-repository" id="markdown-toc-github-repository">2.1. 新建 Github repository</a></li>
-      <li><a href="#github-pages" id="markdown-toc-github-pages">2.2. 配置 Github Pages</a></li>
-      <li><a href="#section-1" id="markdown-toc-section-1">2.3. 生成并部署站点</a></li>
-    </ul>
-  </li>
-  <li><a href="#section-2" id="markdown-toc-section-2">3. 发布博文过程</a>    <ul>
-      <li><a href="#section-3" id="markdown-toc-section-3">3.1. 新建一篇博文</a></li>
-      <li><a href="#section-4" id="markdown-toc-section-4">3.2. 预览新建的博文</a></li>
-      <li><a href="#section-5" id="markdown-toc-section-5">3.3. 发布新建的博文</a></li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="section">1. 前言</h2>
-
-<p>经过<a href="http://jonyfang.github.io/blog/2015/10/13/ji-yu-octopress-he-github-da-jian-bo-ke/">上一篇</a>，我们在本地搭出了 Octopress 雏形，这一篇首先我们要将本地的 Octopress 博客部署到 Github Pages ，然后发布一篇博文。部署过程中分析了原理，可能会比较枯燥，但是能让我们更了解 Octopress，所以我依旧坚持写下来了。</p>
-
-<p>废话少说，开工～</p>
-
+  <div class="entry-content"><p class="info">经过<a href="http://jonyfang.github.io/blog/2015/10/13/ji-yu-octopress-he-github-da-jian-bo-ke/">上一篇</a>，我们在本地搭出了 Octopress 雏形，这一篇首先我们要将本地的 Octopress 博客部署到 Github Pages ，然后发布一篇博文。部署过程中分析了原理，可能会比较枯燥，但是能让我们更了解 Octopress，所以我依旧坚持写下来了。
+<br /><br />
+废话少说，开工～</p>
 </div>
   
   
@@ -468,7 +540,15 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2015/12/25/the_basic_conception_in_data_structure/">数据结构浅析：数据结构基本概念</a>
+        <a href="/blog/2016/01/10/data_structure03.linear_list/">数据结构浅析（三）：线性表</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/01/02/data_structure02.algorithm/">数据结构浅析（二）：算法</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/12/25/data_structure01.the_basic_conception_in_data_structure/">数据结构浅析（一）：数据结构基本概念</a>
       </li>
     
       <li class="post">
@@ -504,7 +584,7 @@
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2015 - Jony Fang -
+  Copyright &copy; 2016 - Jony Fang -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
