@@ -4,7 +4,7 @@
   <title><![CDATA[Categorie: Cocoapods | I'm Jony]]></title>
   <link href="http://jonyfang.com/blog/categories/cocoapods/atom.xml" rel="self"/>
   <link href="http://jonyfang.com/"/>
-  <updated>2016-01-10T23:02:24+08:00</updated>
+  <updated>2016-04-18T14:56:54+08:00</updated>
   <id>http://jonyfang.com/</id>
   <author>
     <name><![CDATA[Jony Fang]]></name>
@@ -25,70 +25,56 @@
 
 <p>和往常一样使用 Cocoapods ，执行命令：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="err">$</span> <span class="n">pod</span> <span class="n">install</span>
-</span><span class='line'> <span class="c1">#输出信息</span>
-</span><span class='line'><span class="sr">/System/</span><span class="no">Library</span><span class="o">/</span><span class="no">Frameworks</span><span class="o">/</span><span class="no">Ruby</span><span class="o">.</span><span class="n">framework</span><span class="o">/</span><span class="no">Versions</span><span class="o">/</span><span class="mi">2</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">ruby</span><span class="o">/</span><span class="mi">2</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">rubygems</span><span class="o">/</span><span class="n">dependency</span><span class="o">.</span><span class="n">rb</span><span class="p">:</span><span class="mi">296</span><span class="ss">:in</span> <span class="o">&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">to_specs</span><span class="s1">&#39;: Could not find &#39;</span><span class="n">cocoapods</span><span class="s1">&#39; (&amp;gt;= 0) among 59 total gem(s) (Gem::LoadError)</span>
-</span><span class='line'><span class="s1">	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/rubygems/dependency.rb:307:in &lt;/code&gt;to_spec’</span>
-</span><span class='line'><span class="s1">	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/rubygems/core_ext/kernel_gem.rb:47:in &lt;code&gt;gem&#39;</span>
-</span><span class='line'>	<span class="n">from</span> <span class="sr">/usr/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="ss">pod</span><span class="p">:</span><span class="mi">22</span><span class="ss">:in</span> <span class="o">&lt;</span><span class="sr">/code&gt;&lt;main&gt;&#39;</span>
-</span></code></pre></td></tr></table></div></figure></main></p>
+<p>{% codeblock lang:ruby %}
+ $ pod install
+ #输出信息
+/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/rubygems/dependency.rb:296:in <code>to_specs': Could not find 'cocoapods' (&gt;= 0) among 59 total gem(s) (Gem::LoadError)
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/rubygems/dependency.rb:307:in </code>to_spec’
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/rubygems/core_ext/kernel_gem.rb:47:in <code>gem'
+	from /usr/local/bin/pod:22:in </code><main>'
+{% endcodeblock %}</main></p>
 
 <p>查看 <code>Ruby</code> 版本：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="err">$</span> <span class="n">ruby</span> <span class="o">-</span><span class="n">v</span>
-</span><span class='line'> <span class="n">ruby</span> <span class="mi">2</span><span class="o">.</span><span class="mi">2</span><span class="o">.</span><span class="mi">3</span><span class="n">p173</span> <span class="p">(</span><span class="mi">2015</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">18</span> <span class="n">revision</span> <span class="mi">51636</span><span class="p">)</span> <span class="o">[</span><span class="n">x86_64</span><span class="o">-</span><span class="n">darwin14</span><span class="o">]</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+ $ ruby -v
+ ruby 2.2.3p173 (2015-08-18 revision 51636) [x86_64-darwin14]
+{% endcodeblock %}</p>
 
 <p>看来是升级 <code>Ruby 2.2.3</code> 导致的问题，更新下 Cocoapods 即可，更新步骤：</p>
 
 <p>1、 更新 gem ，国内需切换 <code>gem source</code></p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="err">$</span> <span class="n">sudo</span> <span class="n">gem</span> <span class="n">update</span> <span class="err">–</span><span class="nb">system</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+ $ sudo gem update –system
+{% endcodeblock %}</p>
 
 <ul>
   <li>切换 <code>gem source</code></li>
 </ul>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="err">$</span> <span class="n">gem</span> <span class="n">sources</span> <span class="err">–</span><span class="n">add</span> <span class="ss">https</span><span class="p">:</span><span class="sr">//</span><span class="n">ruby</span><span class="o">.</span><span class="n">taobao</span><span class="o">.</span><span class="n">org</span><span class="o">/</span> <span class="err">–</span><span class="n">remove</span> <span class="ss">https</span><span class="p">:</span><span class="sr">//</span><span class="n">rubygems</span><span class="o">.</span><span class="n">org</span><span class="o">/&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;$ gem sources -l</span>
-</span><span class='line'><span class="sr">&lt;strong&gt;* CURRENT SOURCES&lt;/s</span><span class="n">trong</span><span class="o">&gt;*&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;https:/</span><span class="o">/</span><span class="n">ruby</span><span class="o">.</span><span class="n">taobao</span><span class="o">.</span><span class="n">org</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+$ gem sources –add https://ruby.taobao.org/ –remove https://rubygems.org/</p>
+
+<p>$ gem sources -l
+<strong>* CURRENT SOURCES</strong>*</p>
+
+<p>https://ruby.taobao.org
+{% endcodeblock %}</p>
 
 <p>2、 安装 <code>cocoapods</code></p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="err">$</span> <span class="n">sudo</span> <span class="n">gem</span> <span class="n">install</span> <span class="n">cocoapods</span>
-</span><span class='line'> <span class="err">$</span> <span class="n">pod</span> <span class="n">setup</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+ $ sudo gem install cocoapods
+ $ pod setup
+{% endcodeblock %}</p>
 
 <p>和安装过程是一样的，再次查看 <code>pod</code> 版本：
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="err">$</span> <span class="n">pod</span> <span class="err">–</span><span class="n">version</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;0.39.0</span>
-</span></code></pre></td></tr></table></div></figure></p>
+{% codeblock lang:ruby %}
+ $ pod –version</p>
+
+<p>0.39.0
+{% endcodeblock %}</p>
 
 <p>搞定～</p>
 ]]></content>

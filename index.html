@@ -9,7 +9,10 @@
   <meta name="author" content="Jony Fang">
 
   
-  <meta name="description" content="什么是线性表？ 线性表的两大存储结构是什么？ 各种存储结构是如何实现存取、插入删除等操作的？ 本篇主要解答了这几个问题，感兴趣的话一起来看看吧～ 一. 什么是线性表？ 二. 线性表的顺序存储结构 2.1、顺序存储需要什么？ 三. 顺序存储结构的插入与删除 3.1、获取元素 3.2、插入新元素 3. &hellip;">
+  <meta name="description" content="什么是栈？
+栈有哪些存储方式？
+栈有哪些应用？ 什么是队列？
+队列有哪些存储方式？ 本篇总结了这几个问题 1.栈 1.1.栈的定义 1.2.	栈的顺序存储结构及实现 1.3.两栈共享空间 1.4.栈的链式存储结构（链栈）及实现 2.栈的应用－－递归 2.1.斐波那契数列（Fibonacci）实现 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,6 +82,80 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2016/04/18/data-structure04-stack-and-queue/">数据结构浅析（四）：栈和队列</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-04-18T14:30:23+08:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>2:30 pm</span></time>
+        
+           | <a href="/blog/2016/04/18/data-structure04-stack-and-queue/#disqus_thread"
+             data-disqus-identifier="http://jonyfang.com/blog/2016/04/18/data-structure04-stack-and-queue/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p class="info">什么是栈？
+栈有哪些存储方式？
+栈有哪些应用？
+<br />
+什么是队列？
+队列有哪些存储方式？
+<br />
+本篇总结了这几个问题</p>
+
+<ul id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">1.栈</a>    <ul>
+      <li><a href="#section-1" id="markdown-toc-section-1">1.1.栈的定义</a></li>
+      <li><a href="#section-2" id="markdown-toc-section-2">1.2.	栈的顺序存储结构及实现</a></li>
+      <li><a href="#section-3" id="markdown-toc-section-3">1.3.两栈共享空间</a></li>
+      <li><a href="#section-4" id="markdown-toc-section-4">1.4.栈的链式存储结构（链栈）及实现</a></li>
+    </ul>
+  </li>
+  <li><a href="#section-5" id="markdown-toc-section-5">2.栈的应用－－递归</a>    <ul>
+      <li><a href="#fibonacci" id="markdown-toc-fibonacci">2.1.斐波那契数列（Fibonacci）实现</a></li>
+      <li><a href="#section-6" id="markdown-toc-section-6">2.2.递归定义</a></li>
+    </ul>
+  </li>
+  <li><a href="#section-7" id="markdown-toc-section-7">3.栈的应用－－四则运算表达式求值</a>    <ul>
+      <li><a href="#section-8" id="markdown-toc-section-8">3.1.后缀（逆波兰）表示法应用</a></li>
+      <li><a href="#section-9" id="markdown-toc-section-9">3.2.中缀表达式转后缀表达式</a></li>
+    </ul>
+  </li>
+  <li><a href="#section-10" id="markdown-toc-section-10">4.队列</a>    <ul>
+      <li><a href="#section-11" id="markdown-toc-section-11">4.1.队列定义</a></li>
+      <li><a href="#section-12" id="markdown-toc-section-12">4.2.循环对列</a>        <ul>
+          <li><a href="#section-13" id="markdown-toc-section-13">4.2.1.循环对列</a></li>
+          <li><a href="#section-14" id="markdown-toc-section-14">4.2.2.对列的链式存储结构及实现</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#section-15" id="markdown-toc-section-15">5.总结</a></li>
+</ul>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2016/04/18/data-structure04-stack-and-queue/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -538,6 +615,10 @@
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2016/04/18/data-structure04-stack-and-queue/">数据结构浅析（四）：栈和队列</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2016/01/10/data_structure03.linear_list/">数据结构浅析（三）：线性表</a>

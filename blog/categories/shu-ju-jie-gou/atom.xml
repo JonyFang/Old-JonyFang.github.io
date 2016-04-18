@@ -4,7 +4,7 @@
   <title><![CDATA[Categorie: 数据结构 | I'm Jony]]></title>
   <link href="http://jonyfang.com/blog/categories/shu-ju-jie-gou/atom.xml" rel="self"/>
   <link href="http://jonyfang.com/"/>
-  <updated>2016-01-10T23:02:24+08:00</updated>
+  <updated>2016-04-18T14:56:54+08:00</updated>
   <id>http://jonyfang.com/</id>
   <author>
     <name><![CDATA[Jony Fang]]></name>
@@ -83,21 +83,15 @@
 - 线性表的最大存储容量：数组长度 MaxSize；
 - 线性表的当前长度：length.</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'> <span class="cp">#define MAXSIZE 20 </span><span class="cm">/* 存储空间的初始分配量 &lt;em&gt;/</span>
-</span><span class='line'><span class="cm">typedef int ElemType; /&lt;/em&gt; ElemType 类型视实际而定，这里为 int &lt;em&gt;/</span>
-</span><span class='line'><span class="cm">typedef struct</span>
-</span><span class='line'><span class="cm">{</span>
-</span><span class='line'><span class="cm">    ElemType data[MAXSIZE]; /&lt;/em&gt; 数组存储数据元素，最大值为 MAXSIZE */</span><span class="cp"></span>
-</span><span class='line'>    <span class="kt">int</span> <span class="n">length</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>  <span class="n">SqList</span><span class="p">;</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:c %}
+ #define MAXSIZE 20 /* 存储空间的初始分配量 <em>/
+typedef int ElemType; /</em> ElemType 类型视实际而定，这里为 int <em>/
+typedef struct
+{
+    ElemType data[MAXSIZE]; /</em> 数组存储数据元素，最大值为 MAXSIZE */
+    int length;
+}  SqList;
+{% endcodeblock %}</p>
 
 <p><strong>这里的数组 data 长度与线性表长度有什么区别？</strong></p>
 
@@ -111,37 +105,22 @@
 
 <p>对于线性表的顺序存储结构，如果我们要实现 GetElem 操作，只需将线性表 L 中第 i 个位置的元素值返回即可.</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'> <span class="cp">#define OK 1</span>
-</span><span class='line'> <span class="cp">#define ERROR 0</span>
-</span><span class='line'> <span class="cp">#define TRUE 1</span>
-</span><span class='line'> <span class="cp">#define FALSE 0</span>
-</span><span class='line'> <span class="k">typedef</span> <span class="kt">int</span> <span class="n">Status</span><span class="p">;</span>  <span class="cm">/* Status 的值是函数的结果状态，如 OK 等 */</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="cm">/* 初始条件：顺序线性表 L 已存在，1 &amp;lt;= i &amp;lt;= ListLength(L) &lt;em&gt;/</span>
-</span><span class='line'><span class="cm"> /&lt;/em&gt; 操作结果：用 e 返回 L 中第 i 个数据元素的值 */</span>
-</span><span class='line'> <span class="n">Status</span> <span class="n">GetElem</span><span class="p">(</span><span class="n">SqList</span> <span class="n">L</span><span class="p">;</span> <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">ElemType</span> <span class="o">*</span><span class="n">e</span><span class="p">)</span>
-</span><span class='line'> <span class="p">{</span>
-</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="n">L</span><span class="p">.</span><span class="n">length</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">i</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="mi">1</span> <span class="o">||</span> <span class="n">i</span> <span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">L</span><span class="p">.</span><span class="n">length</span><span class="p">)</span>
-</span><span class='line'>        <span class="k">return</span> <span class="n">ERROR</span><span class="p">;</span>
-</span><span class='line'>    <span class="o">*</span> <span class="n">e</span> <span class="o">=</span> <span class="n">L</span><span class="p">.</span><span class="n">data</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">return</span> <span class="n">OK</span><span class="p">;</span>  <span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
+<p>{% codeblock lang:c %}
+ #define OK 1
+ #define ERROR 0
+ #define TRUE 1
+ #define FALSE 0
+ typedef int Status;  /* Status 的值是函数的结果状态，如 OK 等 */</p>
+
+<p>/* 初始条件：顺序线性表 L 已存在，1 &lt;= i &lt;= ListLength(L) <em>/
+ /</em> 操作结果：用 e 返回 L 中第 i 个数据元素的值 */
+ Status GetElem(SqList L; int i, ElemType *e)
+ {
+    if (L.length == 0 || i &lt; 1 || i &gt; L.length)
+        return ERROR;
+    * e = L.data[i - 1];</p>
+
+<pre><code>return OK;  } {% endcodeblock %}
 </code></pre>
 
 <h3 id="section-5">3.2、插入新元素</h3>
@@ -156,57 +135,32 @@
 - 从最后一个元素开始向前遍历到第 i 个位置，分别将它们都向后移动一个位置；
 - 将要插入元素填入位置 i 处，线性表长+1.</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cm">/* 初始条件：顺序线性表 L 已存在，1 &amp;lt;= i &amp;lt;= ListLength(L) &lt;em&gt;/</span>
-</span><span class='line'><span class="cm">/&lt;/em&gt; 操作结果：在 L 中第 i 个位置之前插入新的数据元素 e，L 长度为加 1 */</span>
-</span><span class='line'><span class="n">Status</span> <span class="nf">ListInsert</span><span class="p">(</span><span class="n">SqList</span> <span class="o">*</span><span class="n">L</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">ElemType</span> <span class="n">e</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>    <span class="kt">int</span> <span class="n">k</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="cm">/* 顺序线性表已经满 */</span>
-</span><span class='line'><span class="k">if</span> <span class="p">(</span><span class="n">L</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">length</span> <span class="o">==</span> <span class="n">MAXSIZE</span><span class="p">)</span>
-</span><span class='line'>    <span class="k">return</span> <span class="n">ERROR</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="cm">/* 当i不在范围内时 */</span>
-</span><span class='line'><span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="mi">1</span> <span class="o">||</span> <span class="n">i</span> <span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">L</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">length</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-</span><span class='line'>    <span class="k">return</span> <span class="n">ERROR</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="cm">/* 若插入数据位置不在表尾 */</span>
-</span><span class='line'><span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">=</span> <span class="n">L</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">Length</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>    <span class="cm">/*将要插入位置后数据元素向后移动一位 */</span>
-</span><span class='line'>    <span class="k">for</span> <span class="p">(</span><span class="n">k</span> <span class="o">=</span> <span class="n">L</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">k</span> <span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span><span class="o">=</span> <span class="n">i</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">k</span><span class="o">--</span><span class="p">)</span>
-</span><span class='line'>        <span class="n">L</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">data</span><span class="p">[</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">L</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">data</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">L</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">data</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">e</span><span class="p">;</span> <span class="cm">/* 将新元素插入 */</span>
-</span><span class='line'><span class="n">L</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">length</span><span class="o">++</span><span class="p">;</span>
-</span><span class='line'><span class="k">return</span> <span class="n">OK</span><span class="p">;</span> <span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
+<p>{% codeblock lang:c %}
+/* 初始条件：顺序线性表 L 已存在，1 &lt;= i &lt;= ListLength(L) <em>/
+/</em> 操作结果：在 L 中第 i 个位置之前插入新的数据元素 e，L 长度为加 1 */
+Status ListInsert(SqList *L, int i, ElemType e)
+{
+    int k;</p>
+
+<pre><code>/* 顺序线性表已经满 */
+if (L-&gt;length == MAXSIZE) 
+    return ERROR;
+
+/* 当i不在范围内时 */
+if (i &lt; 1 || i &gt; L-&gt; length + 1) 
+    return ERROR;
+
+/* 若插入数据位置不在表尾 */
+if (i &lt;= L-&gt;Length) 
+{
+    /*将要插入位置后数据元素向后移动一位 */
+    for (k = L-&gt;length - 1; k &gt;= i -1; k--) 
+        L-&gt;data[k + 1] = L-&gt;data[k];
+}
+
+L-&gt;data[i - 1] = e; /* 将新元素插入 */
+L-&gt;length++;
+return OK; } {% endcodeblock %}
 </code></pre>
 
 <h3 id="section-6">3.3、删除元素</h3>
@@ -219,51 +173,30 @@
 - 从删除元素位置开始遍历到最后一个元素位置，分别将它们都向前移动一个位置；
 - 线性表长 -1.</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cm">/* 初始条件：顺序线性表L已存在，1≤i≤</span>
-</span><span class='line'><span class="cm">   ListLength(L) &lt;em&gt;/</span>
-</span><span class='line'><span class="cm">/&lt;/em&gt; 操作结果：删除 L 的第 i 个数据元素，并用 e 返回</span>
-</span><span class='line'><span class="cm">   其值，L 的长度 -1 &lt;em&gt;/</span>
-</span><span class='line'><span class="cm">Status ListDelete(SqList *L, int i, ElemType *e)</span>
-</span><span class='line'><span class="cm">{</span>
-</span><span class='line'><span class="cm">    int k;</span>
-</span><span class='line'><span class="cm">    if (L-&amp;gt;length == 0)</span>
-</span><span class='line'><span class="cm">        return ERROR;</span>
-</span><span class='line'><span class="cm">    if (i &amp;lt; 1 || i &amp;gt; L-&amp;gt;length)</span>
-</span><span class='line'><span class="cm">        return ERROR;</span>
-</span><span class='line'><span class="cm">    *e = L-&amp;gt;data[i - 1];</span>
-</span><span class='line'><span class="cm">    /&lt;/em&gt; 如果删除不是最后位置 &lt;em&gt;/</span>
-</span><span class='line'><span class="cm">    if (i &amp;lt; L-&amp;gt;length)</span>
-</span><span class='line'><span class="cm">    {</span>
-</span><span class='line'><span class="cm">        /&lt;/em&gt; 将删除位置后继元素前移 */</span>
-</span><span class='line'>        <span class="k">for</span> <span class="p">(</span><span class="n">k</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span> <span class="n">k</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">L</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">length</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span>
-</span><span class='line'>            <span class="n">L</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">data</span><span class="p">[</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">L</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">data</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>    <span class="n">L</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">length</span><span class="err">–</span><span class="p">;</span>
-</span><span class='line'>    <span class="k">return</span> <span class="n">OK</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:c %}
+/* 初始条件：顺序线性表L已存在，1≤i≤
+   ListLength(L) <em>/
+/</em> 操作结果：删除 L 的第 i 个数据元素，并用 e 返回
+   其值，L 的长度 -1 <em>/
+Status ListDelete(SqList *L, int i, ElemType *e)
+{
+    int k;
+    if (L-&gt;length == 0)
+        return ERROR;
+    if (i &lt; 1 || i &gt; L-&gt;length)
+        return ERROR;
+    *e = L-&gt;data[i - 1];
+    /</em> 如果删除不是最后位置 <em>/
+    if (i &lt; L-&gt;length)
+    {
+        /</em> 将删除位置后继元素前移 */
+        for (k = i; k &lt; L-&gt;length; k++)
+            L-&gt;data[k - 1] = L-&gt;data[k];
+    }
+    L-&gt;length–;
+    return OK;
+}
+{% endcodeblock %}</p>
 
 <p><strong>线性表的顺序存储结构时间复杂度</strong>
 - 在存和取数据元素时，在任何位置，时间复杂度都为 O(1)；
@@ -290,25 +223,17 @@
 
 <p><strong>C 语言创建<code>单链表</code>:</strong></p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cm">/* 线性表的单链表存储结构 */</span>
-</span><span class='line'><span class="k">typedef</span> <span class="k">struct</span> <span class="n">Node</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>	<span class="n">ElemType</span> <span class="n">data</span><span class="p">;</span>
-</span><span class='line'>	<span class="k">struct</span> <span class="n">Node</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span> <span class="n">Node</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="cm">/* 定义 LinkList */</span>
-</span><span class='line'><span class="k">typedef</span> <span class="k">struct</span> <span class="n">Node</span> <span class="o">*</span><span class="n">LinkList</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:c %}
+/* 线性表的单链表存储结构 */
+typedef struct Node
+{
+	ElemType data;
+	struct Node *next;
+} Node;</p>
+
+<p>/* 定义 LinkList */
+typedef struct Node *LinkList
+{% endcodeblock %}</p>
 
 <h3 id="section-9">4.2、最后一个结点</h3>
 
@@ -332,49 +257,28 @@
 
 <p>实现算法代码：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cm">/* 初始条件：顺序线性表 L 已存在，1 ≤ i ≤ ListLength(L) &lt;em&gt;/</span>
-</span><span class='line'><span class="cm">/&lt;/em&gt; 操作结果：用 e 返回 L 中第 i 个数据元素的值 */</span>
-</span><span class='line'><span class="n">Status</span> <span class="nf">GetElem</span><span class="p">(</span><span class="n">LinkList</span> <span class="n">L</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">ElemType</span> <span class="o">*</span><span class="n">e</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>	<span class="kt">int</span> <span class="n">j</span><span class="p">;</span>
-</span><span class='line'>	<span class="n">LinkList</span> <span class="n">p</span><span class="p">;</span>
-</span><span class='line'>	<span class="n">p</span> <span class="o">=</span> <span class="n">L</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span><span class="p">;</span>
-</span><span class='line'>	<span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">while</span><span class="p">(</span><span class="n">p</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span> <span class="n">j</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">i</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>	<span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span><span class="p">;</span>
-</span><span class='line'>	<span class="o">++</span><span class="n">j</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="cm">/* 第 i 个结点不存在 */</span>
-</span><span class='line'><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">p</span> <span class="o">||</span> <span class="n">j</span> <span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">i</span><span class="p">)</span>
-</span><span class='line'>	<span class="k">return</span> <span class="n">ERROR</span><span class="p">;</span>
-</span><span class='line'>	
-</span><span class='line'><span class="o">*</span><span class="n">e</span> <span class="o">=</span> <span class="n">p</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">data</span><span class="p">;</span>
-</span><span class='line'><span class="k">return</span> <span class="n">OK</span><span class="p">;</span> <span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
+<p>{% codeblock lang:c %}
+/* 初始条件：顺序线性表 L 已存在，1 ≤ i ≤ ListLength(L) <em>/
+/</em> 操作结果：用 e 返回 L 中第 i 个数据元素的值 */
+Status GetElem(LinkList L, int i, ElemType *e)
+{
+	int j;
+	LinkList p;
+	p = L-&gt;next;
+	j = 1;</p>
+
+<pre><code>while(p &amp;&amp; j &lt; i)
+{
+	p = p-&gt;next;
+	++j;
+}
+
+/* 第 i 个结点不存在 */
+if(!p || j &gt; i)
+	return ERROR;
+	
+*e = p-&gt;data;
+return OK; } {% endcodeblock %}
 </code></pre>
 
 <p>上面代码很容易理解，从头找到第 i 个结点为止。查找的时间复杂度为 O(n)。</p>
@@ -387,69 +291,41 @@
 
 <p>实现思路如下：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="n">s</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span> <span class="o">=</span> <span class="n">p</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span><span class="p">;</span>
-</span><span class='line'><span class="n">p</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:c %}
+s-&gt;next = p-&gt;next;
+p-&gt;next = s;
+{% endcodeblock %}</p>
 
 <p><code>单链表插入结点</code>算法实现代码如下：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cm">/* 初始条件：顺序线性表 L 已存在，1 ≤ i ≤ ListLength(L) &lt;em&gt;/</span>
-</span><span class='line'><span class="cm">/&lt;/em&gt; 操作结果：在 L 中第 i 个结点位置之前插入新结点 e，L长度+1 */</span>
-</span><span class='line'><span class="n">Status</span> <span class="nf">ListInsert</span><span class="p">(</span><span class="n">LinkList</span> <span class="o">*</span><span class="n">L</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">ElemType</span> <span class="n">e</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>	<span class="kt">int</span> <span class="n">j</span><span class="p">;</span>
-</span><span class='line'>	<span class="n">LinkList</span> <span class="n">p</span><span class="p">,</span> <span class="n">s</span><span class="p">;</span>
-</span><span class='line'>	<span class="n">p</span> <span class="o">=</span> <span class="o">*</span><span class="n">L</span><span class="p">;</span>
-</span><span class='line'>	<span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="cm">/* 寻找第 i - 1 个结点 */</span>
-</span><span class='line'><span class="k">while</span><span class="p">(</span><span class="n">p</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span> <span class="n">j</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">i</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>	<span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span><span class="p">;</span>
-</span><span class='line'>	<span class="o">++</span><span class="n">j</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="cm">/* 第 i 个结点不存在 */</span>
-</span><span class='line'><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">p</span> <span class="o">||</span> <span class="n">j</span> <span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">i</span><span class="p">)</span>
-</span><span class='line'>	<span class="k">return</span> <span class="n">ERROR</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="cm">/* 生成新结点（C 标准函数） */</span>
-</span><span class='line'><span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="n">LinkList</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">Node</span><span class="p">));</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">s</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">data</span> <span class="o">=</span> <span class="n">e</span><span class="p">;</span>
-</span><span class='line'><span class="n">s</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span> <span class="o">=</span> <span class="n">p</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span><span class="p">;</span>
-</span><span class='line'><span class="n">p</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span>
-</span><span class='line'><span class="k">return</span> <span class="n">OK</span><span class="p">;</span> <span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
+<p>{% codeblock lang:c %}
+/* 初始条件：顺序线性表 L 已存在，1 ≤ i ≤ ListLength(L) <em>/
+/</em> 操作结果：在 L 中第 i 个结点位置之前插入新结点 e，L长度+1 */
+Status ListInsert(LinkList *L, int i, ElemType e)
+{
+	int j;
+	LinkList p, s;
+	p = *L;
+	j = 1;</p>
+
+<pre><code>/* 寻找第 i - 1 个结点 */
+while(p &amp;&amp; j &lt; i)
+{
+	p = p-&gt;next;
+	++j;
+}
+
+/* 第 i 个结点不存在 */
+if(!p || j &gt; i)
+	return ERROR;
+
+/* 生成新结点（C 标准函数） */
+s = (LinkList)malloc(sizeof(Node));
+
+s-&gt;data = e;
+s-&gt;next = p-&gt;next;
+p-&gt;next = s;
+return OK; } {% endcodeblock %}
 </code></pre>
 
 <blockquote>
@@ -462,63 +338,38 @@
 
 <p><strong>实现思路如下：</strong></p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="n">q</span> <span class="o">=</span> <span class="n">p</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span><span class="p">;</span>
-</span><span class='line'><span class="n">p</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span> <span class="o">=</span> <span class="n">q</span> <span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span><span class="p">;</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:c %}
+q = p-&gt;next;
+p-&gt;next = q -&gt;next;
+{% endcodeblock %}</p>
 
 <p><strong><code>单链表删除结点</code>算法实现代码如下：</strong></p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cm">/* 初始条件：顺序线性表 L 已存在，1 ≤ i ≤ ListLength(L) &lt;em&gt;/</span>
-</span><span class='line'><span class="cm">/&lt;/em&gt; 操作结果：删除 L 的第 i 个结点，并用 e 返回其值，L 的长度 -1 */</span>
-</span><span class='line'><span class="n">Status</span> <span class="nf">ListDelete</span><span class="p">(</span><span class="n">LinkList</span> <span class="o">*</span><span class="n">L</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">ElemType</span> <span class="o">*</span><span class="n">e</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>	<span class="kt">int</span> <span class="n">j</span><span class="p">;</span>
-</span><span class='line'>	<span class="n">LinkList</span> <span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">;</span>
-</span><span class='line'>	<span class="n">p</span> <span class="o">=</span> <span class="o">*</span><span class="n">L</span><span class="p">;</span>
-</span><span class='line'>	<span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">while</span><span class="p">(</span><span class="n">p</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span> <span class="n">j</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">i</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>	<span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span><span class="p">;</span>
-</span><span class='line'>	<span class="o">++</span><span class="n">j</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">p</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span><span class="p">)</span> <span class="o">||</span> <span class="n">j</span> <span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">i</span><span class="p">)</span>
-</span><span class='line'>	<span class="k">return</span> <span class="n">ERROE</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">q</span> <span class="o">=</span> <span class="n">p</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span><span class="p">;</span>
-</span><span class='line'><span class="n">p</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span> <span class="o">=</span> <span class="n">q</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span><span class="p">;</span>
-</span><span class='line'><span class="o">*</span><span class="n">e</span> <span class="o">=</span> <span class="n">q</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">data</span><span class="p">;</span>
-</span><span class='line'><span class="n">free</span><span class="p">(</span><span class="n">q</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">return</span> <span class="n">OK</span><span class="p">;</span> <span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
+<p>{% codeblock lang:c %}
+/* 初始条件：顺序线性表 L 已存在，1 ≤ i ≤ ListLength(L) <em>/
+/</em> 操作结果：删除 L 的第 i 个结点，并用 e 返回其值，L 的长度 -1 */
+Status ListDelete(LinkList *L, int i, ElemType *e)
+{
+	int j;
+	LinkList p, q;
+	p = *L;
+	j = 1;</p>
+
+<pre><code>while(p-&gt;next &amp;&amp; j &lt; i)
+{
+	p = p-&gt;next;
+	++j;
+}
+
+if(!(p-&gt;next) || j &gt; i)
+	return ERROE;
+
+q = p-&gt;next;
+p-&gt;next = q-&gt;next;
+*e = q-&gt;data;
+free(q);
+
+return OK; } {% endcodeblock %}
 </code></pre>
 
 <blockquote>
@@ -535,96 +386,55 @@
 
 <p><strong>头插法算法实现代码：</strong></p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cm">/* 随机产生 n 个元素的值，建立表头结点的单链线性表 L（头插法） */</span>
-</span><span class='line'><span class="kt">void</span> <span class="nf">CreatListHead</span><span class="p">(</span><span class="n">LinkList</span> <span class="o">*</span><span class="n">L</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>	<span class="n">LinkList</span> <span class="n">p</span><span class="p">;</span>
-</span><span class='line'>	<span class="kt">int</span> <span class="n">i</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="cm">/* 初始化随机种子数 */</span>
-</span><span class='line'><span class="n">srand</span><span class="p">(</span><span class="n">time</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">*</span><span class="n">L</span> <span class="o">=</span> <span class="p">(</span><span class="n">LinkList</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">Node</span><span class="p">));</span>
-</span><span class='line'>
-</span><span class='line'><span class="cm">/* 创建一个带头结点的单链表 */</span>
-</span><span class='line'><span class="p">(</span><span class="o">*</span><span class="n">L</span><span class="p">)</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>	<span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="n">LinkList</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">Node</span><span class="p">));</span>
-</span><span class='line'>	
-</span><span class='line'>	<span class="cm">/* 随机生成 100 以内的数 */</span>
-</span><span class='line'>	<span class="n">p</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">data</span> <span class="o">=</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-</span><span class='line'>	<span class="n">p</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span> <span class="o">=</span> <span class="p">(</span><span class="o">*</span><span class="n">L</span><span class="p">)</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span><span class="p">;</span>
-</span><span class='line'>	<span class="p">(</span><span class="o">*</span><span class="n">L</span><span class="p">)</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span> <span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
+<p>{% codeblock lang:c %}
+/* 随机产生 n 个元素的值，建立表头结点的单链线性表 L（头插法） */
+void CreatListHead(LinkList *L, int n)
+{
+	LinkList p;
+	int i;</p>
+
+<pre><code>/* 初始化随机种子数 */
+srand(time(0));
+
+*L = (LinkList)malloc(sizeof(Node));
+
+/* 创建一个带头结点的单链表 */
+(*L)-&gt;next = NULL;
+
+for(i = 0; i &lt; n; i++)
+{
+	p = (LinkList)malloc(sizeof(Node));
+	
+	/* 随机生成 100 以内的数 */
+	p-&gt;data = rand() % 100 + 1;
+	p-&gt;next = (*L)-&gt;next;
+	(*L)-&gt;next = p;
+} } {% endcodeblock %}
 </code></pre>
 
 <p>算法实现过程根据示意图很容易理解。上面代码中用到了 <code>srand(time(0))</code>，这里的目的是初始化一个随机数种子。实质上就是后面每次 <code>rand()</code> 时，不同时刻可以拿到不同的数，这个数就是 1970.1.1 至今的秒数。这样就能确保每次我们拿到的都是不同的数字。</p>
 
 <p><strong>尾插法算法实现代码：</strong></p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cm">/* 随机产生 n 个元素的值，建立带表头结点的单链表 L（尾插法） */</span>
-</span><span class='line'><span class="kt">void</span> <span class="nf">CreatListTail</span><span class="p">(</span><span class="n">LinkList</span> <span class="o">*</span><span class="n">L</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>	<span class="n">LinkList</span> <span class="n">p</span><span class="p">,</span> <span class="n">r</span><span class="p">;</span>
-</span><span class='line'>	<span class="kt">int</span> <span class="n">i</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">srand</span><span class="p">(</span><span class="n">time</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
-</span><span class='line'><span class="o">*</span><span class="n">L</span> <span class="o">=</span> <span class="p">(</span><span class="n">LinkList</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">Node</span><span class="p">));</span>
-</span><span class='line'><span class="n">r</span> <span class="o">=</span> <span class="o">*</span><span class="n">L</span><span class="p">;</span>
-</span><span class='line'><span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>	<span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="n">Node</span> <span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">Node</span><span class="p">));</span>
-</span><span class='line'>	<span class="n">p</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">data</span> <span class="o">=</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-</span><span class='line'>	<span class="n">r</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span>
-</span><span class='line'>	<span class="n">r</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">r</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
+<p>{% codeblock lang:c %}
+/* 随机产生 n 个元素的值，建立带表头结点的单链表 L（尾插法） */
+void CreatListTail(LinkList *L, int n)
+{
+	LinkList p, r;
+	int i;</p>
+
+<pre><code>srand(time(0));
+*L = (LinkList)malloc(sizeof(Node));
+r = *L;
+for(i = 0; i &lt; n; i++)
+{
+	p = (Node *)malloc(sizeof(Node));
+	p-&gt;data = rand() % 100 + 1;
+	r-&gt;next = p;
+	r = p;
+}
+
+r-&gt;next = NULL; } {% endcodeblock %}
 </code></pre>
 
 <p>了解头插法后看尾插法应该很容易理解了。</p>
@@ -633,39 +443,23 @@
 
 <p>算法实现代码如下：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="o">/*</span> <span class="err">初始条件：单链表</span> <span class="n">L</span> <span class="err">已存在</span> <span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;/</span>
-</span><span class='line'><span class="o">/&lt;/</span><span class="n">em</span><span class="o">&gt;</span> <span class="err">操作结果：将</span> <span class="n">L</span> <span class="err">重置为空表</span> <span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;/</span>
-</span><span class='line'><span class="n">Status</span> <span class="n">ClearList</span><span class="p">(</span><span class="n">LinkList</span> <span class="o">*</span><span class="n">L</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>	<span class="n">LinkList</span> <span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">;</span>
-</span><span class='line'>	<span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;</span><span class="n">L</span><span class="p">)</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">while</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>	<span class="n">q</span> <span class="o">=</span> <span class="n">p</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span><span class="p">;</span>
-</span><span class='line'>	<span class="n">free</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
-</span><span class='line'>	<span class="n">p</span> <span class="o">=</span> <span class="n">q</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="p">(</span><span class="o">*</span><span class="n">L</span><span class="p">)</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
-</span><span class='line'><span class="k">return</span> <span class="n">OK</span><span class="p">;</span> <span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
+<p>{% codeblock lang:c %}
+/* 初始条件：单链表 L 已存在 <em>/
+/</em> 操作结果：将 L 重置为空表 <em>/
+Status ClearList(LinkList *L)
+{
+	LinkList p, q;
+	p = (</em>L)-&gt;next;</p>
+
+<pre><code>while(p)
+{
+	q = p-&gt;next;
+	free(p);
+	p = q;
+}
+
+(*L)-&gt;next = NULL;
+return OK; } {% endcodeblock %}
 </code></pre>
 
 <h3 id="section-17">5.5、单链表结构与顺序结构对比</h3>
@@ -691,45 +485,27 @@
 
 <p>初始化代码如下：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cm">/* 线性表的静态链表存储结构 */</span>
-</span><span class='line'> <span class="cp">#define MAXSIZE 1000                   &lt;br /&gt;</span>
-</span><span class='line'> <span class="k">typedef</span> <span class="k">struct</span>
-</span><span class='line'> <span class="p">{</span>
-</span><span class='line'>    <span class="n">ElemType</span> <span class="n">data</span><span class="p">;</span>
-</span><span class='line'>    <span class="kt">int</span> <span class="n">cur</span><span class="p">;</span>                           <span class="o">&lt;</span><span class="n">br</span> <span class="o">/&gt;</span>
-</span><span class='line'> <span class="p">}</span> <span class="n">StaticLinkList</span><span class="p">[</span><span class="n">MAXSIZE</span><span class="p">];</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="cm">/* 将一维数组space中各分量链成一备用链表， &lt;em&gt;/</span>
-</span><span class='line'><span class="cm"> /&lt;/em&gt; space[0].cur为头指针，”0”表示空指针 &lt;em&gt;/</span>
-</span><span class='line'><span class="cm"> Status InitList(StaticLinkList space)</span>
-</span><span class='line'><span class="cm"> {</span>
-</span><span class='line'><span class="cm">    int i;</span>
-</span><span class='line'><span class="cm">    for (i = 0; i &amp;lt; MAXSIZE - 1; i++)</span>
-</span><span class='line'><span class="cm">        space[i].cur = i + 1;</span>
-</span><span class='line'><span class="cm">    /&lt;/em&gt; 目前静态链表为空，最后一个元素的cur为0 */</span>
-</span><span class='line'>    <span class="n">space</span><span class="p">[</span><span class="n">MAXSIZE</span> <span class="o">-</span> <span class="mi">1</span><span class="p">].</span><span class="n">cur</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>  <span class="o">&lt;</span><span class="n">br</span> <span class="o">/&gt;</span>
-</span><span class='line'>	<span class="k">return</span> <span class="n">OK</span><span class="p">;</span>
-</span><span class='line'> <span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:c %}
+/* 线性表的静态链表存储结构 */
+ #define MAXSIZE 1000                   <br />
+ typedef struct
+ {
+    ElemType data;
+    int cur;                           <br />
+ } StaticLinkList[MAXSIZE];</p>
+
+<p>/* 将一维数组space中各分量链成一备用链表， <em>/
+ /</em> space[0].cur为头指针，”0”表示空指针 <em>/
+ Status InitList(StaticLinkList space)
+ {
+    int i;
+    for (i = 0; i &lt; MAXSIZE - 1; i++)
+        space[i].cur = i + 1;
+    /</em> 目前静态链表为空，最后一个元素的cur为0 */
+    space[MAXSIZE - 1].cur = 0;  <br />
+	return OK;
+ }
+{% endcodeblock %}</p>
 
 <h3 id="section-20">6.2、静态链表的插入操作</h3>
 
@@ -738,89 +514,49 @@
 <p>在动态链表中，结点的申请和释放分别借用<code>malloc()</code>和<code>free()</code>两个函数来实现。在静态链表中，操作的是数组，不存在像动态链表的结点申请和释放问题，所以我们需要自己实现这两个函数，才可以做插入和删除的操作。
 为辨明数组中哪些分量未被使用，将所有未被使用过的及已被删除的分量用游标链成一个备用的链表，每当进行插入时，便可以从备用链表上取得第一个结点作为待插入的新结点。如下代码：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cm">/* 若备用空间链表非空，则返回分配的结点下标，否则返回0 &lt;em&gt;/</span>
-</span><span class='line'><span class="cm">int Malloc_SLL(StaticLinkList space)</span>
-</span><span class='line'><span class="cm">{</span>
-</span><span class='line'><span class="cm">    /&lt;/em&gt; 当前数组第一个元素的cur存的值，就是要返回的第一个备用空闲的下标 */</span>
-</span><span class='line'>    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">space</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">cur</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="cm">/* 由于要拿出一个分量来使用了，所以我们就得把它的下一个分量用来做备用 */</span>
-</span><span class='line'><span class="k">if</span> <span class="p">(</span><span class="n">space</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">cur</span><span class="p">)</span>
-</span><span class='line'>	<span class="n">space</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">cur</span> <span class="o">=</span> <span class="n">space</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">cur</span><span class="p">;</span>
-</span><span class='line'><span class="k">return</span> <span class="n">i</span><span class="p">;</span> <span class="p">}</span>
-</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="cm">/* 在L中第i个元素之前插入新的数据元素e  &lt;em&gt;/</span>
-</span><span class='line'><span class="cm">Status ListInsert(StaticLinkList L, int i, ElemType e)</span>
-</span><span class='line'><span class="cm">{</span>
-</span><span class='line'><span class="cm">    int j, k, l;</span>
-</span><span class='line'><span class="cm">    /&lt;/em&gt; 注意 k 是最后一个元素的下标 */</span>
-</span><span class='line'>    <span class="n">k</span> <span class="o">=</span> <span class="n">MAX_SIZE</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>                 <span class="o">&lt;</span><span class="n">br</span> <span class="o">/&gt;</span>
-</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="mi">1</span> <span class="o">||</span> <span class="n">i</span> <span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">ListLength</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-</span><span class='line'>        <span class="k">return</span> <span class="n">ERROR</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="cm">/* 获得空闲分量的下标 */</span>
-</span><span class='line'><span class="n">j</span> <span class="o">=</span> <span class="n">Malloc_SSL</span><span class="p">(</span><span class="n">L</span><span class="p">);</span>
-</span><span class='line'><span class="k">if</span> <span class="p">(</span><span class="n">j</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>   <span class="cm">/* 将数据赋值给此分量的 data */</span>
-</span><span class='line'>   <span class="n">L</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">data</span> <span class="o">=</span> <span class="n">e</span><span class="p">;</span>
-</span><span class='line'>   <span class="cm">/* 找到第i个元素之前的位置 */</span>
-</span><span class='line'>   <span class="k">for</span> <span class="p">(</span><span class="n">l</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">l</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">l</span><span class="o">++</span><span class="p">)</span>
-</span><span class='line'>       <span class="n">k</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">cur</span><span class="p">;</span>
-</span><span class='line'>   <span class="cm">/* 把第i个元素之前的cur赋值给新元素的cur */</span>
-</span><span class='line'>   <span class="n">L</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">cur</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">cur</span><span class="p">;</span>
-</span><span class='line'>   <span class="cm">/* 把新元素的下标赋值给第i个元素之前元素的cur */</span>
-</span><span class='line'>   <span class="n">L</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">cur</span> <span class="o">=</span> <span class="n">j</span><span class="p">;</span>
-</span><span class='line'>   <span class="k">return</span> <span class="n">OK</span><span class="p">;</span>
-</span><span class='line'> <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'> <span class="k">return</span> <span class="n">ERROR</span><span class="p">;</span>
-</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:c %}
+/* 若备用空间链表非空，则返回分配的结点下标，否则返回0 <em>/
+int Malloc_SLL(StaticLinkList space)
+{
+    /</em> 当前数组第一个元素的cur存的值，就是要返回的第一个备用空闲的下标 */
+    int i = space[0].cur;</p>
+
+<pre><code>/* 由于要拿出一个分量来使用了，所以我们就得把它的下一个分量用来做备用 */
+if (space[0].cur)
+	space[0].cur = space[i].cur;
+return i; }
+</code></pre>
+
+<p>/* 在L中第i个元素之前插入新的数据元素e  <em>/
+Status ListInsert(StaticLinkList L, int i, ElemType e)
+{
+    int j, k, l;
+    /</em> 注意 k 是最后一个元素的下标 */
+    k = MAX_SIZE - 1;                 <br />
+    if (i &lt; 1 || i &gt; ListLength(L) + 1)
+        return ERROR;</p>
+
+<pre><code>/* 获得空闲分量的下标 */
+j = Malloc_SSL(L);                  
+if (j)
+{
+   /* 将数据赋值给此分量的 data */
+   L[j].data = e;                  
+   /* 找到第i个元素之前的位置 */
+   for (l = 1; l &lt;= i - 1; l++)    
+       k = L[k].cur;
+   /* 把第i个元素之前的cur赋值给新元素的cur */
+   L[j].cur = L[k].cur;        
+   /* 把新元素的下标赋值给第i个元素之前元素的cur */
+   L[k].cur = j;                   
+   return OK;
+ }
+ 
+ return ERROR;
+</code></pre>
+
+<p>}
+{% endcodeblock %}</p>
 
 <h3 id="section-21">6.3、静态链表的删除操作</h3>
 
@@ -828,79 +564,43 @@
 
 <p>和插入操作原理相同，删除操作代码如下：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cm">/* 删除在 L 中第 i 个数据元素 e */</span>
-</span><span class='line'><span class="n">Status</span> <span class="nf">ListDelete</span><span class="p">(</span><span class="n">StaticLinkList</span> <span class="n">L</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>    <span class="kt">int</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">;</span>
-</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="mi">1</span> <span class="o">||</span> <span class="n">i</span> <span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">ListLength</span><span class="p">(</span><span class="n">L</span><span class="p">))</span>
-</span><span class='line'>        <span class="k">return</span> <span class="n">ERROR</span><span class="p">;</span>
-</span><span class='line'>    <span class="n">k</span> <span class="o">=</span> <span class="n">MAX_SIZE</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-</span><span class='line'>    <span class="k">for</span> <span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
-</span><span class='line'>        <span class="n">k</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">cur</span><span class="p">;</span>
-</span><span class='line'>    <span class="n">j</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">cur</span><span class="p">;</span>
-</span><span class='line'>    <span class="n">L</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">cur</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">cur</span><span class="p">;</span>
-</span><span class='line'>    <span class="n">Free_SSL</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">j</span><span class="p">);</span>
-</span><span class='line'>	<span class="k">return</span> <span class="n">OK</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="cm">/* 将下标为k的空闲结点回收到备用链表 &lt;em&gt;/</span>
-</span><span class='line'><span class="cm">void Free_SSL(StaticLinkList space, int k)</span>
-</span><span class='line'><span class="cm">{</span>
-</span><span class='line'><span class="cm">    /&lt;/em&gt; 把第一个元素 cur 值赋给要删除的分量 cur &lt;em&gt;/</span>
-</span><span class='line'><span class="cm">    space[k].cur = space[0].cur;</span>
-</span><span class='line'><span class="cm">    /&lt;/em&gt; 把要删除的分量下标赋值给第一个元素的 cur */</span>
-</span><span class='line'>	<span class="n">space</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">cur</span> <span class="o">=</span> <span class="n">k</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="cm">/* 初始条件：静态链表 L 已存在。操作结果：返回 L 中数据元素个数 */</span>
-</span><span class='line'><span class="kt">int</span> <span class="n">ListLength</span><span class="p">(</span><span class="n">StaticLinkList</span> <span class="n">L</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>    <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</span><span class='line'>    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">MAXSIZE</span> <span class="o">-</span> <span class="mi">1</span><span class="p">].</span><span class="n">cur</span><span class="p">;</span>
-</span><span class='line'>    <span class="k">while</span> <span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</span><span class='line'>    <span class="p">{</span>
-</span><span class='line'>        <span class="n">i</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">cur</span><span class="p">;</span>
-</span><span class='line'>        <span class="n">j</span><span class="o">++</span><span class="p">;</span>
-</span><span class='line'>    <span class="p">}</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">return</span> <span class="n">j</span><span class="p">;</span> <span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
+<p>{% codeblock lang:c %}
+/* 删除在 L 中第 i 个数据元素 e */
+Status ListDelete(StaticLinkList L, int i)
+{
+    int j, k;
+    if (i &lt; 1 || i &gt; ListLength(L))
+        return ERROR;
+    k = MAX_SIZE - 1;
+    for (j = 1; j &lt;= i - 1; j++)
+        k = L[k].cur;
+    j = L[k].cur;
+    L[k].cur = L[j].cur;
+    Free_SSL(L, j);
+	return OK;
+}</p>
+
+<p>/* 将下标为k的空闲结点回收到备用链表 <em>/
+void Free_SSL(StaticLinkList space, int k)
+{
+    /</em> 把第一个元素 cur 值赋给要删除的分量 cur <em>/
+    space[k].cur = space[0].cur;
+    /</em> 把要删除的分量下标赋值给第一个元素的 cur */
+	space[0].cur = k;
+}</p>
+
+<p>/* 初始条件：静态链表 L 已存在。操作结果：返回 L 中数据元素个数 */
+int ListLength(StaticLinkList L)
+{
+    int j = 0;
+    int i = L[MAXSIZE - 1].cur;
+    while (i)
+    {
+        i = L[i].cur;
+        j++;
+    }</p>
+
+<pre><code>return j; } {% endcodeblock %}
 </code></pre>
 
 <h3 id="section-22">6.4、静态链表优缺点</h3>
@@ -933,115 +633,78 @@
 
 <p><img src="http://7xob7d.com1.z0.glb.clouddn.com/data_structure_003%E5%90%88%E5%B9%B6%E4%B8%A4%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8%20-%20%E5%90%8E.png" alt="合并两循环链表 - 后" /></p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cm">/* 保存A表的头结点，即① */</span>
-</span><span class='line'><span class="n">p</span> <span class="o">=</span> <span class="n">rearA</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="cm">/*将本是指向B表的第一个结点（不是头结点） */</span>
-</span><span class='line'><span class="n">rearA</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span> <span class="o">=</span> <span class="n">rearB</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="cm">/* 赋值给reaA-&amp;gt;next，即② */</span>
-</span><span class='line'><span class="n">q</span> <span class="o">=</span> <span class="n">rearB</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="cm">/* 将原A表的头结点赋值给rearB-&amp;gt;next，即③ */</span>
-</span><span class='line'><span class="n">rearB</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="cm">/* 释放 q */</span>
-</span><span class='line'><span class="n">free</span><span class="p">(</span><span class="n">q</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:c %}
+/* 保存A表的头结点，即① */
+p = rearA-&gt;next;</p>
+
+<p>/*将本是指向B表的第一个结点（不是头结点） */
+rearA-&gt;next = rearB-&gt;next-&gt;next;</p>
+
+<p>/* 赋值给reaA-&gt;next，即② */
+q = rearB-&gt;next;</p>
+
+<p>/* 将原A表的头结点赋值给rearB-&gt;next，即③ */
+rearB-&gt;next = p;</p>
+
+<p>/* 释放 q */
+free(q);
+{% endcodeblock %}</p>
 
 <h2 id="section-24">八. 双向链表</h2>
 
 <p>双向链表中结点拥有两个指针域，一个指向直接前驱，一个指向直接后继。</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cm">/* 线性表的双向链表存储结构 &lt;em&gt;/</span>
-</span><span class='line'><span class="cm">typedef struct DulNode</span>
-</span><span class='line'><span class="cm">{</span>
-</span><span class='line'><span class="cm">    ElemType data;</span>
-</span><span class='line'><span class="cm">    struct DuLNode *prior;    /&lt;/em&gt; 直接前驱指针 &lt;em&gt;/</span>
-</span><span class='line'><span class="cm">    struct DuLNode *next;     /&lt;/em&gt; 直接后继指针 */</span>
-</span><span class='line'><span class="p">}</span> <span class="n">DulNode</span><span class="p">,</span> <span class="o">*</span><span class="n">DuLinkList</span><span class="p">;</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:c %}
+/* 线性表的双向链表存储结构 <em>/
+typedef struct DulNode
+{
+    ElemType data;
+    struct DuLNode *prior;    /</em> 直接前驱指针 <em>/
+    struct DuLNode *next;     /</em> 直接后继指针 */
+} DulNode, *DuLinkList;
+{% endcodeblock %}</p>
 
 <p><img src="http://7xob7d.com1.z0.glb.clouddn.com/data_structure_003%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8%E7%9A%84%E5%BE%AA%E7%8E%AF%E5%B8%A6%E5%A4%B4%E7%BB%93%E7%82%B9%E7%9A%84%E7%A9%BA%E9%93%BE%E8%A1%A8.png" alt="双向链表的循环带头结点的空链表" /></p>
 
 <p><img src="http://7xob7d.com1.z0.glb.clouddn.com/data_structure_003%E9%9D%9E%E7%A9%BA%E7%9A%84%E5%BE%AA%E7%8E%AF%E7%9A%84%E5%B8%A6%E5%A4%B4%E7%BB%93%E7%82%B9%E7%9A%84%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8.png" alt="非空的循环的带头结点的双向链表" /></p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cm">/* 链表中的某一结点 p */</span>
-</span><span class='line'><span class="n">p</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">prior</span> <span class="o">=</span> <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">prior</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:c %}
+/* 链表中的某一结点 p */
+p-&gt;next-&gt;prior = p = p-&gt;prior-&gt;next
+{% endcodeblock %}</p>
 
 <p>假设存储元素 e 的结点 s，要实现将结点 s 插入到结点 p 和 p-&gt;next 之间，如下：</p>
 
 <p><img src="http://7xob7d.com1.z0.glb.clouddn.com/data_structure_003%E7%BB%93%E7%82%B9%E6%8F%92%E5%85%A5.png" alt="结点插入" /></p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cm">/* 把p赋值给s的前驱，如图中① */</span>
-</span><span class='line'><span class="n">s</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">prior</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="cm">/* 把p-&amp;gt;next赋值给s的后继，如图中② */</span>
-</span><span class='line'><span class="n">s</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span> <span class="o">=</span> <span class="n">p</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="cm">/* 把s赋值给p-&amp;gt;next的前驱，如图中③ */</span>
-</span><span class='line'><span class="n">p</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">prior</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="cm">/* 把s赋值给p的后继，如图中④ */</span>
-</span><span class='line'><span class="n">p</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:c %}
+/* 把p赋值给s的前驱，如图中① */
+s-&gt;prior = p;</p>
+
+<p>/* 把p-&gt;next赋值给s的后继，如图中② */
+s-&gt;next = p-&gt;next;</p>
+
+<p>/* 把s赋值给p-&gt;next的前驱，如图中③ */
+p-&gt;next-&gt;prior = s;</p>
+
+<p>/* 把s赋值给p的后继，如图中④ */
+p-&gt;next = s;
+{% endcodeblock %}</p>
 
 <p>理解了插入操作，删除操作就比较简单了，示意图如下：</p>
 
 <p><img src="http://7xob7d.com1.z0.glb.clouddn.com/data_structure_003%E5%88%A0%E9%99%A4%E7%BB%93%E7%82%B9%20p.png" alt="删除结点 p" /></p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cm">/* 把p-&amp;gt;next赋值给p-&amp;gt;prior的后继，如图中① */</span>
-</span><span class='line'><span class="n">p</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">prior</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span> <span class="o">=</span> <span class="n">p</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="cm">/* 把p-&amp;gt;prior赋值给p-&amp;gt;next的前驱，如图中② */</span>
-</span><span class='line'><span class="n">p</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">next</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">prior</span> <span class="o">=</span> <span class="n">p</span><span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span><span class="n">prior</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="cm">/* 释放结点 */</span>
-</span><span class='line'><span class="n">free</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:c %}
+/* 把p-&gt;next赋值给p-&gt;prior的后继，如图中① */
+p-&gt;prior-&gt;next = p-&gt;next;</p>
+
+<p>/* 把p-&gt;prior赋值给p-&gt;next的前驱，如图中② */
+p-&gt;next-&gt;prior = p-&gt;prior;</p>
+
+<p>/* 释放结点 */
+free(p);
+{% endcodeblock %}</p>
 
 <blockquote>
   <p><strong>本篇参考：</strong>
@@ -1152,13 +815,11 @@
 <p>例如：求 1+2+3+…+100 和
 我们很容易想到的是 <code>高斯算法</code>，如下：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>         <span class="cm">/* 执行一次 &lt;em&gt;/</span>
-</span><span class='line'><span class="cm">sum = (1 + n) * n / 2;        /&lt;/em&gt; 执行一次 &lt;em&gt;/</span>
-</span><span class='line'><span class="cm">printf(“%d”, sum);            /&lt;/em&gt; 执行一次 */</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:c %}
+int sum = 0, n = 100;         /* 执行一次 <em>/
+sum = (1 + n) * n / 2;        /</em> 执行一次 <em>/
+printf(“%d”, sum);            /</em> 执行一次 */
+{% endcodeblock %}</p>
 
 <p>由  <code>T ( n ) = O ( f ( n ) )</code>，找到依次数据，很容易得到 <code>f ( n ) = 3</code>；根据上面给出的推到方法，我们很容易得出 <code>高斯算法</code> 的时间复杂度为<code>O (1)</code></p>
 
@@ -1166,15 +827,12 @@
 
 <p>举个例子，如下：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>  <span class="cm">/* 时间复杂度为 O (1) 的程序步骤序列 */</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:c %}
+for (i = 0; i &lt; n; i++ )
+{
+  /* 时间复杂度为 O (1) 的程序步骤序列 */
+}
+{% endcodeblock %}</p>
 
 <p>循环体中的代码需要执行 <code>n 次</code>，即 <code>f( n ) = n</code>，所以它的时间复杂度为 <code>O( n )</code></p>
 
@@ -1182,17 +840,13 @@
 
 <p>举例如下：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-</span><span class='line'><span class="k">while</span> <span class="p">(</span><span class="n">count</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">n</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>  <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:c %}
+int count = 1;
+while (count &lt; n)
+{
+  count = count * 2;
+}
+{% endcodeblock %}</p>
 
 <p>每次 count * 2 之后，就距离 n 更近一分。那么有多少个 2 相乘后大于 n 退出循环？ 数学表示来看也就是 2^x = n ，得到 x = log(2 为底 n 的对数） [<code>markdown</code> 写数学公式功底不够，理解就好…]，得出 T( n ) = logn;</p>
 
@@ -1200,73 +854,52 @@
 
 <p><strong>下面是一个<code>循环嵌套</code>例子：</strong></p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">;</span>
-</span><span class='line'><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>    <span class="k">for</span> <span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">n</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
-</span><span class='line'>    <span class="p">{</span>
-</span><span class='line'>        <span class="cm">/* 时间复杂度为 O(1) 的程序步骤序列 */</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:c %}
+int i, j;
+for (i = 0; i&lt; n; i ++)
+{
+    for (j = 0; j &lt; n; j++)
+    {
+        /* 时间复杂度为 O(1) 的程序步骤序列 */
+    }
+}
+{% endcodeblock %}</p>
 
 <p><code>外层</code>和<code>内层</code>的时间复杂度都是 <code>O(n)</code>，所以这段代码的时间复杂度是 <code>O(n^2)</code>.</p>
 
 <p><strong>再看下面一个<code>循环嵌套</code>例子：</strong></p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">;</span>
-</span><span class='line'><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">m</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>    <span class="k">for</span> <span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">n</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
-</span><span class='line'>    <span class="p">{</span>
-</span><span class='line'>        <span class="cm">/* 时间复杂度为 O(1) 的程序步骤序列 */</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:c %}
+int i, j;
+for (i = 0; i&lt; m; i ++)
+{
+    for (j = 0; j &lt; n; j++)
+    {
+        /* 时间复杂度为 O(1) 的程序步骤序列 */
+    }
+}
+{% endcodeblock %}</p>
 
 <p>外层和内层的时间复杂度依次为 <code>O(m)</code>, <code>O(n)</code>，所以这段代码的时间复杂度是 <code>O(m * n)</code></p>
 
 <p><strong>接着再看一个例子：</strong></p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">;</span>
-</span><span class='line'><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>   <span class="k">for</span> <span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">n</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
-</span><span class='line'>    <span class="p">{</span>
-</span><span class='line'>        <span class="cm">/* 时间复杂度为 O(1) 的程序步骤序列*/</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:c %}
+int i, j;
+for (i = 0; i &lt; n; i++)
+{
+   for (j = i; j &lt; n; j++)
+    {
+        /* 时间复杂度为 O(1) 的程序步骤序列*/
+    }
+}
+{% endcodeblock %}</p>
 
 <p>当 i = 0 时，内循环执行 n 次；当 i = 1 时，内循环执行 n-1 次；……；当 i = n -1时，执行 1 次。所以总的执行次数为：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="n">n</span> <span class="o">+</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="err">…</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">=</span> <span class="n">n</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">=</span> <span class="n">n</span><span class="o">^</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">n</span> <span class="o">/</span> <span class="mi">2</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:c %}
+n + (n - 1) + (n - 2) + … + 1 = n(n + 1) / 2 = n^2 / 2 + n / 2
+{% endcodeblock %}</p>
 
 <p>根据前面的<code>推导方法</code>，很容易得到这段代码的<code>时间复杂度</code>为 <code>O(n^2)</code>.</p>
 
@@ -1323,13 +956,11 @@
 
 <p>常用时间复杂度所消耗时间从小到大依次为：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'> <span class="n">O</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">O</span><span class="p">(</span><span class="n">logn</span><span class="p">)</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">O</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">O</span><span class="p">(</span><span class="n">nlogn</span><span class="p">)</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">O</span><span class="p">(</span><span class="n">n</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">O</span><span class="p">(</span><span class="n">n</span><span class="o">^</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">O</span><span class="p">(</span><span class="mi">2</span><span class="o">^</span><span class="n">n</span><span class="p">)</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">O</span><span class="p">(</span><span class="n">n</span><span class="o">!</span><span class="p">)</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">O</span><span class="p">(</span><span class="n">n</span><span class="o">^</span><span class="n">n</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="err">#</span> <span class="err">其中的</span> <span class="err">指数阶</span> <span class="err">和</span> <span class="err">阶乘阶</span> <span class="err">很少用到，你懂的…</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:c %}
+ O(1) &lt; O(logn) &lt; O(n) &lt; O(nlogn) &lt; O(n^2) &lt; O(n^3) &lt; O(2^n) &lt; O(n!) &lt; O(n^n)</p>
+
+<p># 其中的 指数阶 和 阶乘阶 很少用到，你懂的…
+{% endcodeblock %}</p>
 
 <h2 id="section-15">五. 算法空间复杂度</h2>
 

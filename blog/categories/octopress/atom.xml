@@ -4,7 +4,7 @@
   <title><![CDATA[Categorie: Octopress | I'm Jony]]></title>
   <link href="http://jonyfang.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://jonyfang.com/"/>
-  <updated>2016-01-10T23:02:24+08:00</updated>
+  <updated>2016-04-18T14:56:54+08:00</updated>
   <id>http://jonyfang.com/</id>
   <author>
     <name><![CDATA[Jony Fang]]></name>
@@ -25,33 +25,30 @@
 
 <p>Github 远程目录有两个分支，一个<strong><code>master</code></strong>，一个 <strong><code>source</code></strong>，首先把 <code>source</code> 分支 <code>clone</code> 下来:</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="err">$</span> <span class="n">git</span> <span class="nb">clone</span> <span class="o">-</span><span class="n">b</span> <span class="n">source</span> <span class="n">git</span><span class="vi">@github</span><span class="o">.</span><span class="n">com</span><span class="ss">:username</span><span class="o">/</span><span class="n">username</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">git</span> <span class="n">octopress</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+$ git clone -b source git@github.com:username/username.github.io.git octopress
+{% endcodeblock %}</p>
 
 <p>进入 octopress 目录，安装 Octopress 所需要的依赖库（dependencies）：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="err">$</span> <span class="n">cd</span> <span class="n">octopress</span>
-</span><span class='line'><span class="err">$</span> <span class="n">gem</span> <span class="n">install</span> <span class="n">bundler</span>
-</span><span class='line'><span class="err">$</span> <span class="n">bundle</span> <span class="n">install</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+$ cd octopress
+$ gem install bundler
+$ bundle install
+{% endcodeblock %}</p>
 
 <p>接着执行如下命令，提示后，输入 Github 仓库的 URL （例如：git@github.com:username/username.github.io.git）：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="err">$</span> <span class="n">rake</span> <span class="n">setup_github_pages</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+$ rake setup_github_pages
+{% endcodeblock %}</p>
 
 <p>最后删除生成的 <code>_deploy</code>，克隆 <code>master</code> 分支到本地：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="err">$</span> <span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="n">_deploy</span>
-</span><span class='line'><span class="err">$</span> <span class="n">git</span> <span class="nb">clone</span> <span class="n">git</span><span class="vi">@github</span><span class="o">.</span><span class="n">com</span><span class="ss">:username</span><span class="o">/</span><span class="n">username</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">git</span> <span class="n">_deploy</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+$ rm -rf _deploy
+$ git clone git@github.com:username/username.github.io.git _deploy
+{% endcodeblock %}</p>
 
 ]]></content>
   </entry>
@@ -76,39 +73,30 @@
 
 <p>首先打开终端，运行：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="err">$</span> <span class="n">rake</span> <span class="n">preview</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+ $ rake preview
+{% endcodeblock %}</p>
 
 <p>报错如下：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="err">$</span> <span class="n">rakepreviewStarting</span> <span class="n">to</span> <span class="n">watchsourcewith</span> <span class="no">Jekyll</span> <span class="ow">and</span> <span class="no">Compass</span><span class="o">.</span> <span class="no">Starting</span> <span class="no">Rack</span> <span class="n">on</span> <span class="n">port</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;4000rake aborted!Errno::ENOENT: No such file or directory -&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="n">compass</span><span class="o">/</span><span class="no">Users</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">git</span><span class="o">/</span><span class="n">octopress</span><span class="o">/</span><span class="ss">Rakefile</span><span class="p">:</span><span class="mi">85</span><span class="ss">:in</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;spawn/</span><span class="no">Users</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">git</span><span class="o">/</span><span class="n">octopress</span><span class="o">/</span><span class="ss">Rakefile</span><span class="p">:</span><span class="mi">85</span><span class="ss">:in</span> <span class="n">block</span> <span class="ss">inTasks</span><span class="p">:</span><span class="no">TOP</span><span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">preview</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+$ rakepreviewStarting to watchsourcewith Jekyll and Compass. Starting Rack on port</p>
+
+<p>4000rake aborted!Errno::ENOENT: No such file or directory -</p>
+
+<p>compass/Users/user/git/octopress/Rakefile:85:in</p>
+
+<p>spawn/Users/user/git/octopress/Rakefile:85:in block inTasks:TOP=&gt; preview
+{% endcodeblock %}</p>
 
 <p>在没有升级 OS X EI Capitan 之前一切如常，首先想到是不是 Ruby 的问题</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="err">$</span> <span class="n">ruby</span> <span class="o">-</span><span class="n">v</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;#输出</span>
-</span><span class='line'><span class="sr"> ruby 2.0.0p645 (2015-04-13 revision 50299) [universal.x86_64-darwin15]</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+ $ ruby -v</p>
+
+<p>#输出
+ ruby 2.0.0p645 (2015-04-13 revision 50299) [universal.x86_64-darwin15]
+{% endcodeblock %}</p>
 
 <p>和以前一样还是 2.0.0 版本，到官网查看最新版本是 2.2.3，多次尝试更新 <code>ruby</code> 失败。</p>
 
@@ -117,63 +105,50 @@
 
 <h3 id="rvm">1.1. 安装 RVM</h3>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="err">$</span> <span class="n">curl</span> <span class="o">-</span><span class="n">L</span> <span class="ss">https</span><span class="p">:</span><span class="sr">//</span><span class="n">get</span><span class="o">.</span><span class="n">rvm</span><span class="o">.</span><span class="n">io</span> <span class="o">|</span> <span class="n">bash</span> <span class="o">-</span><span class="n">s</span> <span class="n">stable</span> <span class="err">–</span><span class="n">ruby</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+ $ curl -L https://get.rvm.io | bash -s stable –ruby
+{% endcodeblock %}</p>
 
 <p class="addition">这里自己安装 <strong>RVM</strong> 过程中遇到安装冲突的情况，通过下面的命令清理缓存后恢复了。<code>$ rm -rf /usr/local/.git</code></p>
 
 <h3 id="ruby-223">1.2. 安装 Ruby 2.2.3</h3>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="err">$</span> <span class="n">rvm</span> <span class="n">install</span> <span class="mi">2</span><span class="o">.</span><span class="mi">2</span><span class="o">.</span><span class="mi">3</span>
-</span><span class='line'> <span class="err">$</span> <span class="n">rvm</span> <span class="n">use</span> <span class="mi">2</span><span class="o">.</span><span class="mi">2</span><span class="o">.</span><span class="mi">3</span>
-</span><span class='line'> <span class="err">$</span> <span class="n">rvm</span> <span class="n">rubygems</span> <span class="n">latest</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+ $ rvm install 2.2.3
+ $ rvm use 2.2.3
+ $ rvm rubygems latest
+{% endcodeblock %}</p>
 
 <p>查看下 Ruby 版本:</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="err">$</span> <span class="n">ruby</span> <span class="o">-</span><span class="n">v</span>
-</span><span class='line'> <span class="err">$</span> <span class="n">ruby</span> <span class="mi">2</span><span class="o">.</span><span class="mi">2</span><span class="o">.</span><span class="mi">3</span><span class="n">p173</span> <span class="p">(</span><span class="mi">2015</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">18</span> <span class="n">revision</span> <span class="mi">51636</span><span class="p">)</span> <span class="o">[</span><span class="n">x86_64</span><span class="o">-</span><span class="n">darwin14</span><span class="o">]</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+ $ ruby -v
+ $ ruby 2.2.3p173 (2015-08-18 revision 51636) [x86_64-darwin14]
+{% endcodeblock %}</p>
 
 <p>啊哈，切换过来了，其实也很简单，到这里就修复了吗？其实还没有，如你所见还有第4步。</p>
 
 <h3 id="octopress-">1.3. 安装 Octopress 依赖库</h3>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="err">$</span> <span class="n">cd</span> <span class="n">octopress</span>
-</span><span class='line'> <span class="err">$</span> <span class="n">sudo</span> <span class="n">gem</span> <span class="n">install</span> <span class="n">bundler</span>
-</span><span class='line'> <span class="err">$</span> <span class="n">bundle</span> <span class="n">install</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+ $ cd octopress
+ $ sudo gem install bundler
+ $ bundle install
+{% endcodeblock %}</p>
 
 <p>当 bundler 安装完毕之后，来测试下 <code>rake</code> 命令是否修复了：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="err">$</span> <span class="n">rake</span> <span class="n">generate</span>
-</span><span class='line'> <span class="c1">## Generating Site with Jekyll</span>
-</span><span class='line'>    <span class="n">write</span> <span class="n">source</span><span class="o">/</span><span class="n">stylesheets</span><span class="o">/</span><span class="n">screen</span><span class="o">.</span><span class="n">css</span>
-</span><span class='line'><span class="no">Configuration</span> <span class="ss">file</span><span class="p">:</span> <span class="sr">/Users/</span><span class="no">JonyFang</span><span class="o">/</span><span class="no">Desktop</span><span class="o">/</span><span class="n">octopress</span><span class="o">/</span><span class="n">_config</span><span class="o">.</span><span class="n">yml</span>
-</span><span class='line'>            <span class="ss">Source</span><span class="p">:</span> <span class="n">source</span>
-</span><span class='line'>       <span class="ss">Destination</span><span class="p">:</span> <span class="kp">public</span>
-</span><span class='line'>      <span class="no">Generating</span><span class="err">…</span>
-</span><span class='line'>                    <span class="n">done</span><span class="o">.</span>
-</span><span class='line'> <span class="no">Auto</span><span class="o">-</span><span class="ss">regeneration</span><span class="p">:</span> <span class="n">disabled</span><span class="o">.</span> <span class="no">Use</span> <span class="err">–</span><span class="n">watch</span> <span class="n">to</span> <span class="n">enable</span><span class="o">.</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+ $ rake generate
+ ## Generating Site with Jekyll
+    write source/stylesheets/screen.css
+Configuration file: /Users/JonyFang/Desktop/octopress/_config.yml
+            Source: source
+       Destination: public
+      Generating… 
+                    done.
+ Auto-regeneration: disabled. Use –watch to enable.
+{% endcodeblock %}</p>
 
 <p>可以了～</p>
 
@@ -236,11 +211,10 @@
 
 <p>终端执行如下命令：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="err">$</span> <span class="n">cd</span> <span class="n">octopress</span>
-</span><span class='line'>  <span class="err">$</span> <span class="n">rake</span> <span class="n">setup_github_pages</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+  $ cd octopress
+  $ rake setup_github_pages
+{% endcodeblock %}</p>
 
 <p>该命令会要求我们输入 Github 仓库的 URL 。复制粘贴下我们新建仓库的 <code>SSH</code> 或 <code>HTTPS</code> URL 即可。
 （例如：git@github.com:username/username.github.io.git）</p>
@@ -253,11 +227,10 @@
 
 <p>(1). 命令要求我们输入 Github Pages 仓库的 URL，也就是我们新建的名为 username.github.io 仓库的 URL。这样命名是为了通过字符串截取 URL 拿到子串（http://username.github.io）作为我们博客的域名；</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="c1"># Rakefile 中可查看 URL 截取方式：</span>
-</span><span class='line'>  <span class="n">repo_url</span> <span class="o">=</span> <span class="n">get_stdin</span><span class="p">(</span><span class="err">“</span><span class="no">Repository</span> <span class="ss">url</span><span class="p">:</span> <span class="err">“</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+  # Rakefile 中可查看 URL 截取方式：
+  repo_url = get_stdin(“Repository url: “)
+{% endcodeblock %}</p>
 
 <p>(2). 将指向（pointing to）imathis/octopress 远程库的名字 <code>‘origin’</code> 改为 <code>‘octopress’</code>；</p>
 
@@ -265,109 +238,81 @@
 
 <p>当我们 clone 了 octopress 仓库，执行如下命令可看到远程仓库信息：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="err">$</span> <span class="n">cd</span> <span class="n">octopress</span>
-</span><span class='line'>  <span class="err">$</span> <span class="n">git</span> <span class="n">remote</span> <span class="o">-</span><span class="n">v</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;# 输出如下，可看到远程仓库名为 origin</span>
-</span><span class='line'><span class="sr">  origin	git:/</span><span class="o">/</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">imathis</span><span class="o">/</span><span class="n">octopress</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">fetch</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">origin</span>	<span class="ss">git</span><span class="p">:</span><span class="sr">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">imathis</span><span class="o">/</span><span class="n">octopress</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">push</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+  $ cd octopress
+  $ git remote -v</p>
+
+<p># 输出如下，可看到远程仓库名为 origin
+  origin	git://github.com/imathis/octopress.git (fetch)
+  origin	git://github.com/imathis/octopress.git (push)
+{% endcodeblock %}</p>
 
 <p><code>Rakefile</code> 中可看出是通过如下的方式，将 origin 改为 octopress:</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="c1"># 查看 Rakefile</span>
-</span><span class='line'>  <span class="nb">system</span> <span class="err">“</span><span class="n">git</span> <span class="n">remote</span> <span class="n">rename</span> <span class="n">origin</span> <span class="n">octopress</span><span class="err">”</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+  # 查看 Rakefile
+  system “git remote rename origin octopress”
+{% endcodeblock %}</p>
 
 <p>这里内部执行了命令 <code>git remote rename origin octopress</code>，当 <code>rake setup_github_pages</code> 执行完毕，再 <code>git remote -v</code> 发现远程库名改为了 octopress。</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="err">$</span> <span class="n">git</span> <span class="n">remote</span> <span class="o">-</span><span class="n">v</span>
-</span><span class='line'>  <span class="c1"># 输出如下</span>
-</span><span class='line'>  <span class="n">octopress</span>	  <span class="ss">git</span><span class="p">:</span><span class="sr">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">imathis</span><span class="o">/</span><span class="n">octopress</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">fetch</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">octopress</span>	  <span class="ss">git</span><span class="p">:</span><span class="sr">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">imathis</span><span class="o">/</span><span class="n">octopress</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">push</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+  $ git remote -v
+  # 输出如下
+  octopress	  git://github.com/imathis/octopress.git (fetch)
+  octopress	  git://github.com/imathis/octopress.git (push)
+{% endcodeblock %}</p>
 
 <p>(3). 添加你的 Github Pages 仓库作为默认的 origin remote，并将远程库中指向 imathis/octopress 中 master 分支的指针指向现在的 origin（即 username/username.github.io）的 master 分支，</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="c1"># 查看 Rakefile</span>
-</span><span class='line'>  <span class="nb">system</span> <span class="err">“</span><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">origin</span> <span class="c1">#{repo_url}”</span>
-</span><span class='line'>  <span class="nb">system</span> <span class="err">“</span><span class="n">git</span> <span class="n">config</span> <span class="n">branch</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">remote</span> <span class="n">origin</span><span class="err">”</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+  # 查看 Rakefile
+  system “git remote add origin #{repo_url}”
+  system “git config branch.master.remote origin”
+{% endcodeblock %}</p>
 
 <p>当 <code>rake setup_github_pages</code> 执行完毕查看远程库，可以看到远程库 origin 指向了 Github Pages。</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="err">$</span> <span class="n">cd</span> <span class="n">octopress</span>
-</span><span class='line'>  <span class="err">$</span> <span class="n">git</span> <span class="n">remote</span> <span class="o">-</span><span class="n">v</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;# 输出信息如下</span>
-</span><span class='line'><span class="sr">  octopress	git:/</span><span class="o">/</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">imathis</span><span class="o">/</span><span class="n">octopress</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">fetch</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">octopress</span>	<span class="ss">git</span><span class="p">:</span><span class="sr">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">imathis</span><span class="o">/</span><span class="n">octopress</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">push</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">origin</span>	<span class="n">git</span><span class="vi">@github</span><span class="o">.</span><span class="n">com</span><span class="ss">:JonyFang</span><span class="o">/</span><span class="no">JonyFang</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">fetch</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">origin</span>	<span class="n">git</span><span class="vi">@github</span><span class="o">.</span><span class="n">com</span><span class="ss">:JonyFang</span><span class="o">/</span><span class="no">JonyFang</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">push</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+  $ cd octopress
+  $ git remote -v</p>
+
+<p># 输出信息如下
+  octopress	git://github.com/imathis/octopress.git (fetch)
+  octopress	git://github.com/imathis/octopress.git (push)
+  origin	git@github.com:JonyFang/JonyFang.github.io.git (fetch)
+  origin	git@github.com:JonyFang/JonyFang.github.io.git (push)
+{% endcodeblock %}</p>
 
 <p>到这里，应该能猜到上一步将指向 <code>imathis/octopress</code> 远程库的名字 <code>origin</code> 改为 <code>octopress</code> 的原因了。</p>
 
 <p>(4). 将本地 master 分支名字从 <code>master</code> 改为 <code>source</code></p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="c1"># 查看 Rakefile</span>
-</span><span class='line'>  <span class="nb">system</span> <span class="err">“</span><span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">m</span> <span class="n">master</span> <span class="n">source</span><span class="err">”</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+  # 查看 Rakefile
+  system “git branch -m master source”
+{% endcodeblock %}</p>
 
 <p>执行如下命令查看本地分支（拿到第6条解释为什么要改名为 source）：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="err">$</span> <span class="n">git</span> <span class="n">branch</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;# 输出如下</span>
-</span><span class='line'><span class="sr">  * source</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+  $ git branch</p>
+
+<p># 输出如下
+  * source
+{% endcodeblock %}</p>
 
 <p>(5). 根据提供的 Github Pages 仓库的 <code>SSH</code> 或 <code>HTTPS</code> 的 URL，截取仓库名 <code>username.github.io</code> 作为博客的 URL（上面 1 有提到）。然后将 octopress 目录下 <code>_config.yml</code> 文件中 url 参数值改为 <code>http：//username.github.io</code>。</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="c1"># octopress 下 Rakefile 查看&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="n">url</span> <span class="o">=</span> <span class="n">blog_url</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">project</span><span class="p">,</span> <span class="n">source_dir</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">jekyll_config</span> <span class="o">=</span> <span class="no">IO</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="err">‘</span><span class="n">_config</span><span class="o">.</span><span class="n">yml</span><span class="err">’</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">jekyll_config</span><span class="o">.</span><span class="n">sub!</span><span class="p">(</span><span class="sr">/^url:.*$/</span><span class="p">,</span> <span class="err">“</span><span class="ss">url</span><span class="p">:</span> <span class="c1">#{url}”)</span>
-</span><span class='line'>  <span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="err">‘</span><span class="n">_config</span><span class="o">.</span><span class="n">yml</span><span class="err">’</span><span class="p">,</span> <span class="err">‘</span><span class="n">w</span><span class="err">’</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span>
-</span><span class='line'>  <span class="n">f</span><span class="o">.</span><span class="n">write</span> <span class="n">jekyll_config</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+  # octopress 下 Rakefile 查看</p>
+
+<p>url = blog_url(user, project, source_dir)
+  jekyll_config = IO.read(‘_config.yml’)
+  jekyll_config.sub!(/^url:.*$/, “url: #{url}”)
+  File.open(‘_config.yml’, ‘w’) do |f|
+  f.write jekyll_config
+{% endcodeblock %}</p>
 
 <p>(6). 在 octopress 目录下新建 <code>_deploy</code> 目录，并在 _deploy目录下新建 <code>master</code> 分支；</p>
 
@@ -377,37 +322,26 @@
 
 <p>之所以第4步将本地 <code>master</code> 改为 <code>source</code>，是为了把 <code>master 指针</code>让出来，让它指向这一步（6）新建的 <code>_deploy</code> 目录下的 master 分支。这样，<code>octopress/_deploy</code> 目录下的本地 master 分支 就对应了 Github Pages 远程库中的 master 分支，本地 source 分支同理。</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="c1"># 查看 Rakefile </span>
-</span><span class='line'>  <span class="n">cd</span> <span class="err">“</span><span class="c1">#{deploy_dir}” do</span>
-</span><span class='line'>  <span class="nb">system</span> <span class="err">“</span><span class="n">git</span> <span class="n">init</span><span class="err">”</span>
-</span><span class='line'>  <span class="nb">system</span> <span class="err">‘</span><span class="n">echo</span> <span class="err">“</span><span class="no">My</span> <span class="no">Octopress</span> <span class="no">Page</span> <span class="n">is</span> <span class="n">coming</span> <span class="n">soon</span> <span class="err">…”</span> <span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">index</span><span class="o">.</span><span class="n">html</span><span class="err">’</span>
-</span><span class='line'>  <span class="nb">system</span> <span class="err">“</span><span class="n">git</span> <span class="n">add</span> <span class="o">.</span><span class="err">”</span>
-</span><span class='line'>  <span class="nb">system</span> <span class="err">“</span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Octopress init&quot;</span><span class="err">”</span>
-</span><span class='line'>  <span class="nb">system</span> <span class="err">“</span><span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">m</span> <span class="n">gh</span><span class="o">-</span><span class="n">pages</span><span class="err">”</span> <span class="k">unless</span> <span class="n">branch</span> <span class="o">==</span> <span class="err">‘</span><span class="n">master</span><span class="err">’</span>
-</span><span class='line'>  <span class="nb">system</span> <span class="err">“</span><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">origin</span> <span class="c1">#{repo_url}”</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+  # 查看 Rakefile 
+  cd “#{deploy_dir}” do
+  system “git init”
+  system ‘echo “My Octopress Page is coming soon …” &gt; index.html’
+  system “git add .”
+  system “git commit -m "Octopress init"”
+  system “git branch -m gh-pages” unless branch == ‘master’
+  system “git remote add origin #{repo_url}”
+{% endcodeblock %}</p>
 
 <p>最后修改了 <code>Rakefile</code> 中 <code>deploy_default</code> 和 <code>deploy_branch</code> 变量的初始值：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="c1"># deploy 时执行的命令，”push” 为 Rakefile 中定义的一个 rake task</span>
-</span><span class='line'>  <span class="n">deploy_default</span> <span class="o">=</span> <span class="err">“</span><span class="n">push</span><span class="err">”</span> <span class="c1"># 初始为 “rsync”&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="c1"># deploy 时执行上述 rake task 命令 “push” 到 “master” 分支</span>
-</span><span class='line'>  <span class="n">deploy_branch</span>  <span class="o">=</span> <span class="err">“</span><span class="n">master</span><span class="err">”</span> <span class="c1"># 初始为 “gh-pages”</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+  # deploy 时执行的命令，”push” 为 Rakefile 中定义的一个 rake task
+  deploy_default = “push” # 初始为 “rsync”</p>
+
+<p># deploy 时执行上述 rake task 命令 “push” 到 “master” 分支
+  deploy_branch  = “master” # 初始为 “gh-pages”
+{% endcodeblock %}</p>
 
 <p>再回头来看 <code>rake setup_github_pages</code> ，是不是清晰多了呢？</p>
 
@@ -415,23 +349,20 @@
 
 <p>执行如下命令，（将 <code>octopress/_deploy</code> 下数据 push 到 <code>master</code> 分支）：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="err">$</span> <span class="n">sudo</span> <span class="n">rake</span> <span class="n">generate</span>
-</span><span class='line'>  <span class="err">$</span> <span class="n">sudo</span> <span class="n">rake</span> <span class="n">deploy</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+  $ sudo rake generate
+  $ sudo rake deploy
+{% endcodeblock %}</p>
 
 <p>这时在浏览器输入 <code>http://username.github.io</code> 就可以访问你的博客网页啦～</p>
 
 <p>最后别忘了 commit 你的 <code>octopress 框架源码</code>到 <code>source</code> 分支：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="err">$</span> <span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
-</span><span class='line'>  <span class="err">$</span> <span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span><span class="err">’</span><span class="n">init</span><span class="err">’</span>  <span class="c1">#init 可随意填写</span>
-</span><span class='line'>  <span class="err">$</span> <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">source</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+  $ git add .
+  $ git commit -m’init’  #init 可随意填写
+  $ git push origin source
+{% endcodeblock %}</p>
 
 <p>好，到这里，如果顺利完成前面所有内容的话，我们已经将 <code>Octopress</code> 部署到 <code>Github Pages</code> 了。如果你想换成自己的域名可以参考这里的方法（<a href="http://octopress.org/docs/deploying/github/#custom_domains">Custom Domains</a>），不再赘述了。</p>
 
@@ -439,13 +370,11 @@
 
 <p>rake generate：生成 <code>jekyll</code> 站点（Generating Site with Jekyll）</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="c1"># 查看 Rakefile</span>
-</span><span class='line'>  <span class="nb">system</span> <span class="err">“</span><span class="n">compass</span> <span class="n">compile</span> <span class="err">–</span><span class="n">css</span><span class="o">-</span><span class="n">dir</span> <span class="c1">#{source_dir}/stylesheets”</span>
-</span><span class='line'>  <span class="nb">system</span> <span class="err">“</span><span class="n">jekyll</span> <span class="n">build</span><span class="err">”</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+  # 查看 Rakefile
+  system “compass compile –css-dir #{source_dir}/stylesheets”
+  system “jekyll build”
+{% endcodeblock %}</p>
 
 <p>rake deploy：将站点部署到 <code>Github Pages</code>。由于 <code>_deploy</code> 目录所代表的本地仓库的 <code>master</code> 分支对应 <code>Github Pages</code> 远程仓库的 <code>master</code> 分支，该分支目录的内容即 <code>Github Pages</code> 在互联网上供公开访问的站点内容。因此这里做的主要就是将改动的内容（博客、DIY 布局等…） copy 到 <code>_deploy</code> 目录下，然后将此修改 push 到 <code>Github Pages</code> 远程库的 <code>master</code> 分支。</p>
 
@@ -470,21 +399,15 @@
   </li>
 </ol>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="c1"># 查看 Rakefile</span>
-</span><span class='line'>  <span class="nb">system</span> <span class="err">“</span><span class="n">git</span> <span class="n">add</span> <span class="o">-</span><span class="n">A</span><span class="err">”</span>
-</span><span class='line'>  <span class="n">message</span> <span class="o">=</span> <span class="err">“</span><span class="no">Site</span> <span class="n">updated</span> <span class="n">at</span> <span class="c1">#{Time.now.utc}”</span>
-</span><span class='line'>  <span class="nb">system</span> <span class="err">“</span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">message</span><span class="si">}</span><span class="s2">&quot;</span><span class="err">”</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;# 前面说过 deploy_branch  = “master”</span>
-</span><span class='line'><span class="sr">  Bundler.with_clean_env { system “git push origin </span><span class="si">#{</span><span class="n">deploy_branch</span><span class="si">}</span><span class="sr">” }</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+  # 查看 Rakefile
+  system “git add -A”
+  message = “Site updated at #{Time.now.utc}”
+  system “git commit -m "#{message}"”</p>
+
+<p># 前面说过 deploy_branch  = “master”
+  Bundler.with_clean_env { system “git push origin #{deploy_branch}” }
+{% endcodeblock %}</p>
 
 <h2 id="section-1">二. 发布博文过程</h2>
 
@@ -492,61 +415,44 @@
 
 <p>打开终端，输入：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="err">$</span> <span class="n">cd</span> <span class="n">octopress</span>
-</span><span class='line'>  <span class="err">$</span> <span class="n">rake</span> <span class="n">new_post</span><span class="o">[</span><span class="err">“</span><span class="no">Hi</span><span class="p">,</span> <span class="n">octopress</span><span class="err">”</span><span class="o">]</span>  <span class="c1"># “Hi, octopress” 是文章的标题</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+  $ cd octopress
+  $ rake new_post[“Hi, octopress”]  # “Hi, octopress” 是文章的标题
+{% endcodeblock %}</p>
 
 <p>然后在 <code>octopress/source/_posts</code> 目录下我们会看到命名格式为 <code>"2015-10-14-Hi-octopress.markdown"</code> 的文件。</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="c1"># 查看 Rakefile ，这是实现方法</span>
-</span><span class='line'>  <span class="n">filename</span> <span class="o">=</span> <span class="err">“</span><span class="c1">#{source_dir}/#{posts_dir}/#{Time.now.strftime(‘%Y-%m-%d’)}</span>
-</span><span class='line'>  <span class="c1">#{title.to_url}.#{new_post_ext}”</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+  # 查看 Rakefile ，这是实现方法
+  filename = “#{source_dir}/#{posts_dir}/#{Time.now.strftime(‘%Y-%m-%d’)}
+  #{title.to_url}.#{new_post_ext}”
+{% endcodeblock %}</p>
 
 <p>打开新建的 <code>"2015-10-14-Hi-octopress.markdown"</code> 文件（我用的 <a href="http://mouapp.com/">Mou</a>，免费还好用），会发现头文件有如下内容（不要删除这段信息）：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="err">—</span>
-</span><span class='line'>  <span class="ss">layout</span><span class="p">:</span> <span class="n">post</span>             <span class="c1">#代表是一片博文</span>
-</span><span class='line'>  <span class="ss">title</span><span class="p">:</span> <span class="err">“</span><span class="n">hello</span> <span class="n">world</span><span class="err">”</span>
-</span><span class='line'>  <span class="ss">date</span><span class="p">:</span> <span class="mi">2015</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">14</span> <span class="mi">19</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">22</span> <span class="o">+</span><span class="mi">0800</span>
-</span><span class='line'>  <span class="ss">comments</span><span class="p">:</span> <span class="kp">true</span>         <span class="c1">#是否允许评论</span>
-</span><span class='line'>  <span class="ss">categories</span><span class="p">:</span>             <span class="c1">#分类</span>
-</span><span class='line'>  <span class="err">—</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+  —
+  layout: post             #代表是一片博文
+  title: “hello world” 
+  date: 2015-10-14 19:59:22 +0800
+  comments: true         #是否允许评论
+  categories:             #分类
+  —
+{% endcodeblock %}</p>
 
 <p>头部布局实现原理：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="c1"># 查看 Rakefile，头部布局实现</span>
-</span><span class='line'>  <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="err">‘</span><span class="n">w</span><span class="err">’</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">post</span><span class="o">|</span>
-</span><span class='line'>  <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="err">“—”</span>
-</span><span class='line'>  <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="err">“</span><span class="ss">layout</span><span class="p">:</span> <span class="n">post</span><span class="err">”</span>
-</span><span class='line'>  <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="err">“</span><span class="ss">title</span><span class="p">:</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">title</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/&amp;amp;/</span><span class="p">,</span><span class="err">’</span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="err">’</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="err">”</span>
-</span><span class='line'>  <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="err">“</span><span class="ss">date</span><span class="p">:</span> <span class="c1">#{Time.now.strftime(‘%Y-%m-%d %H:%M:%S %z’)}”</span>
-</span><span class='line'>  <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="err">“</span><span class="ss">comments</span><span class="p">:</span> <span class="kp">true</span><span class="err">”</span>
-</span><span class='line'>  <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="err">“</span><span class="ss">categories</span><span class="p">:</span> <span class="err">“</span>
-</span><span class='line'>  <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="err">“—”</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+  # 查看 Rakefile，头部布局实现
+  open(filename, ‘w’) do |post|
+  post.puts “—”
+  post.puts “layout: post”
+  post.puts “title: "#{title.gsub(/&amp;/,’&amp;’)}"”
+  post.puts “date: #{Time.now.strftime(‘%Y-%m-%d %H:%M:%S %z’)}”
+  post.puts “comments: true”
+  post.puts “categories: “
+  post.puts “—”
+{% endcodeblock %}</p>
 
 <p>在最后面的－－－下面就可以开始我们的正文啦～</p>
 
@@ -554,13 +460,11 @@
 
 <p>终端执行如下命令：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="err">$</span> <span class="n">cd</span> <span class="n">octopress</span>
-</span><span class='line'>  <span class="err">$</span> <span class="n">sudo</span> <span class="n">rake</span> <span class="n">generate</span>
-</span><span class='line'>  <span class="err">$</span> <span class="n">rake</span> <span class="n">preview</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+  $ cd octopress
+  $ sudo rake generate
+  $ rake preview
+{% endcodeblock %}</p>
 
 <p>在浏览器中打开<a href="http://localhost:4000/">http://localhost:4000</a>,即可以预览我们刚 post 的博客效果。</p>
 
@@ -568,19 +472,17 @@
 
 <p>终端执行：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="err">$</span> <span class="n">sudo</span> <span class="n">rake</span> <span class="n">deploy</span>  <span class="c1">#deploy blog 到 Github Pages</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+  $ sudo rake deploy  #deploy blog 到 Github Pages
+{% endcodeblock %}</p>
 
 <p>最后别忘了，push 下本地的 octopress 到 source：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="err">$</span> <span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
-</span><span class='line'>  <span class="err">$</span> <span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span><span class="err">’</span><span class="n">post</span> <span class="nb">test</span> <span class="n">blog</span><span class="err">’</span>
-</span><span class='line'>  <span class="err">$</span> <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">source</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+  $ git add .
+  $ git commit -m’post test blog’
+  $ git push origin source
+{% endcodeblock %}</p>
 
 <p>OK，到此，本地 octopress 博客部署到 Github Pages 完成了，打开访问你的个人博客看看效果吧。额，因为还没有做布局修改，留到下一篇介绍～</p>
 
@@ -640,29 +542,28 @@
 
 <p>打开终端，执行如下命令，<code>安装 RVM</code>，同时也会安装最新的 Ruby：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="err">$</span> <span class="n">curl</span> <span class="o">-</span><span class="n">L</span> <span class="ss">https</span><span class="p">:</span><span class="sr">//</span><span class="n">get</span><span class="o">.</span><span class="n">rvm</span><span class="o">.</span><span class="n">io</span> <span class="o">|</span> <span class="n">bash</span> <span class="o">-</span><span class="n">s</span> <span class="n">stable</span> <span class="err">–</span><span class="n">ruby</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+  $ curl -L https://get.rvm.io | bash -s stable –ruby
+{% endcodeblock %}</p>
 
 <p>安装完，执行如下命令，<code>查看 Ruby 版本</code> (-v = –version)</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="err">$</span> <span class="n">ruby</span> <span class="o">-</span><span class="n">v</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+  $ ruby -v
+{% endcodeblock %}</p>
 
 <p>如果你的 Ruby 版本不低于 <code>1.9.3</code>，可直接跳转到 <code>安装 RubyGems</code>。否则需要执行如下命令：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="err">$</span> <span class="n">rvm</span> <span class="n">install</span> <span class="mi">2</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span>
-</span><span class='line'>  <span class="err">$</span> <span class="n">rvm</span> <span class="n">use</span> <span class="mi">2</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+  $ rvm install 2.0.0
+  $ rvm use 2.0.0
+{% endcodeblock %}</p>
 
 <p>安装 RubyGems：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="err">$</span> <span class="n">rvm</span> <span class="n">rubygems</span> <span class="n">latest</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+  $ rvm rubygems latest
+{% endcodeblock %}</p>
 
 <p>现在我们再执行命令 <code>ruby -v</code> 查看 Ruby版本，会看到现在已经是 2.0.0 了。</p>
 
@@ -674,61 +575,49 @@
 
 <p>首先，将 Octopress 的项目 <code>clone</code> 到本地，终端执行如下命令：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="err">$</span> <span class="n">git</span> <span class="nb">clone</span> <span class="ss">git</span><span class="p">:</span><span class="sr">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">imathis</span><span class="o">/</span><span class="n">octopress</span><span class="o">.</span><span class="n">git</span> <span class="n">octopress</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+  $ git clone git://github.com/imathis/octopress.git octopress
+{% endcodeblock %}</p>
 
 <p>进入 octopress 目录，安装 Octopress 所需要的<code>依赖库（dependencies）</code>：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="err">$</span> <span class="n">cd</span> <span class="n">octopress</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;# 安装过程中可能会遇到权限问题，我们需要在命令前面加上 sudo 再执行，并输入登录密码。</span>
-</span><span class='line'><span class="sr">  # sudo 全称：super user do，也就是以 root 用户身份来执行&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="err">$</span> <span class="n">sudo</span> <span class="n">gem</span> <span class="n">install</span> <span class="n">bundler</span>
-</span><span class='line'>  <span class="err">$</span> <span class="n">bundle</span> <span class="n">install</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+  $ cd octopress</p>
+
+<p># 安装过程中可能会遇到权限问题，我们需要在命令前面加上 sudo 再执行，并输入登录密码。
+  # sudo 全称：super user do，也就是以 root 用户身份来执行</p>
+
+<p>$ sudo gem install bundler
+  $ bundle install
+{% endcodeblock %}</p>
 
 <p class="warning">这里在不翻墙的情况下，可能会遇到一个问题：<code>sudo gem install bundler</code> 执行后，一直没有响应。这是由于国内网络原因（你懂的），导致<a href="http://rubygems.org/" target="_blank"> rubygems.org </a>存放在 <code>Amazon S3</code> 上面的资源文件间歇性连接失败。所以你会遇到 <code>gem install rack</code> 或 <code>bundle install</code> 的时候半天没有响应的情况。</p>
 
 <p>幸运的是国内某大神帮我们解决了这一心头大患，我们可以用<code>淘宝的 Ruby 镜像</code>来替换原来的镜像。只需终端执行下面的命令即可：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="err">$</span> <span class="n">gem</span> <span class="n">sources</span> <span class="o">-</span><span class="n">a</span> <span class="ss">https</span><span class="p">:</span><span class="sr">//</span><span class="n">ruby</span><span class="o">.</span><span class="n">taobao</span><span class="o">.</span><span class="n">org</span><span class="o">/</span> <span class="o">-</span><span class="n">r</span> <span class="ss">https</span><span class="p">:</span><span class="sr">//</span><span class="n">rubygems</span><span class="o">.</span><span class="n">org</span><span class="o">/&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;# 下一命令查看切换后结果</span>
-</span><span class='line'><span class="sr">  $ gem sources -l</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+  $ gem sources -a https://ruby.taobao.org/ -r https://rubygems.org/</p>
+
+<p># 下一命令查看切换后结果
+  $ gem sources -l
+{% endcodeblock %}</p>
 
 <p>然后会看到这样的输出：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;**</span> <span class="no">CURRENT</span> <span class="no">SOURCES</span> <span class="o">**&lt;</span><span class="sr">/em&gt;&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="ss">https</span><span class="p">:</span><span class="sr">//</span><span class="n">ruby</span><span class="o">.</span><span class="n">taobao</span><span class="o">.</span><span class="n">org</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+  <em>** CURRENT SOURCES **</em></p>
+
+<p>https://ruby.taobao.org
+{% endcodeblock %}</p>
 
 <p>这就说明我们切换到<code>淘宝的 Ruby 镜像</code>了，再次安装 Octopress 所需要的依赖库就会发现现在可以了。</p>
 
 <p>最后安装下默认主题：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="c1"># rake 全称：ruby make</span>
-</span><span class='line'>  <span class="err">$</span> <span class="n">rake</span> <span class="n">install</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+  # rake 全称：ruby make
+  $ rake install
+{% endcodeblock %}</p>
 
 <p class="addition">上面提到的 <code>Ruby 镜像</code>问题，还有另外两种解决方法:
 <br /><br />
@@ -736,11 +625,10 @@
 <br /><br />
 （2）第二种相对方便点，因为我们使用的是 Gemfile，所以我们可以用 Bundler 的 <a href="http://bundler.io/v1.5/bundle_config.html#gem-source-mirrors">Gem 源代码镜像命令</a>，这样我们就不用改 Gemfile 的 source 了。</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="err">$</span> <span class="n">cd</span> <span class="n">octopress</span>
-</span><span class='line'>  <span class="err">$</span> <span class="n">bundle</span> <span class="n">config</span> <span class="n">mirror</span><span class="o">.</span><span class="n">https</span><span class="ss">:/</span><span class="o">/</span><span class="n">rubygems</span><span class="o">.</span><span class="n">org</span> <span class="ss">https</span><span class="p">:</span><span class="sr">//</span><span class="n">ruby</span><span class="o">.</span><span class="n">taobao</span><span class="o">.</span><span class="n">org</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+  $ cd octopress
+  $ bundle config mirror.https://rubygems.org https://ruby.taobao.org
+{% endcodeblock %}</p>
 
 <h2 id="section-1">四. 预览效果</h2>
 
@@ -748,9 +636,9 @@
 
 <p>我们来看看效果吧。在终端执行命令：</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="err">$</span> <span class="n">sudo</span> <span class="n">rake</span> <span class="n">preview</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}
+  $ sudo rake preview
+{% endcodeblock %}</p>
 
 <p>打开浏览器，输入 <code>http://localhost:4000/</code>，就可以看到效果了。虽然比较简陋，但让人挺高兴的，你觉得呢？</p>
 
